@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 15: Mayor adaptación</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 15: Mayor adaptación"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 15: Mayor adaptación</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En los motores anteriores, se generaban una serie de organismos, los cuales se adaptaban a un determinado número de ambientes. Sin embargo, un problema que surge con estas simulaciones es que una vez un organismo tiene una buena adaptación, los siguientes organismos generados siguen la corriente del primero, luego muchos ambientes no son tenidos en cuenta.</p>
+				<p>Para resolver este problema, esta simulación NO permite que dos o mas organismos compartan el mismo ambiente de entrada y de salida. Y dado el caso, el mejor adaptado se queda y el resto es desechado.</p>
+				<p>El usuario define en el archivo de inicialización Motor15.ini cuantos ambientes va a crear (hasta 14 ambientes), luego el programa generará organismos que se adapten a estos ambientes. Cada organismo tendrá una serie de entrada y otra de salida. Quedando de la siguiente forma:</p>
+				<p><img src="../Imagen/Motor13p1.gif" alt="image" /></p>
+				<p>Cada cilindro es un organismo, en este gráfico se han generado tres(3) organismos, los <i>Ambiente2</i> y <i>Ambiente5</i> no alteran los organismos (suele ocurrir).</p>
+				<p>Este es un listado generado por el programa:</p>
+				<p>MOTOR15. Simbiosis. Parte 3.<br /> Ambientes. Total: [5]<br /> [0] 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,<br /> [1] 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> [2] -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,<br /> [3] -1,-2,-3,-4,5,-6,-7,8,9,10,11,12,13,<br /> [4] 1,2,3,-4,5,6,7,-8,-9,10,-11,-12,-13,</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignarán, compararán o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<p>Número máximo de ciclos CPU: 130<br /> Número de Instrucciones mínimas para algoritmo: 5<br /> Número de Instrucciones máximas para algoritmo: 10<br /> Error máximo de adaptación: 30.000000<br /> Máximo número de Organismos a generar: 5</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 6.193601<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 2/X-X/((((X/X))));<br /> 2: Z = (4*Y);<br /> 3: if( W = Y*7*Y ) goto 2;<br /> 4: Z = Z/((((7/8))));<br /> 5: if( W = 1+(2/X) ) goto 9;<br /> 6: W = X*1*X;<br /> 7: if( Z ! ((W+W)) ) goto 0;<br /> 8: X = X/6-3;<br /> 9: Y = 7/(8-2);<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 25.785713<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 2/X-X/((((X/X))));<br /> 2: if( X &lt; (5-6) ) goto 7;<br /> 3: Y = 2+4-X;<br /> 4: W = X*2/X;<br /> 5: Y = Z*(2-Z);<br /> 6: Y = (Y+9);<br /> 7: Z = ((Z+Z));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [2] Salida: [0]<br /> Error: 5.160267<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 2/X-X/((((X/X))));<br /> 2: if( X ! 4-(5-W) ) goto 6;<br /> 3: Y = Y/5*Y;<br /> 4: X = (X/5);<br /> 5: Z = (Z*1);<br /> 6: W = X+8/7;<br /> 7: if( Z = (5)*9 ) goto 4;<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [4] Salida: [1]<br /> Error: 14.474553<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 2/X-X/((((X/X))));<br /> 2: if( X &lt; (W/8) ) goto 0;<br /> 3: W = (1+W);<br /> 4: Z = 7-6/X;<br /> 5: Y = Y/Y+6;<br /> 6: if( W &lt; (3*Y) ) goto 1;<br /> 7: X = Z*((9+Z));<br /> 8: Y = Y-Y+7;<br /> 9: W = (Z*Z);<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [2] Salida: [1]<br /> Error: 21.910267<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 2/X-X/((((X/X))));<br /> 2: if( X &lt; (W/8) ) goto 0;<br /> 3: W = (1+W);<br /> 4: Z = 7-6/X;<br /> 5: Y = Y/Y+6;<br /> 6: if( W &gt; (Z/Z) ) goto 5;<br /> 7: X = Z*((9+Z));<br /> 8: Y = Y-Y+7;<br /> 9: W = (Z*Z);<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [1]<br /> Error: 25.944445<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = ((X*(X/X*X/9)));<br /> 2: Z = (4*Y);<br /> 3: if( Z = Y*7*Y ) goto 2;<br /> 4: Z = Z/((((7/8))));<br /> 5: if( W = 1+(2/X) ) goto 9;<br /> 6: W = X*1*X;<br /> 7: if( Z ! ((W+W)) ) goto 0;<br /> 8: X = X/6-3;<br /> 9: Y = 7/(8-2);<br /> return Y;<br /> }</p>
+				<p>Descargue el fuente: <a href= "../Download/Motor15cpp.zip">De clic aquí</a><br /> Descargue el ejecutable para Windows: <a href= "../Download/Motor15exe.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

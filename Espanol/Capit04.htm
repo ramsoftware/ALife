@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. "El Algoritmo Evolutivo"</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Capítulo 4: El Algoritmo Evolutivo"/>
+		<meta name="keywords" content="Vida Artificial, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. "El Algoritmo Evolutivo"</h1>
+		</header>
+
+		<section>
+			<article>
+				<h2>Universo y Vida</h2>
+				<p>En los pasados tres capítulos, se hicieron pruebas sobre expresiones y algoritmos genéticos, probando diversas técnicas para lograr una mejor aproximación o adaptación a un ambiente. En la investigación no se busca lograr una total adaptación, sino el estudio del comportamiento de cada técnica y la relación que tiene esta con la evolución biológica. Se llegaron a resultados interesantes como la inexistencia de un proceso de atrofia, o generación completamente al azar para luego irse acercando al resultado esperado con cambios sutiles. También se exploró la adaptación hacia ambientes cíclicos y el nacimiento del concepto de macroorganismo. El cuarto capítulo explora como "el algoritmo evolutivo" se relaciona con el Universo. Para entenderlo vamos por partes.</p>
+				<p>Todo ser vivo debe obedecer las leyes del Universo: cuando el corazón late y la sangre fluye por las venas y arterias se puede estudiar el comportamiento de este proceso con la mecánica de fluidos, cuando caminamos nuestro oído interno nos envía los datos para equilibrarnos gracias a la fuerza de gravedad, movemos nuestros músculos gracias a impulsos eléctricos, etc... todos estos procesos están regidos bajo leyes que aplican a seres vivos o inanimados, nada esta exento.</p>
+				<p>Igualmente, los seres vivos están formados por materiales que nacen de procesos físicos y químicos del Universo. Somos seres basados en la química del carbono.</p>
+				<p>En síntesis, el Universo proporciona los materiales, las leyes y la energía, los cuales son tomados por "el algoritmo evolutivo" para generar y evolucionar seres vivos.</p>
+				<p>¿Es "el algoritmo evolutivo" dependiente de lo ofrecido por el Universo?.</p>
+				
+				<h2>Virus Informáticos: una pista sobre la independencia del "algoritmo evolutivo"</h2>
+				<p>El desarrollo de virus informáticos podremos tomarlo como un primer paso hacia la vida artificial ya que reúnen características propias de seres vivos como la reproducción, la huida o enfrentamiento a depredadores (antivirus), algunos se auto protegen (técnicas anti-depuración) y mantienen su integridad a toda costa. Pero no podemos decir que sean seres vivos porque no evolucionan, su estructura se mantiene intacta tal y como el programador del virus lo pensó, ¿Qué hay de los virus o gusanos polimórficos y mutantes? Estos virus utilizan rutinas de encriptación u ofuscación para aparecer distintos en cada infección y complicarle la labor de desinfección a los antivirus y programas de seguridad, pero la lógica del virus como tal se mantiene intacta.</p>
+				<p>Intentar evolucionar un virus informático, como si se tratase de un algoritmo genético no es buena idea, al cambiar la lógica del virus lo mas probable es que colapse o deje de funcionar.</p>
+				<p>Observe que el Universo de un virus informático es el sistema operativo o la aplicación (en el caso de los virus macro), en ellos no aplican las leyes de gravedad, termodinámica o química del carbono. Son otros tipos de leyes. Pero un sistema operativo o una aplicación no es un Universo apto para generar seres vivos empezando porque no existe un proceso claro y automático de selección natural, las mutaciones simplemente bloquearían a los virus, no hay ambientes cíclicos (luego no se generaría simbiosis y mucho menos Macroorganismos), además los sistemas operativos modernos están siendo diseñados para hacer difícil la creación de virus.</p>
+				<p>En este capítulo se desarrollará un Entorno Operativo, un Universo para poder desarrollar "organismos" en este, las características que tendría este entorno serían:</p>
+				<ol>
+					<li>Permitir implementar ambientes cíclicos.</li>
+					<li>Apoyo al desarrollo y evolución de "organismos": generación al azar, mutación fuerte, mutación débil, adición de instrucciones, etc...</li>
+					<li>Mecanismo claro y automático de selección natural.</li>
+				</ol>
+				<p>Obsérvese la gráfica de la arquitectura:</p>
+				<p><img src="../Imagen/Temp3ra.jpg" alt="Arquitectura"/></p>
+				<p>El Entorno Operativo es el Universo, en su interior se desarrollan ambientes cíclicos (por eso se dibuja la alternancia entre luz, oscuridad, tormenta para representar esto), en su interior se desarrollan los diferentes organismos, se permite que estos puedan viajar entre ambiente y ambiente.</p>
+				<p>Con esta arquitectura se busca estudiar como el "algoritmo evolutivo" toma las diferentes instrucciones cedidas por el Entorno Operativo y permite evolucionar los organismos.</p>
+				<p>De esta manera, una aplicación futura de esta tecnología sería en software que analice los ambientes desarrollados por ejemplo en un videojuego, el "algoritmo evolutivo" tomaría las instrucciones, examinaría el estilo de juego del usuario y le daría mejor inteligencia (un macroorganismo) a los otros actores del videojuego como enemigos, aliados, etc..</p>
+				<h2>Las Simulaciones</h2>
+				<p>Para llegar al estado de arte planteado anteriormente, se usará la misma técnica usada en las simulaciones anteriores: poco a poco.</p>
+				<table> 
+					<tr>
+						<td><a href="AlgEv001.htm">Algoritmo 001</a></td>
+						<td>Primera versión: Universo, multiambientes y materiales estáticos, organismos representados como relaciones. No optimizado.</td>
+					</tr> 
+					<tr>
+						<td><a href="AlgEv002.htm">Algoritmo 002</a></td>
+						<td>Optimización (memoria y velocidad). Parametrización. Tipos de materiales.</td>
+					</tr> 
+					<tr>
+						<td><a href="AlgEv003.htm">Algoritmo 003</a></td>
+						<td>Nace el concepto de Especie. Explicación clara.</td>
+					</tr> 
+					<tr>
+						<td><a href="AlgEv004.htm">Algoritmo 004</a></td>
+						<td>Los aptos se reproducen.</td>
+					</tr> 
+					<tr>
+						<td><a href="AlgEv005.htm">Algoritmo 005</a></td>
+						<td>Los materiales no se mantienen así para siempre.</td>
+					</tr>
+				</table>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Hipótesis: La vida, ¿Requiere complejidad para existir?</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Hipótesis: La vida, ¿Requiere complejidad para existir?"/>
+		<meta name="keywords" content="Vida Artificial, Hipótesis"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Hipótesis: La vida, ¿Requiere complejidad para existir?. <time>2009-mayo-30</time></h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Suena paradójico, pero quizás los esfuerzos por simplificar los modelos matemáticos para simular vida artificial sean responsables que la vida como tal no aparezca en ese ambiente simulado. Cuando desarrollé el modelo matemático para el proyecto de grado de Maestría cuyo objetivo era estudiar el comportamiento de poblaciones de individuos con capacidad evolutiva en un ambiente abierto, me topé con algo muy interesante: no fue necesario programar la selección natural, fue un comportamiento emergente del modelo. Todas las simulaciones escritas en años anteriores fue necesario escribir rutinas que premiaran o castigaran a los individuos aptos o no, respectivamente. Lograr que un comportamiento emergiera sin haberse programado lo considero un éxito. Sin embargo, en el mismo modelo debí implementar los mecanismos de reproducción y variación, no eran comportamientos emergentes sino programados (tal y como sucede en algoritmos o programación genéticos). Celebraré el día que encuentre como sin programarlo, individuos simulados logren generar por sí mismos el mecanismo de reproducción (un mecanismo que debió encontrar la evolución en las primeras etapas del inicio de la vida).</p>
+ 				<p>Personalmente considero que fue gracias a la complejidad del modelo que desarrollé para el proyecto de grado que se logró ese comportamiento emergente de la selección natural. Sin embargo, ese modelo trae consigo varios problemas que debí resolver:</p>
+ 				<p>1. Amplio uso de números aleatorios. Fue resuelto usando el generador Mersenne Twister el cual tiene un periodo muy alto y es muy rápido. De todos modos, el usar tanta generación de números aleatorios consume CPU y hace la simulación lenta.</p>
+ 				<p>2. Posibilidad que algo implementado falle. Esta fue la mayor preocupación que tenía durante la programación del modelo. Fue la razón principal de porque tardé tanto en implementarlo, porque cada módulo, método y función debieron ser probados hasta la saciedad (recurrí a programar lo mismo en otro lenguaje de programación para comparar resultados, o hacer múltiples pruebas con Excel). Considero que fue un récord personal mío que no lo superaré en mucho tiempo por la gigantesca cantidad de horas dedicadas a la cuidadosa programación y pruebas.</p>
+ 				<p>3. La simulación podría tardar mucho en completarse. ¡Y eso sucedió! Los resultados fueron tan buenos que la población en ambientes abiertos (recibe y emite energía del exterior) creció sostenidamente (incluso en condiciones hostiles). Había que usar condiciones ambientales muy hostiles para extinguir la población. Entre más creciese la población más tardaba la ejecución porque se requería simular cada individuo naciente. Use varios computadores al tiempo por horas para hacer las múltiples simulaciones en diversas situaciones y así sacar los indicadores para después graficar su comportamiento.</p>
+ 				<p>Me asalta entonces una preocupación: Si quiero una emergencia espontánea de comportamientos como reproducción, variación, macroorganismo, evolución jerárquica, inteligencia ¿el modelo debe ser cada vez más y más complejo? Si quiero simular la vida ¿se debe implementar cada comportamiento físico y químico de nuestro planeta en un modelo para poder ver vida emerger de una simulación? Yo espero que la respuesta sea negativa.</p>
+ 				<p>Encontré los problemas de la simulación usando modelos tipo Tierra aquí: <a href= "http://www.tim-taylor.com/papers/thesis/html/node159.html">http://www.tim-taylor.com/papers/thesis/html/node159.html</a></p>
+			</article>
+		</section>
+	</body>
+</html>

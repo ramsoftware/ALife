@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Simulación VII. La Memoria Cíclica.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Simulación VII. La Memoria Cíclica."/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Simulación VII. La Memoria Cíclica.</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Los ambientes comúnmente son cíclicos, luego los seres vivos deben adaptarse a esta característica de los ambientes. Durante ciertos períodos, el ambiente puede ser benévolo con el ser vivo porque provee de recursos y la adaptación es óptima. Pero en otros períodos los recursos son escasos y la adaptación es difícil. Existen varias estrategias para soportar un ambiente malévolo y una de ellas es la emigración a otros ambientes. Sin embargo, esta emigración es un juego arriesgado porque el ser vivo puede encontrarse con un nuevo ambiente peor. De ahí nace esta simulación, en la cual se provee a los seres vivos de una "memoria" sobre el comportamiento cíclico de los distintos ambientes.</p>
+				<p>Esta memoria que se ha bautizado como "memoria cíclica", tiene un registro con la siguiente estructura:</p>
+				<p>Punto de referencia, Ambiente, Energía que provee</p>
+				<p><b>Punto de referencia:</b> Es un dato con el cual el ser vivo se da cuenta en que período se encuentra el ambiente. En la historia de la humanidad, para saber el curso de las estaciones, nuestros ancestros construyeron complejos sistemas de medición utilizando la posición de las estrellas en el firmamento como puntos de referencia. Estos centros como Stonehenhe, interpretándolos de manera adecuada comunican cuando tiempo durará una estación.<br /> Para propósitos de la simulación, el ser vivo guarda el valor de la variable Y con que se evalúan los ambientes.</p>
+				<p><b>Ambiente:</b> Almacena el código del ambiente, en la simulación puede ser 1, 2 o 3.</p>
+				<p><b>Energía que provee:</b> Si el ambiente es benévolo entonces los recursos son bastantes y la adaptación óptima luego este tendrá un valor positivo en caso contrario tendrá un valor negativo.</p>
+				<p><b>Modo de funcionamiento<br /></b> Cuando nace el ser vivo, su memoria cíclica esta totalmente vacía y es depositado en un ambiente en forma aleatoria, inmediatamente se estudia que tan bien le fue en ese ambiente (Recursos - Adaptación). Este dato es grabado en su memoria. A medida que transcurre el tiempo, el ser vivo ya sabe que la emigración no es tan aleatoria sino que consulta su memoria cíclica. El pseudo-algoritmo seria así:</p>
+				<ol>
+					<li>Nace ser vivo, memoria limpia, ubíquelo en un ambiente.</li>
+					<li>Energía = Recursos - Adaptación. Si Energía acumulada es cero, el ser vivo muere, luego vuelva a 1.</li>
+					<li>Guarde: Punto de Referencia (valor Y), Ambiente en donde se encuentra, Energía.</li>
+					<li>Consulte en memoria si la siguiente iteración la tiene almacenada en memoria.</li>
+					<li>Si la tiene almacenada entonces busque el mejor ambiente (el que da mas energía), si no existe el registro y el ambiente actual es malévolo busque otro.</li>
+					<li>Por si acaso, busque el ambiente menos dañino.</li>
+					<li>Si no hay ambientes buenos entonces arriésguese a un ambiente desconocido.</li>
+					<li>Si no hay ambientes buenos, ni desconocidos entonces vaya al ambiente menos dañino.</li>
+					<li>Emigre al nuevo ambiente y regrese al punto 2.</li>
+				</ol>
+				<p>Sin embargo, la memoria cíclica no es efectiva sino hasta que el ser vivo tiene el registro del comportamiento cíclico de todos los ambientes. Puede morir antes de eso.</p>
+
+				<h2>Conclusiones</h2>
+				<p>Después de programar esta simulación, quedaron varias dudas de si la naturaleza obró de esta manera:</p>
+				<ol>
+					<li>¿Cuando se percató de crear una memoria cíclica?</li>
+					<li>Hay serios problemas con determinar el Punto de Referencia, fácilmente se le informó al ser vivo en que posición estaba el ambiente, pero en realidad no es así.</li>
+					<li>Aunque reduce el riesgo de morir, la memoria cíclica requiere una estructura donde se almacenen los registros y esta estructura puede crecer de forma gigantesca. ¿Como hace el ser vivo para manternerla?</li>
+					<li>Una memoria cíclica gigantesca es difícil de heredar a los hijos en el ADN.</li>
+					<li>El Punto de Referencia falla con ambientes complejos donde existan cientos de variables. La memoria cíclica crecería demasiado, el algoritmo de búsqueda se volvería mas complejo, el proceso de decisión mas lento. Ya requeriría un motor de base de datos. La memoria cíclica no es escalable.</li>
+				</ol>
+				<p><img src="../Imagen/Aprox10.gif" alt="Aprox10.gif (8372 bytes)" /></p>
+				<p>Sin embargo, varias investigaciones han llegado a la conclusión que los seres vivos tienen un reloj interno que les avisa cuando deben emigrar, cuando dormir, cuando reproducirse, etc.. pero ¿Cómo se sincroniza ese reloj con el ambiente? En caso de que un ser vivo llegue accidentalmente a un ambiente totalmente nuevo con ciclos distintos, ¿Cómo vuelve a sincronizar su reloj interno?. ¿Ese reloj interno intuye una memoria cíclica?</p>
+				<p>La investigación continúa....</p>
+				<p><a href="../Download/EvolSim07.zip">Baje el código fuente dando clic aquí</a></p>
+			</article>
+		</section>
+ </body>
+</html>

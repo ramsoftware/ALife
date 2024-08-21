@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 05: Nuevos tipos de algoritmos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Independencia 05: Nuevos tipos de algoritmos"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 05: Nuevos tipos de algoritmos</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Los algoritmos hasta ahora usados son del tipo:</p>
+				<p>1: IF ( X &gt; (3 + X + X*X )) Goto 3; // Es in If condicional<br /> 2: Y := 4 - Z +Z * Z * Z; // Es una asignación<br /> 3: Y := 10 - W * W;</p>
+				<p>Esto requiere un evaluador de expresiones el cual consume memoria y tiempo de ejecución (y en estos momentos esta optimizado).</p>
+				<p>La expresión por ejemplo: 3 + X + X*X, puede replantearse de la siguiente manera:</p>
+				<p>Var01 := 3 + X;<br /> Var02 := X * X;<br /> Var03 := Var01 + Var02;</p>
+				<p>Una sola instrucción se vuelven tres(3) pero con un mismo modelo:<br /> <i>Variable operador Variable</i></p>
+				<p>Eso es mas fácil y mucho más rápido de construir y evaluar. Las mutaciones serán sutiles, luego no habrán cambios dramáticos entre el padre y el hijo.</p>
+				<p>Las nuevas instrucciones de los algoritmos serán de la siguiente forma:</p>
+				<p>Etiqueta: Código que identifica la instrucción<br /> Instrucción: Código de la instrucción (SET=0, IFMAY=1, IFMEN=2,...)<br /> Variable: A que variable asignará o comparará.<br /> ¿Operando o Numero?: ¿Lo que sigue es una variable o un número?<br /> Operando 1: Código de la variable o un número entero<br /> Operador: suma(+), resta(-), dividir(/), multiplicar(*)<br /> ¿Operando o Numero?: ¿Lo que sigue es una variable o un número?<br /> Operando 2: Código de la variable o un número entero<br /> Salto: A donde irá si es una instrucción de comparación y es verdadera.</p>
+				<p>Por ejemplo:</p>
+				<p>1: SET X1 = 45 - Y3;<br /> 2: SET X2 = 12 / 25;<br /> 3: SET X3 = 7 * X1;<br /> 4: IF X2 &gt; X3 Goto 2;</p>
+				<p>Esto implica cambiar todo los programas anteriores. Hacer pruebas. Hay un asunto que hay que arreglar: Nacimiento de variables intermedias ¿Cuantas deben ser?.</p>
+				<p>Ya esta disponible para descarga el nuevo tipo de algoritmo genético, en pruebas preliminares mostró ser mucho más rápido que sus predecesores.</p>
+				<p>En una próxima actualización se registrará el resultado de pruebas formales.</p>
+				<p><a href="../Download/Indep05.zip">Descargar código Fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Población (segunda implementación mejorada)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Población (segunda implementación mejorada)"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Población (segunda implementación mejorada)</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Esta segunda versión adiciona dos(2) filtros mas a la generación de algoritmos aptos:</p>
+				<p>1. Ciertos algoritmos generados al azar implementan ciclos cerrados (queda atrapada la ejecución allí). Como el interpretador ejecuta una cantidad de veces definida las instrucciones finalmente el programa termina. Estos algoritmos son rechazados.</p>
+				<p>2. Algunos algoritmos llegan a los límites que imponen los enteros, por ejemplo multiplica un número grande con otro grande y vuelve y repite hasta que ya sobrepasa el límite permitido. El interpretador lo que hace es evitar que las operaciones se pasen de esta frontera. Estos algoritmos son rechazados.</p>
+				<p>Además se ha agregado que puede leer un archivo de inicialización donde se puede configurar diferentes variables (entradas, salidas, etc..)</p>
+				<p>La mejora es que el manejo de memoria es dinámico (el archivo de inicialización impone los límites) y los algoritmos genéticos generados pueden ser compilados sin problemas en C++.</p>
+				<p><a href= "../Download/Poblacion002.zip">Descargue el código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

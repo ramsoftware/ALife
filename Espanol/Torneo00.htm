@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 00: "Robocode"</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Torneo 00: Robocode"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 00: "Robocode" inspira un entorno virtual para evolucionar</h1>
+		</header>
+
+		<section>
+			<article>
+				<p><img src="../Imagen/Robocode1.jpg"alt="image" /></p>
+				<p>Robocode es un proyecto de IBM dirigido a los estudiantes y entusiastas del lenguaje de programación Java. Es un juego de enfrentamiento entre tanques de guerra.</p>
+				<p>A diferencia del tradicional juego de video de acción en el que el jugador debe estar controlando en tiempo real su personaje, en Robocode, el jugador programa el comportamiento del tanque de guerra usando Java. Una vez programado, el tanque es depositado en la arena de combate donde se enfrentará a otros... solo debe quedar uno vivo.</p>
+				<p><img src="../Imagen/Robocode2.jpg"alt="image" /></p>
+				<p>El jugador tiene a su disposición varias funciones para controlar el tanque como desplazamiento, giros, control del radar, control del cañón y disparo. Además de los eventos (cuando el tanque es impactado por otro, cuando el tanque detecta a un enemigo, etc..).</p>
+				<p>Aunque las reglas, funciones y eventos son simples, la diversidad de tanques esta limitada solo por la imaginación del jugador (programador), hay tanques de comportamiento simple (si detectan un enemigo en su trayectoria disparan, si reciben un impacto dan media vuelta y huyen), hasta complejos (se desplazan de manera que sea difícil seguirles la pista, calculan como calcular el disparo dependiendo del movimiento del enemigo, etc..).</p>
+				<p>Robocode es gratuito, lo puede descargar de Internet en esta dirección: <a href= "https://robocode.sourceforge.io/">https://robocode.sourceforge.io/</a> , requiere que tenga Java instalado en su máquina. Recomiendo un buen PC (Pentium III en adelante) y 128 MB RAM mínimo porque como Robocode esta escrito en Java se siente la lentitud en algunas partidas.</p>
+				<p><img src="../Imagen/Robocode3.jpg"alt="image" /></p>
+				<p>Cuando arranca el torneo, los tanques participantes son colocados al azar en la arena de combate y como sucede en la naturaleza, un complejo tanque puede ser rápidamente destruido si está en el sitio equivocado en el momento equivocado, para evitar esta "mala suerte", uno puede programar N torneos de tal manera que si el tanque esta bien programado se notará al final con un alto puntaje.</p>
+				<p>Los tanques siempre arrancan con un valor de energía: 100. Cada vez que disparan o son impactados la energía disminuye y solo pueden aumentar su energía si logran acertarle a un tanque enemigo. El desplazamiento no consume energía.</p>
+				<p>El juego trae un editor para programar el tanque:</p>
+				<p><img src="../Imagen/Robocode4.jpg"alt="image" /></p>
+				<p>Este juego educativo (dirigido a personas que están aprendiendo a programar en Java o quieran mejorar sus habilidades en programación) ha tenido éxito en la comunidad académica.</p>
+				<p class="Negrilla">Inspirando un entorno para la evolución</p>
+				<p>Robocode reúne las características necesarias para desarrollar un entorno similar que permita evolucionar organismos artificiales.</p>
+				<p>Un tanque de guerra se presenta de esta manera:</p>
+				<p><img src="../Imagen/Robocode5.jpg"alt="image" /></p>
+				<p>El vehículo puede girar y desplazarse, el radar y el cañón solo giran; los tres son independientes.</p>
+				<p>Existen funciones para:</p>
+				<ol>
+					<li>Girar el tanque.</li>
+					<li>Desplazar el tanque hacia adelante.</li>
+					<li>Desplazar el tanque hacia atrás.</li>
+					<li>Girar el radar.</li>
+					<li>Girar el cañón.</li>
+					<li>Disparar.</li>
+				</ol>
+				<p>Y hay eventos como:</p>
+				<ol>
+					<li>Cuando le acierto a un tanque enemigo.</li>
+					<li>Cuando es impactado por un disparo.</li>
+					<li>Cuando colisiona contra otro tanque.</li>
+					<li>Cuando colisiona con una pared.</li>
+					<li>Cuando el radar detecta un tanque enemigo.</li>
+				</ol>
+				<p>La lista es un poco mas extensa en cuanto a funciones y a eventos, he colocado los principales.</p>
+				<p>Los eventos de un objeto pueden ser análogos a las emociones de un ser vivo y las funciones a las distintas acciones que pueda hacer un ser vivo.</p>
+				<p>Algo llamativo que responde el juego es ¿que hacer si ningún evento ha ocurrido?, los seres vivos no solo se "mueven" cuando alguna emoción se dispara, también actúan por su propia cuenta: en el juego hay una rutina <i>public void run()</i>, la cual se programa para que el tanque actúe por su cuenta si ningún evento se ha activado.</p>
+				<p>Ahora bien, Robocode fue hecho para que programadores escriban el comportamiento del tanque y su reacción a los diversos eventos, utilizando la sintaxis de Java.</p>
+				<p>En la simulación de vida artificial los tanques serán los organismos artificiales, y aquí aparecen las diferencias:</p>
+				<ol>
+					<li>El tanque no puede ser creado con sintaxis en Java debido a la dificultad de generar y mutar instrucciones al azar. Así que el tanque tendrá un nuevo lenguaje de programación diseñado para facilitar la mutación.</li>
+					<li>La simulación debe ser muy rápida. En la primera etapa, el simulador no tendrá una interfaz gráfica, se desarrollará en C++.</li>
+					<li>Los tanques con mejores puntajes pueden reproducirse, los hijos tendrán una ligera mutación. Los tanques con muy bajos puntajes serán eliminados.</li>
+				</ol>
+				<p>El objetivo de esta simulación es experimentar con el manejo de múltiples instrucciones (funciones) y el manejo de emociones (eventos). El tanque ganador generado con estos algoritmos de vida artificial es entonces traducido a Java y llevado a Robocode.</p>
+			</article>
+		</section>
+	</body>
+</html>

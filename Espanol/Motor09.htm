@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 09: Sutil</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 09: Sutil"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 09: Sutil</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Si usted fuera un escultor y deseara hacer una escultura sobre una piedra, estos serían los pasos:</p>
+				<ol>
+					<li>Dirigirse a una mina de piedras y escoger la mejor para su propósito.</li>
+					<li>Escogida la piedra, tomar herramientas fuertes y comenzar a tallarla.</li>
+					<li>Tomar herramientas mas delicadas para retocar la escultura.</li>
+				</ol>
+				<p>Similarmente trabaja esta simulación de vida artificial, estos serían los pasos:</p>
+				<ol>
+					<li>Se escoge aleatoriamente un algoritmo que se adapte al ambiente (serie de entrada y salida).</li>
+					<li>Escogido el algoritmo, se muta cada instrucción (gen) para ir adaptándolo mejor.</li>
+					<li>Finalmente, se mutan instrucciones de manera menos brusca, mas sutil.</li>
+				</ol>
+				<p>El usuario puede modificar estos nuevos parámetros:</p>
+				<ol>
+					<li>Número de veces que se generarán algoritmos aleatorios: <b>m_iGeneraAzar</b></li>
+					<li>Número de veces que se mutarán instrucciones (genes): <b>m_iMutaTodoGen</b></li>
+					<li>Número de veces que se mutarán instrucciones (genes) mas suavemente: <b>m_iMutaParcGen</b></li>
+					<li>Número de instrucciones mínimas que se generarán: <b>m_iNumInstMin</b></li>
+					<li>N'umero de instrucciones máximas que se generarán: <b>m_iNumInstMax</b></li>
+				</ol>
+				<p>El programa esta escrito en C++, tiene dos caminos para probarlo:</p>
+				<ol>
+					<li>Descargar el programa ejecutable (Windows 95/98/NT/2000). <a href="../Download/Motor09exe.zip">De clic aquí.</a></li>
+					<li>Descargar el programa fuente (C++). <a href= "../Download/Motor09cpp.zip">De clic aquí.</a></li>
+				</ol>
+				<p>Para configurarlo, debe modificar el archivo de inicialización Motor09.ini, observe la figura:</p>
+				<p><img src="../Imagen/Motor09.gif" alt= "image" /></p>
+				<p>Ejecute el programa, dependiendo de los parámetros en Motor09.ini, puede tardar en terminar.</p>
+				<p>1. Serie de salida ascendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,</p>
+				<table>
+					<tr>
+						<th>Estrategia</th>
+						<th>Intento</th>
+						<th>Valor de mayor aproximación</th>
+					</tr>
+					<tr>
+						<td>Aleatorio</td>
+						<td>228479</td>
+						<td>87.000000</td>
+					</tr>
+					<tr>
+						<td>Mutación Fuerte</td>
+						<td>759718</td>
+						<td>27.000000</td>
+					</tr>
+					<tr>
+						<td>Mutación Débil (Sutil)</td>
+						<td>326542</td>
+						<td>26.999992</td>
+					</tr>
+				</table>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50%, Asignación: 50%<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25%, '&gt;':25%, '&lt;':25%, '!=':25%<br /> 3. Longitud de la expresión (número de operadores): 2<br /> 4. Construcción de las expresiones, posibilidad de salir X=33%, Paréntesis:33%, Números=34%<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25%, X=25%, Y=25%, Z=25%<br /> Número de veces que se generará algoritmos al azar: 300.000<br /> Número de veces que se mutará todo un Gen: 900.000<br /> Número de veces que se mutará parcialmente un Gen: 900.000<br /> Número de Genes mínimo: 10<br /> Número de Genes máximo: 40<br /> Número de ciclos CPU: 130</p>
+				<p>Descargue el listado generado. <a href= "../Download/Motor09L1.zip">De clic aquí.</a></p>
+				<p>Número de veces que se generará algoritmos al azar: 3.000.000<br /> Número de veces que se mutará todo un Gen: 9.000.000<br /> Número de veces que se mutará parcialmente un Gen: 9.000.000<br /> Número de Genes mínimo: 10<br /> Número de Genes máximo: 40<br /> Número de ciclos CPU: 130</p>
+				<table>
+					<tr>
+						<th>Estrategia</th>
+						<th>Intento</th>
+						<th>Valor de mayor aproximación</th>
+					</tr>
+					<tr>
+						<td>Aleatorio</td>
+						<td>2.021.441</td>
+						<td>63.185715</td>
+					</tr>
+					<tr>
+						<td>Mutación Fuerte</td>
+						<td>2.620.899</td>
+						<td>24.999989</td>
+					</tr>
+					<tr>
+						<td>Mutación Débil (Sutil)</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+				</table>
+				<p>Descargue el listado generado. <a href= "../Download/Motor09L3.zip">De clic aquí.</a></p>
+				<p>2. Serie de salida descendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2<br /> 4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<p>Número de veces que se generará algoritmos al azar: 1.000.000<br /> Número de veces que se mutará todo un Gen: 7.000.000<br /> Número de veces que se mutará parcialmente un Gen: 7.000.000<br /> Número de Genes mínimo: 10<br /> Número de Genes máximo: 60<br /> Número de ciclos CPU: 130</p>
+				<table>
+					<tr>
+						<th>Estrategia</th>
+						<th>Intento</th>
+						<th>Valor de mayor aproximación</th>
+					</tr>
+					<tr>
+						<td>Aleatorio</td>
+						<td>624.410</td>
+						<td> 307.000000</td>
+					</tr>
+					<tr>
+						<td>Mutación Fuerte</td>
+						<td>4.948.286</td>
+						<td>30.195324</td>
+					</tr>
+					<tr>
+						<td>Mutación Débil (Sutil)</td>
+						<td>3.208.528</td>
+						<td>30.195322</td>
+					</tr>
+				</table>
+				<p>Descargue el listado generado. <a href= "../Download/Motor09L4.zip">De clic aquí.</a></p>
+				<p>3. Serie de salida alterna;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50%, Asignación: 50%<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25%, '&gt;':25%, '&lt;':25%, '!=':25%<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33%, Paréntesis:33%, Números=34%<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25%, X=25%, Y=25%, Z=25%</p>
+				<p>Número de veces que se generará algoritmos al azar: 200.000<br /> Número de veces que se mutará todo un Gen: 300.000<br /> Número de veces que se mutará parcialmente un Gen: 500.000<br /> Número de Genes mínimo: 10<br /> Número de Genes máximo: 40<br /> Número de ciclos CPU: 130</p>
+				<table>
+					<tr>
+						<td><strong>Estrategia</strong></td>
+						<td><strong>Intento</strong></td>
+						<td><strong>Valor de mayor aproximación</strong></td>
+					</tr>
+					<tr>
+						<td>Aleatorio</td>
+						<td>147894</td>
+						<td>81.571419</td>
+					</tr>
+					<tr>
+						<td>Mutación Fuerte</td>
+						<td>158607</td>
+						<td>8.809524</td>
+					</tr>
+					<tr>
+						<td>Mutación Débil (Sutil)</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+				</table>
+				<p>Descargue el listado generado. <a href= "../Download/Motor09L2.zip">De clic aquí.</a></p>
+				<h2>Conclusiones:</h2>
+				<p>1. Las aproximaciones usando esta estrategia son mejores que con las simulaciones anteriores. La libertad en generar el número de instrucciones fue una buena estrategia.</p>
+				<p>2. En la última prueba se observa que la Mutación Débil (Sutil) no tuvo efecto, esto puede suceder.</p>
+				<p>3. Igualmente se enfrentan al problema de que las mutaciones afecten instrucciones que nunca se ejecuten. ¿Será necesario arreglar esto?.</p>
+			</article>
+		</section>
+	</body>
+</html>

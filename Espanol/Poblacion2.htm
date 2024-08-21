@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Población (primera implementación)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Población (primera implementación)"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Población (primera implementación)</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Esta implementación aplica lo <a href="Poblacion1.htm">propuesto anteriormente</a>, aterrizado a la realidad de un lenguaje de programación. Utilizo Visual C++ 6.0.</p>
+				<p>Ese nuevo enfoque resultó en un programa mas simple, que consume menos recursos de memoria y es más rápido (lo ideal). Los resultados hasta ahora son muy prometedores porque las aproximaciones (adaptaciones) son mucho mejores que la generación de algoritmos del capitulo 2.</p>
+				<p>Falta hacer pruebas y comprobar.</p>
+				<p>El programa se encuentra en fase simplista (los parámetros de ejecución están dentro del código) y lo único que hace es imprimir el resultado al final de la simulación. En una versión posterior podrá enviársele parámetros vía un archivo plano o quizás tenga GUI.</p>
+				<p>Esta simulación si deja planteadas algunas preguntas:</p>
+				<p>1. Ciertos algoritmos generados al azar implementan ciclos cerrados (queda atrapada la ejecución allí). Como el interpretador ejecuta una cantidad de veces definida las instrucciones finalmente el programa termina. ¿Estos algoritmos con esta característica deben rechazarse?</p>
+				<p>2. Algunos algoritmos llegan a los límites que imponen los enteros, por ejemplo multiplica un número grande con otro grande y vuelve y repite hasta que ya sobrepasa el límite permitido. El interpretador lo que hace es evitar que las operaciones se pasen de esta frontera, pero ¿Estos algoritmos con esta característica deben rechazarse?</p>
+				<p>Ambas preguntas son muy tentadoras a responder afirmativamente, pero la experiencia me dice que uno debe probar varias veces antes de concluir.</p>
+				<p><a href= "../Download/Poblacion001.zip">Descargue el código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

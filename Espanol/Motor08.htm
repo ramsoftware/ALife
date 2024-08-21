@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 08</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 08"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 08</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>El proceso de atrofia en los seres vivos que implemente en Motor 06 (Java), se reescribió en C++ (aplicación texto). Nuevamente se obtienen aumentos dramáticos de velocidad. Se hicieron varias pruebas con diferentes series.</p>
+				<p>Las nueva característica del Motor08 es que es configurable vía un archivo de inicialización, es decir, ya no requiere recompilar la aplicación para probar diferentes simulaciones.</p>
+				<p>El programa esta escrito en C++, tiene dos caminos para probarlo:</p>
+				<ol>
+					<li>Descargar el programa ejecutable (Windows 95/98/NT/2000). <a href="../Download/Motor08exe.zip">De clic aquí.</a></li>
+					<li>Descargar el programa fuente (C++). <a href= "../Download/Motor08cpp.zip">De clic aquí.</a></li>
+				</ol>
+				<p>Para configurarlo, debe modificar el archivo de inicialización Motor08.ini, observe la figura:</p>
+				<p><img src="../Imagen/Motor08.gif" alt= "image" /></p>
+				<p>Motor08 optimiza el mejor algoritmo, es decir, aquellas instrucciones que nunca se ejecutaron son eliminadas (un proceso de atrofia), el algoritmo entonces tiende a ser mas pequeño (con menos instrucciones).</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,<br /> Intentos: 1000000<br /> CPU: 130<br /> Mutar al simular: 70%<br /> Hay libertad de generar de 1 a N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50%, Asignación: 50%<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25%, '&gt;':25%, '&lt;':25%, '!=':25%<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33%, Paréntesis:33%, Números=34%<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25%, X=25%, Y=25%, Z=25%</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th> Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>267315</td>
+						<td>46.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>3914</td>
+						<td>72.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>323002</td>
+						<td>44.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>139098</td>
+						<td>62.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>19860</td>
+						<td>60.000000</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>423143</td>
+						<td>24.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>19907</td>
+						<td>60.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>37943</td>
+						<td>60.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>51480</td>
+						<td>17.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>74882</td>
+						<td>62.000000</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>234761</td>
+						<td>19.125000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>66036</td>
+						<td>62.000000</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>49.01041666...</td>
+					</tr>
+				</table>
+				<p>Descargue el listado generado. <a href= "../Download/Motor08L1.zip">De clic aquí.</a></p>
+				<p>Motor08. Optimiza el mas apto y luego muta una instrucción.<br /> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,<br /> Intentos: 1000000<br /> CPU: 130<br /> Mutar al simular: 50%<br /> Es obligatorio generar N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50%, Asignación: 50%<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25%, '&gt;':25%, '&lt;':25%, '!=':25%<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p> 4. Construcción de las expresiones, posibilidad de salir X=33%, Paréntesis:33%, Números=34%<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25%, X=25%, Y=25%, Z=25%</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>13102</td>
+						<td>72.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>70641</td>
+						<td>71.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>907825</td>
+						<td>12.400413</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>215607</td>
+						<td>0.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>956918</td>
+						<td>17.901031</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>88244</td>
+						<td>30.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>640910</td>
+						<td>40.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>87390</td>
+						<td>43.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>205716</td>
+						<td>4.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>23587</td>
+						<td>65.000000</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>546809</td>
+						<td>12.000000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>112329</td>
+						<td>24.000000</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>32.60845366666....</td>
+					</tr>
+				</table>
+				<p>Descargue el listado generado. <a href= "../Download/Motor08L2.zip">De clic aquí.</a></p>
+
+				<h2>Conclusiones:</h2>
+				<p>Similar al Motor06, la optimización presenta el problema que como disminuye el tamaño del algoritmo, al tener muy pocas instrucciones y poca libertad en mutar, puede perder cualquier esperanza de lograr el acercamiento (adaptación) a la serie dada por el usuario (ambiente).</p>
+				<p>¿Que hacer entonces?. Se presentan los siguientes problemas:</p>
+				<p>1. Instrucciones (Genes) que nunca son ejecutadas, al mutarse no le dan ningún beneficio al ser vivo por lo tanto se pierde un ciclo de evaluación.</p>
+				<p>2. Si se elimina las instrucciones sobrantes, el algoritmo se hace cada vez mas pequeño, o demasiado pequeño (1 instrucción), luego las mutaciones hacen cambios tan fuertes que es muy poco probable que resulte beneficioso al organismo.</p>
+				<p>La investigación continua...</p>
+			</article>
+		</section>
+	</body>
+</html>

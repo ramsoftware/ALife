@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Un sistema operativo para la vida artificial</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Un sistema operativo para la vida artificial"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 09: Un sistema operativo para la vida artificial</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Similares a los virus biológicos, los virus informáticos tienen una típica característica de los seres vivos: reproducirse.</p>
+				<p>En Definición hay una comparativa entre los virus informáticos y los virus biológicos, al final deduzco como programador que estos virus informáticos no son vida, porque les falta algo.</p>
+				<p>Han pasado unos cuatro años desde que comencé esta investigación y ese "algo" ha sido muy esquivo. La diferencia entre lo vivo y lo no vivo no es clara. La única pista es que los seres vivos evolucionan algo que no sucede con un virus informático por si solo.</p>
+				<p>Pero asalta la pregunta: ¿y que es evolucionar?, ¿la adaptación del ser vivo a un nuevo ambiente cambiando su cuerpo y comportamiento?, ¿una compleja simbiosis entre diversos organismos simples dando como origen a un organismo mas grande y complejo con el único fin de sobrevivir en ambientes cambiantes y hostiles?, ¿una meta de la vida para lograr además de la perfecta adaptación, poder dominar las leyes del Universo y así modificar a su antojo los distintos ambientes para un mejor vivir?. Son preguntas que por ahora tan solo plantean hipótesis y pruebas (simulaciones).</p>
+				<p>A pesar de que los virus informáticos no los considero formas de vida, son un comienzo. Desafortunadamente, se enfrentan a limitantes técnicas que impiden que estos puedan "evolucionar". Un virus que llegara a mutar alguna instrucción, lo mas probable es que deje de funcionar. Un virus puede estropear el funcionamiento del sistema operativo.</p>
+				<p>La idea es "emular" un sistema operativo para poder desarrollar organismos mejores que un virus. La funcionalidad que tengo en mente es la siguiente:</p>
+				<ol>
+					<li>Emulación de un sistema operativo con un sencillo árbol de directorios.</li>
+					<li>Usar un motor de bases de datos para almacenar el estado de la simulación y los mejores organismos.</li>
+					<li>Ejecución continuada de los organismos.</li>
+					<li>APIs que pueden ser usados por los organismos (estos generados al azar).</li>
+					<li>Posibilidad de agregar mas APIs para que puedan ser usadas por los organismos.</li>
+					<li>Los organismos pueden mutar sin estropear el funcionamiento del "sistema operativo".</li>
+				</ol>
+				<p>Este es el diseño en "bruto":</p>
+				<p><b>Directorio (ambiente)</b><br /> 1. ID (único para todo el sistema)<br /> 2. Total Fuerza Vital<br /> 3. Comentario</p>
+				<p><b>Archivo (Organismo)</b><br /> 1. ID (único para todo el sistema)<br /> 2. Directorio donde reside<br /> 3. Fuerza Vital (0 Muere)<br /> 4. Algoritmo Genético</p>
+				<p><b>Instrucciones del Algoritmo Genético (entre paréntesis los parámetros)</b><br /> 1. Cambiar Directorio (Directorio)<br /> 2. Copiarse()<br /> 3. Copiarse en un archivo al inicio (archivo)<br /> 4. Copiarse en un archivo al final (archivo)<br /> 5. Eliminar instrucciones propias (inicio, fin)<br /> 6. Autodestruirse()<br /> 7. Borrar archivo (archivo) (fuerza vital vuelve al directorio)<br /> 8. Pedir fuerza vital (cantidad)<br /> 9. Ceder fuerza vital a otro archivo (cantidad, archivo)<br /> 10. Ceder fuerza vital al directorio (cantidad)<br /> 11. Mutar una instrucción a si mismo (instrucción)<br /> 12. Mutar una instrucción a otro archivo (instrucción, archivo)</p>
+				<p><b>Tecnología a utilizar</b><br /> Según pruebas de desempeño, Visual C++ es la opción indicada, el problema radica en que se requiere buen manejo gráfico (GUI) y por ahora no soy experto en este tópico de este lenguaje en particular. Además falta el motor de la base de datos.<br /> Otra opción es Borland Delphi 6, que es un poco mas lento, pero en el cual soy experto en GUI y tengo varios motores de bases de datos gratuitos: uno nuevo que puede ir junto al ejecutable llamado FlashFiler.<br /> Otra opción es trabajar con Borland C++, aún no he probado el desempeño de este programa, ni el manejo GUI, ni el manejo de bases de datos pero primeras impresiones son muy positivas en este aspecto.</p>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 07: Mas velocidad</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Independencia 07: Mas velocidad"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 07: Mas velocidad</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Esta es una evolución del algoritmo presentado en "Independencia 06". Se usan variables enteras lo cual le da mayor velocidad en evaluación. Por ejemplo en un AMD Athlon XP 1800+ se están generando y evaluando en 2 minutos 38 segundos, 9 millones de algoritmos (con un promedio de 42 instrucciones cada algoritmo).. es decir, aproximadamente 57000 algoritmos por segundo.</p>
+				<p>Se usa un nuevo operador el % (división modular).</p>
+				<p>Los resultados de los algoritmos están en sintaxis C++, por ejemplo:</p>
+				<p>Serie Entrada: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,]
+				<br />Serie Salida: [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,]</p>
+				<p>Posibilidades:
+				<br />Número de Instrucciones mínimas para cada Algoritmo: 7
+				<br />Número de Instrucciones máximas para cada Algoritmo: 80
+				<br />Número máximo de ciclos para evaluar cada Algoritmo: 600
+				<br />Total variables usadas: 4
+				<br />Probabilidad de usar Variables: 30%
+				<br />Total funciones del ambiente llamadas: 0
+				<br />Probabilidad de uso de instrucciones IF: 10%
+				<br />Probabilidad de uso de Funciones: 0%
+				<br />Probabilidad de uso de instrucciones SET (asignacion): 90%
+				<br />Número de veces que se genera Algoritmos Genéticos: 2000000
+				<br />Número de veces que se muta el mejor Algoritmo Genético: 7000000</p>
+				<p>Intento: [6912130], Margen de Error (menor es mejor): [57.000000]
+				<br />#include &lt;stdio.h&gt;
+				<br />void main()
+				<br />{
+				<br />int V1=0, V2=0, V3=0, V4=0;
+				<br />L1: if (V1 != (88 + V4)) goto L34;
+				<br />L2: V2 = (24 * 81);
+				<br />L3: V3 = (58 % 87);
+				<br />L4: V2 = (V4 - 94);
+				<br />L5: V4 = (78 * 89);
+				<br />L6: V3 = (58 - 98);
+				<br />L7: V4 = (44 % 5);
+				<br />L8: V1 = (27 - 98);
+				<br />L9: if (V3 &gt; (83 + 21)) goto L10;
+				<br />L10: V3 = (V3 % V4);
+				<br />L11: V2 = (87 % 64);
+				<br />L12: V1 = (V3 % V2);
+				<br />L13: V4 = (20 / 53);
+				<br />L14: V2 = (64 * 37);
+				<br />L15: V3 = (99 / V1);
+				<br />L16: V1 = (42 * 3);
+				<br />L17: V1 = (35 + 93);
+				<br />L18: V2 = (45 / 18);
+				<br />L19: V3 = (V3 + 42);
+				<br />L20: V1 = (36 / 76);
+				<br />L21: if (V4 &lt; (11 - 79)) goto L5;
+				<br />L22: V2 = (79 % 78);
+				<br />L23: V1 = (68 * 63);
+				<br />L24: V1 = (100 * 81);
+				<br />L25: V2 = (45 / V3);
+				<br />L26: V1 = (69 - 91);
+				<br />L27: V2 = (46 + V2);
+				<br />L28: if (V4 &gt; (8 % 46)) goto L17;
+				<br />L29: V1 = (58 + V1);
+				<br />L30: V1 = (V3 * 45);
+				<br />L31: V3 = (6 - 55);
+				<br />L32: V2 = (V3 * V4);
+				<br />L33: V1 = (60 - V1);
+				<br />L34: if (V3 &gt; (60 % 79)) goto L16;
+				<br />L35: V4 = (91 * V1);
+				<br />L36: V4 = (V4 - 93);
+				<br />L37: V2 = (V4 / 25);
+				<br />L38: V4 = (V2 * 31);
+				<br />L39: V1 = (V4 + 82);
+				<br />L40: if (V2 &gt; (55 - 28)) goto L42;
+				<br />L41: V2 = (V1 / 44);
+				<br />L42: if (V3 == (V1 % V2)) goto L38;
+				<br />L0: printf("%d\n", V2);
+				<br />}</p>
+				<p><a href="../Download/Indep07.zip">Descargar código Fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Redes neuronales.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Capítulo 6: Torneo"/>
+		<meta name="keywords" content="Vida Artificial, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Regresión Simbólica: Programación Entera</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Nuevo capítulo: En una comparativa entre una red neuronal (perceptrón multicapa) y un algoritmo genético (regresión simbólica) para saber cuál de las dos técnicas tiene mejores resultados para detectar el patrón de una serie de datos, se concluyó que el perceptrón multicapa lo hace mejor.</p>
+				<p>Se hicieron varias pruebas con diversos tipos de datos y el perceptrón multicapa consistentemente logró ser mejor en el ajuste de curvas. Sin embargo, el costo fue en tiempo de procesamiento que superó varias veces a de la regresión simbólica en el mismo número de ciclos o iteraciones. Cabe anotar que en una iteración se ejecuta una vez el ajuste del algoritmo “backpropagation” en el perceptrón multicapa y se ejecuta una vez el seleccionar al azar que individuos compiten para un mejor ajuste, luego reproducir el mejor y mutar esa descendencia en la regresión simbólica.</p>
+				<p>La gran velocidad mostrada por la regresión simbólica, añadida que se puede incrementar más este desempeño y que existe todavía buen camino para mejorar su ajuste, es el camino seguido por este capítulo. Las estrategias que se utilizarán son:</p>
+				<p>1.	Programación con números y variables enteras: En http://nicolas.limare.net/pro/notes/2014/12/12_arit_speed/ se muestra la diferencia de desempeño entre algoritmos que usan enteros y algoritmos que usan variables de tipo real. Si la regresión simbólica se desarrolla en enteros será mucho más rápida que la tradicional de punto flotante.</p>
+				<p>2.	Acceso a un nuevo operador: la división modular. Al programar en enteros se tiene acceso a esta operación que añade variedad y esto es algo requerido en los algoritmos genéticos.</p>
+				<p>3.	Aplicando un rango en las operaciones matemáticas. En la regresión simbólica abordada anteriormente, las ecuaciones podían generar valores muy altos positivos o muy bajos negativos totalmente alejados de los datos a buscar patrón. Con la programación de enteros se puede limitar los resultados a un rango (aplicando división modular) haciendo que las ecuaciones generen valores en el área de los datos a encontrar un patrón.</p>
+				<p>4.	Valores de funciones trigonométricas predefinidas. En http://nicolas.limare.net/pro/notes/2014/12/16_math_speed/ se muestra como funciones como seno, coseno, tangente consumen bastantes ciclos de CPU por lo que lo hace más lento el algoritmo tradicional de regresión simbólica. Con la programación entera, se puede ahorrar este tiempo, al almacenar en arreglos unidimensionales los valores generados por estas funciones. Si se requiere un valor de una función se consultaría en el arreglo unidimensional que requiere menos tiempo.</p>
+				<p>5.	Investigar cómo lograr mutaciones suaves. En el perceptrón multicapa, el algoritmo “backpropagation” va ajustando poco a poco los pesos, comparando el valor obtenido con el valor esperado. Es un ajuste muy sutil. La regresión simbólica, en cambio, no tiene eso, si se muta de una resta a una suma, el cambio es brusco, o de una división a una multiplicación, sucede lo mismo, son cambios muy bruscos. Eso también desecha la posibilidad de hacer reproducción porque mezclar dos ecuaciones genera unos cambios demasiado bruscos en los resultados. ¿Cómo es entonces ajustar en regresión simbólica?</p>
+			</article>
+		</section>
+	</body>
+</html>

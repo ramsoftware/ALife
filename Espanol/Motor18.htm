@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 18: Estudio Cíclico y optimizado</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 18: Estudio Cíclico y optimizado"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 18: Estudio Cíclico, optimizado y con resultados interesantes.</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Nota: Se corrige un problema con el <b>despliegue</b> de resultados del Motor 17 y 18. Las pruebas son realizadas nuevamente.</p>
+				<p>En el Motor 17, se trabajó sobre adaptación a ambientes cíclicos y el usuario era libre de definir cuantos organismos atenderían el ciclo. Observe el gráfico de un ciclo completo (de 0 a 2*PI):</p>
+				<p><img src="../Imagen/Motor18a.gif" alt="image" /></p>
+				<p>Cada punto azul es un organismo completamente adaptado al ciclo, la simbiosis de todos estos organismos (puntos azules) es un MacroOrganismo.</p>
+				<p>En teoría entre mas organismos atienden un ciclo (en la siguiente gráfica hay 60 organismos), la diferencia entre un organismo y otro seguido debe ser mínima, observe los dos puntos amarillos de la gráfica:</p>
+				<p><img src="../Imagen/Motor18b.gif" alt="image" /></p>
+				<p>Pero el Motor 17 mostró que esto no se cumplía. Habían diferencias sustanciales entre organismo y organismo, así estos fueran seguidos. Observe:</p>
+				<table>
+					<tr>
+						<td>PosY: 6*PI/70, Error: [2.022986]<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;<p>1: Y = (X/(4/X));<br /> 2: Y = (Y-(3/Y));<br /> 3: if( Z = ((3-5*Y)) ) goto 1;<br /> 4: if( X &lt; W/5/7-W ) goto 5;<br /> 5: if( Y = Z/1/5-Z ) goto 4;<br /> 6: if( Y &gt; 5*Y-(((4*Y))) ) goto 2;<br /> 7: X = X-(((X)-2));<br /> return Y;<br /> }</td>
+						<td>PosY: 7*PI/70, Error: [3.843365]<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;<p>1: Y = X/9*X*8;<br /> 2: if( Z &lt; (W-((3*6))) ) goto 4;<br /> 3: if( W &lt; Y-(7/8) ) goto 4;<br /> 4: Z = X*(X-6);<br /> 5: W = X/7+(X-4);<br /> 6: Y = 5+((Y)-7);<br /> 7: X = (6/((Y*4)));<br /> 8: Z = Z-(6+2);<br /> 9: if( W &gt; 3+7+6/7 ) goto 2;<br /> 10: Y = ((Y)/3);<br /> return Y;<br /> }</td>
+					</tr>
+				</table>
+				<p>Por esta razón se creó el Motor 18 el cual toma un organismo que es apto en una parte del ciclo, y lo prueba en otra parte del ciclo. Se sigue un comportamiento natural, los seres vivos se adaptan bien a su ambiente, pero es muy común que se aventuren a viajar a otras tierras. Los seres vivos van conquistando terreno poco a poco. Y es en esta conquista que sus cuerpos y comportamiento comienzan a variar dando origen a nuevas especies.</p>
+				<p>El Motor 18 ofrece al usuario evaluar el organismo entre 0 a PI/2, 0 a PI o 0 a 2*PI. Observe la gráfica:</p>
+				<p><img src="../Imagen/Motor18c.gif" alt="image" /><br /> Organismos evaluados de 0 a PI</p>
+				<p><img src="../Imagen/Motor18d.gif" alt="image" /><br /> Organismos evaluados de 0 a PI/2 (15 organismos)</p>
+				<h2>Pruebas</h2>
+				<p>En las pruebas, se usaron 70 organismos entre 0 a 2*PI, 0 a PI y 0 a PI/2. Los resultados de las aproximaciones pueden verse en las siguientes gráficas. Entre menor sea el valor del eje Y, mejor aproximación. Lo ideal sería entonces que se mostrara una línea paralela horizontal encima del eje X.</p>
+				<p>Prueba 1 (0 a 2*PI)</p>
+				<p><img src="../Imagen/Motor18e.gif" alt="image" /></p>
+				<p>Prueba 2 (0 a PI)</p>
+				<p><img src="../Imagen/Motor18f.gif" alt="image" /></p>
+				<p>Prueba 3 (0 a PI/2)</p>
+				<p><img src="../Imagen/Motor18g.gif" alt="image" /></p>
+				<p>Descargue las pruebas: <a href= "../Download/Motor18Test.zip">De clic aquí</a><br /> Descargue el fuente: <a href="../Download/Motor18cpp.zip">De clic aquí</a><br /> Descargue el ejecutable para Windows: <a href= "../Download/Motor18exe.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

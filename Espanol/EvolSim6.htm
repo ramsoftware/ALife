@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Adaptación y Recursos en ambientes Cíclicos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Adaptación y Recursos en ambientes Cíclicos"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Simulación VI. Adaptación y Recursos en ambientes Cíclicos</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Un nuevo ingrediente se añade en la simulación de adaptación: los recursos. Todo ser vivo es una máquina, la cual busca mantenerse estable, para ello tiene una serie de procesos internos. Obedeciendo a una ley termodinámica: "La energía no se crea ni se destruye, solo se transforma", estos procesos convierten la energía (incluyendo la materia) en productos útiles o no al ser vivo. Los productos útiles son consumidos o almacenados por el ser vivo, los inútiles son desechados. También existe una salida no menos importante y es el calor. Este calor se disipa en el medio ambiente. En conclusión, el ser vivo poco a poco va perdiendo energía (transfiriéndola al medio ambiente a través de desechos o calor), luego para evitar la inestabilidad, debe recuperarse esta energía de algún modo y es en la búsqueda de recursos.</p>
+				<p>Esta simulación es un poco mas compleja: el ser vivo es generado aleatoriamente (similar a la Simulación I), luego es depositado en un ambiente que cambia cíclicamente. El ser vivo nace con una energía por defecto, la cual se va perdiendo dependiendo de su adaptación (entre mejor este adaptado mas conservará energía). Además el ser vivo puede extraer recursos del ambiente en donde se encuentre. La instrucción algorítmica sería:</p>
+				<p>Energía = Energía + Recursos - Adaptación</p>
+				<p>Entre mejor este adaptado (tendencia a cero) y mas recursos consiga (tendencia a infinito), mas energía tendrá. Si la Energía llega a cero entonces el organismo muere.</p>
+				<p>Por supuesto, el ser vivo no esta resignado a vivir (y morir) siempre en el mismo ambiente, tiene la posibilidad de saltar a otro; en la simulación existen tres ambientes cíclicos. La condición que se coloca es que si "<b>Adaptación" es mayor que "Recursos"</b> entonces busque otro ambiente. Queda claro que el organismo asume el riesgo de que el nuevo ambiente sea mas malévolo que el anterior, perdiendo así mayor energía.</p>
+				<p>Veamos un ejemplo de esta simulación:</p>
+				<p>Se generan tres(3) ambientes cíclicos: sin(y)*(x+3), cos(y)*(x*x-12), cos(y)*(x-10)<br /> Se genera un ser vivo: 3*x*x - 4*x - 10<br /> Ubiquémoslo aleatoriamente en el segundo ambiente: cos(y)*(x*x-12)<br /> Generamos 6 números del ambiente escogido (Y=0, X=0 a 6), entonces: -12, -11, -8, -3, 4, 13<br /> Ahora observe como el ser vivo se comporta (X=0 a 6), entonces: -10, -11, -6, 5, 22, 45<br /> Comparando el ambiente con el ser vivo tenemos que:<br /> Adaptación= abs(-12 - -10) + abs(-11 - -11) + abs(-8 - -6) + abs(-3 -5) +... = 62</p>
+				<p>Los recursos es la sumatoria absoluta de los números que componen la serie (se hace así porque en un ambiente cíclico, existen estaciones en las cuales hay mayor alimento y en otras poco).<br /> Recursos = abs(-12) +abs(-11) +abs(-8) + abs(-3) + abs(4) + abs(13) = 51</p>
+				<p>Luego, Energía = Recursos - Adaptación = 51 - 62 = -11</p>
+				<p>En este caso el Ser Vivo pierde energía, la decisión entonces es saltar a cualquiera de los otros dos ambientes. Se corre el riesgo de que en el nuevo ambiente pierda energía o que en un próximo ciclo el ambiente malévolo donde estaba se vuelva benévolo por lo que era mejor esperar. Eso es un asunto de estrategia. En una próxima simulación se abordará el tema de Memoria Cíclica.</p>
+				<p>El usuario puede controlar varios parámetros antes de simular:</p>
+				<ol>
+					<li><b>Posibilidad de X, Números y Paréntesis:</b> Para la generación aleatoria de los tres ambientes cíclicos y los seres vivos.</li>
+					<li><b># Elementos de la serie para ambiente:</b> Los ambientes (que son expresiones) generan series numéricas (p. ej.: 2,4,6,8,10), el usuario puede determinar cuantos números de la serie va a generar. Debe tener en cuenta que entre mas números por serie se generen, mas cálculos debe hacer el algoritmo, luego disminuirá el desempeño.</li>
+					<li><b>Longitud del ser vivo:</b> Es la sumatoria de operandos y operadores que compondrá el ser vivo.</li>
+					<li><b>Máxima Energía:</b> Mientras se construía la simulación, se observó que aleatoriamente se construían seres vivos que estaban muy bien adaptados a un ambiente sin importar lo cíclico que fuera, conseguían bastantes recursos por lo que su energía se incrementaba en cada ciclo y no había signos de perderla. La simulación así puede perder interés. En este caso se ha dejado al usuario que aquella criatura exitosa abandone la simulación y pase al salón de la fama en: Adaptación Total. No Muere.</li>
+					<li><b>Energía Inicio:</b> Es la energía con que arranca un ser vivo recién creado.</li>
+				</ol>
+				<p>Durante la simulación se crean criaturas "cero", aquellas que siempre la diferencia entre Adaptación y Recursos es cero, es el caso de: (X/X)-1 (no importa que valor tome X, siempre la expresión dará cero). Para evitar que una criatura de estas se adueñe de la simulación (porque nunca su energía se agotará y tampoco alcanzará un valor tope), se valida que si después de 1000 intentos la energía se mantiene en energía Inicial entonces estamos con una criatura "cero" que pasa a engrosar las filas de las especies de mayor adaptación.</p>
+				<p><a href="../Download/EvolSim06.zip">Baje el fuente dando clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

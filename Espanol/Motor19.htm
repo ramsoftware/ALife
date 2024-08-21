@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 19</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 19. Velocidad"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 19</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Velocidad, es uno de los objetivos buscados en este motor, entre mayor velocidad se pueda lograr, mayor será el número de algoritmos (organismos) que podrán ser probados y muy posiblemente se tendrá una mejor aproximación.</p>
+				<p>En todas las simulaciones realizadas hasta ahora, las expresiones matemáticas son construidas de forma aleatoria (siguiendo una reglas), esta expresiones son después analizadas y evaluadas, observe a continuación un típico ejemplo de un algoritmo (organismo):</p>
+				<p>PosY: 6*PI/70, Error: [2.022986]<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (X/(4/X));<br /> 2: Y = (Y-(3/Y));<br /> 3: if( Z = ((3-5*Y)) ) goto 1;<br /> 4: if( X &lt; W/5/7-W ) goto 5;<br /> 5: if( Y = Z/1/5-Z ) goto 4;<br /> 6: if( Y &gt; 5*Y-(((4*Y))) ) goto 2;<br /> 7: X = X-(((X)-2));<br /> return Y;<br /> }</p>
+				<p>Tomemos por ejemplo la instrucción 6: , al factorizar tendríamos una expresión así:<br /> 3: if ( Y &gt; 3*Y ) goto 2;<br /> O tomemos la instrucción 7: , al factorizar o simplificar la expresión quedaría así:<br /> 4: X = 2;</p>
+				<p>Es claro que las expresiones aleatorias no son efectivas, estas expresiones "mal" construidas deben luego ser analizadas por el evaluador de expresiones y en el caso de mutarlas se debe buscar que partes pueden ser mutadas.</p>
+ 
+				<h2>Construyendo mejores expresiones</h2>
+				<p>¿Por que no construir expresiones de una manera mas inteligente?, esta es la clave de la optimización agresiva. Como se observó anteriormente, las expresiones matemáticas pueden factorizarse y llegar a ser un simple polinomio del tipo:</p>
+				<p><img src="../Imagen/Ecuacion1.gif" alt="image" /></p>
+				<p>luego es simplemente generar aleatoriamente los valores a, b y c (negativo o positivo), las expresiones ya estarán construidas de manera optimizada, otro punto es que como solo son polinomios no se requiere el evaluador de expresiones y en las mutaciones se cambian estos valores.</p>
+ 
+				<h2>Consecuencias</h2>
+				<p>Inevitablemente existen consecuencias al usar este proceder y es que se esta limitando la riqueza que ofrece la generación aleatoria de expresiones. Es necesario entonces estudiar las expresiones que se generaban con los motores anteriores y como podrían implementarse usando la filosofía de polinomios.</p>
+ 
+				<h2>Versión Final</h2>
+				<p>El motor 19 se ha construido siguiendo esta filosofía, se puede observar que el incremento de velocidad es muy significativo. Los polinomios construidos son de la forma:</p>
+				<p><img src="../Imagen/Ecuacion2.gif" alt="image" /></p>
+				<p>a, b, c, d y e son valores enteros.</p>
+				<p>Resultados (Motor 18 vs Motor 19)</p>
+				<p>La generación de expresiones aleatorias (Motor 18) proporciona mejor aproximación aunque tarda mayor tiempo.</p>
+				<p><b>Primera Prueba<br /> Expresión de ambiente: x*x-x+2 (simple) de 0 a PI/2</b></p>
+				<p>30 Organismos</p>
+				<p><img src="../Imagen/Motor19p01.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 13.8761505 en 4min50seg<br /> Promedio Polinomio: 20.6153708 en 7min 49seg</p>
+				<p>50 Organismos</p>
+				<p><img src= "../Imagen/Motor19p02.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 14.1538513 en 6min12seg<br /> Promedio Polinomio: 17.0080921 en 4min 40seg</p>
+				<p>70 Organismos</p>
+				<p><img src="../Imagen/Motor19p03.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 18.0942494 en 16min14seg<br /> Promedio Polinomio: 19.866744 en 4min 37seg</p>
+				<p>Segunda Prueba<br /> Expresión de ambiente: 2*x*x*x-5*x*x+3*x-4 (compleja) de 0 a PI/2</p>
+				<p>30 Organismos</p>
+				<p><img src="../Imagen/Motor19p04.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 37.9813786 en 11horas 00min 57seg<br /> Promedio Polinomio: 684.72057 en 15min 05seg</p>
+				<p>50 Organismos</p>
+				<p><img src="../Imagen/Motor19p05.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 29.0844255 en 17horas 55min 36seg<br /> Promedio Polinomio: 522.85421 en 20min 28seg</p>
+				<p>70 Organismos</p>
+				<p><img src="../Imagen/Motor19p06.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 167.032688 en 20horas 44min 03seg<br /> Promedio Polinomio: 510.975328 en 27min 14seg</p>
+				<p>Tercera Prueba<br /> Expresión de ambiente: 2*x*x*x-5*x*x+3*x-4 (compleja) de 0 a PI/2<br /> Se le da mas tiempo al Motor 19 para evaluar.</p>
+				<p>30 Organismos</p>
+				<p><img src="../Imagen/Motor19p07.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 37.9813786 en 11horas 00min 57seg<br /> Promedio Polinomio: 277.304268 en 10horas 07min 24seg</p>
+				<p>50 Organismos</p>
+				<p><img src="../Imagen/Motor19p08.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 29.0844255 en 17horas 55min 36seg<br /> Promedio Polinomio: 162.969204 en 16horas 10min 35seg</p>
+				<p>70 Organismos</p>
+				<p><img src="../Imagen/Motor19p09.gif" alt="image" /></p>
+				<p>Promedio Aleatorio: 167.032688 en 20horas 44min 03seg<br /> Promedio Polinomio: 131.79 en 26horas 52min 09seg</p>
+				
+				<h2>Conclusión Pruebas</h2>
+				<p>La generación aleatoria de expresiones implementada en el Motor 18 generó mejores promedios que el Motor 19 y mas cuando el ambiente se volvía mas complejo. A excepción de la última prueba en el que el polinomio tuvo mucho mas tiempo que aleatorio y mostró mejores resultados. En ambientes simples, el Motor 19 si se aproximó a los resultados del Motor 18.</p>
+				<p>Se concluye entonces que la generación totalmente aleatoria, sin control, produjo mejores resultados, esto se debe a la riqueza que se encuentra en un ambiente aleatorio. El problema es que es mas lento de evaluar. Una razón por la cual la evolución de las especies es lenta.</p>
+				<p>Descargue el fuente: <a href= "../Download/Motor19cpp.zip">De clic aquí</a></p>
+				<p>Descargue el ejecutable para Windows: <a href= "../Download/Motor19exe.zip">De clic aquí</a></p>
+				<p>Descargue las pruebas: <a href="../Download/M18vs19.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

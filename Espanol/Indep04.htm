@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 04: Mutación</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Independencia 04: Mutación"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 04: Mutación</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En la anterior simulación se generaban algoritmos al azar de 1 a 40 instrucciones y de 1 a 95 instrucciones. En esta simulación se implementa la mutación de los mejores algoritmos. En las pruebas se observó un incremento dramático en el número de casillas llenas.</p>
+				<p>A continuación muestro los resultados (casillas llenas) en texto y gráfico:</p>
+				<table>
+					<tr>
+						<th># Pruebas</th>
+						<th>Algoritmos al Azar</th>
+						<th>Libre 1 a 40 Instrucciones. Mutando los mejores</th>
+						<th>Libre 1 a 95 Instrucciones. Mutando los mejores</th>
+					</tr>
+					<tr>
+						<td>100,000.00</td>
+						<td>7.125</td>
+						<td>60.000001</td>
+						<td>66.100001</td>
+					</tr>
+					<tr>
+						<td>200,000.00</td>
+						<td>8.85</td>
+						<td>43.000001</td>
+						<td>74.000001</td>
+					</tr>
+					<tr>
+						<td>300,000.00</td>
+						<td>9.725</td>
+						<td>67.000001</td>
+						<td>56.000001</td>
+					</tr>
+					<tr>
+						<td>400,000.00</td>
+						<td>12</td>
+						<td>52.000001</td>
+						<td>12.000000</td>
+					</tr>
+					<tr>
+						<td>500,000.00</td>
+						<td>11.975</td>
+						<td>52.000001</td>
+						<td>69.000001</td>
+					</tr>
+					<tr>
+						<td>600,000.00</td>
+						<td>11.175</td>
+						<td>76.000001</td>
+						<td>79.000001</td>
+					</tr>
+					<tr>
+						<td>700,000.00</td>
+						<td>10.85</td>
+						<td>60.000001</td>
+						<td>84.000001</td>
+					</tr>
+					<tr>
+						<td>800,000.00</td>
+						<td>10.45</td>
+						<td>47.000001</td>
+						<td>58.000001</td>
+					</tr>
+					<tr>
+						<td>900,000.00</td>
+						<td>10.65</td>
+						<td>71.000001</td>
+						<td>85.000001</td>
+					</tr>
+					<tr>
+						<td>1,000,000.00</td>
+						<td>11.4</td>
+						<td>46.000001</td>
+						<td>100.000001</td>
+					</tr>
+					<tr>
+						<td>Promedio:</td>
+						<td>10.42</td>
+						<td>57.4</td>
+						<td>68.31</td>
+					</tr>
+				</table>
+				<p>Es especialmente llamativo lo sucedido en la prueba con 400.000 intentos, en el cual se dio como promedio unas mediocres 12 casillas llenas (cuarta columna). En varios escritos sobre Algoritmos Genéticos mencionan este problema, en donde hay un "falso positivo", es decir, una respuesta que puede ser, pero por mas mutaciones que se den no hay un progreso. Se forma un callejón sin salida, porque este algoritmo dañado solo puede ser vencido por uno al azar que de mejor aproximación (algo muy raro), pero a medida que pasan las pruebas este algoritmo dañado deja descendencia con aproximación similar y le cierra las oportunidades a otros algoritmos que al azar no tengan buena aproximación pero con unas cuantas mutaciones hubiesen sido mucho mejores.</p>
+				<p>En la naturaleza puede que suceda algo similar. Una especie logra adaptarse pero no progresar, aún así le cierra el espacio a otras especies que en un inicio son poco aptas pero que con el paso del tiempo progresan a niveles evolutivos mas avanzados. Solo un desastre natural podría quitarle ese reinado a esa mediocre especie. En el caso de las simulaciones podría generarse borrados al azar de la lista de mejores algoritmos para que uno nuevo tenga espacio.</p>
+				<p>En ambas pruebas (descontando el caso especial de aproximación 12), entre mas instrucciones, mayor fue el número de casillas llenas. Debido a la forma como la "selección natural" opera en esta simulación, un algoritmo bueno, deja descendencia con el mismo número de instrucciones. A continuación el número de instrucciones usadas en promedio.</p>
+				 <table>
+					<tr>
+						<th># Pruebas</th>
+						<th>Promedio Instrucciones Libre 1 a 40</th>
+						<th>Promedio Instrucciones<br /> Libre 1 a 95</th>
+					</tr>
+					<tr>
+						<td>100,000.00</td>
+						<td>33</td>
+						<td>82</td>
+					</tr>
+					<tr>
+						<td>200,000.00</td>
+						<td>31</td>
+						<td>95</td>
+					</tr>
+					<tr>
+						<td>300,000.00</td>
+						<td>37</td>
+						<td>90</td>
+					</tr>
+					<tr>
+						<td>400,000.00</td>
+						<td>31</td>
+						<td>70</td>
+					</tr>
+					<tr>
+						<td>500,000.00</td>
+						<td>34</td>
+						<td>87</td>
+					</tr>
+					<tr>
+						<td>600,000.00</td>
+						<td>28</td>
+						<td>72</td>
+					</tr>
+					<tr>
+						<td>700,000.00</td>
+						<td>28</td>
+						<td>92</td>
+					</tr>
+					<tr>
+						<td>800,000.00</td>
+						<td>37</td>
+						<td>95</td>
+					</tr>
+					<tr>
+						<td>900,000.00</td>
+						<td>39</td>
+						<td>78</td>
+					</tr>
+					<tr>
+						<td>1,000,000.00</td>
+						<td>34</td>
+						<td>94</td>
+					</tr>
+					<tr>
+						<td>Promedio:</td>
+						<td>33.2</td>
+						<td>85.5</td>
+					</tr>
+					<tr>
+						<td>% Uso</td>
+						<td>33.2/40 = 83%</td>
+						<td>85.5/95 = 90%</td>
+					</tr>
+				</table>
+				<p>Los algoritmos mas efectivos usaron muchas instrucciones, entre un 83% y 90% de lo permitido.</p>
+				<p><a href="../Download/Indep04.zip">Descargue código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

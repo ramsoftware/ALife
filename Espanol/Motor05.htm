@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 05</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 05"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 05</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>¿Entre mas instrucciones o genes, más rápida y precisa es la adaptación?. Esta simulación contesta esta pregunta. El usuario decide si genera de 1 a <b>n</b> instrucciones o solo <b>n</b> instrucciones. Además se combina <b>la generación aleatoria con la mutación del mejor algoritmo</b>.</p>
+				<p>La restricción de libertad para crear instrucciones, fue necesario para comprobar si el descubrimiento de que mas instrucciones no significa mayor adaptación.<br /> Para los valores por defecto con que se carga este applet, este tendrá éxito (total adaptación) cuando genere aleatoriamente o mediante mutación el siguiente algoritmo:</p>
+				<p>Entra (X):1,2,3,4,5,6,7,8,9,10,11,12,13<br /> Sale (Y): 1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13</p>
+				<p>float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: W = W + 2;<br /> 2: if ( W &lt; X ) goto 1;<br /> 3: if ( W = X ) goto 5;<br /> 4: if ( W &gt; X ) goto 7;<br /> 5: Y = X * -1;<br /> 6: if ( Z = 0 ) goto 0;<br /> 7: Y = X;<br /> return Y;<br /> }</p>
+				<p>Ese algoritmo se generó a mano, pensando como un programador, su aproximación es cero(0) que significa una total adaptación, ¿Podrá la simulación anterior llegar a esta aproximación o a este algoritmo? Estadísticamente es posible, pero un calculo de probabilidades arrojaría que se necesitan millones de pruebas antes de dar con este.</p>
+				<p>Esta simulación prueba diferentes algoritmos que dado unos valores de entrada generen los valores de salida requeridos por el usuario. Los programas son generados en forma aleatoria. Usted puede crear cualquier programa con solo asignaciones e instrucciones IF. Los programas generados manejan solo 4 variables, entre estas una es de entrada X y una es de salida Y, W y Z son temporales.<br /> Las líneas de código son de dos tipos:<br /> 1. Asignación<br /> 2. Validación IF</p>
+				<p>En la asignación el modelo de construcción es:<br /> <b>Label: Variable = Expresión;<br /></b> Donde <em>Variable</em> puede ser W, X, Y, Z y <em>Expresión</em> es una expresión matemática de una sola variable independiente (que puede ser W, X, Y, Z), esta variable independiente la he llamado variable activa de la expresión.<br /> Ejemplos de asignaciones:<br /> X = Y * 3 / 2 + Y * Y - 7;<br /> W = 45 + (3 * Z - Z * Z * Z);<br /> Z = 4 * Z - 2 * Z * Z;</p>
+				<p>En la validación IF el modelo de construcción es:<br /> <b>Label: IF ( Variable Condición Expresión ) Goto LineaCodigo<br /></b> Donde <em>Variable</em> puede ser W, X, Y, Z; Condición puede ser &gt;, &lt;, !, = ; <em>Expresión</em> es una expresión matemática de una sola variable independiente (que puede ser W, X, Y, Z), esta variable independiente la he llamado variable activa de la expresión; LineaCodigo es a que línea de código el programa irá si la condición es evaluada como verdadera.<br /> Ejemplos de validaciones son:<br /> IF ( X &gt; (4 * Y - Y * Y + 7) ) Goto 2;<br /> IF ( Z ! (12 -X + X * X + 7) ) Goto 8;<br /> IF ( W &lt; (W * W - 7 * W - 43) ) Goto 2;</p>
+				<p>Uniendo asignaciones con validaciones obtenemos un programa, por ejemplo:<br /> 1: IF ( X&gt; (3 + X + X*X )) Goto 3; // Es in If condicional<br /> 2: Y = 4 - Z +Z * Z * Z; // Es una asignación<br /> 3: Y = 10 - W * W;</p>
+				<p>Nota: Goto 0 es finalización del programa.</p>
+				<p>Modo de Uso:<br /> <b>Serie de Entrada:</b> El valor X que tomarán los algoritmos generados para operar.<br /> <b>Serie de Salida</b>: Valores esperados, se comparan con el valor de salida Y de los algoritmos generados.<br /> <b>Número de Genes</b>: Máximo número de instrucciones generadas para el algoritmo.<br /> <b>Máximo Ciclos de CPU:</b> Muchos algoritmos pueden tener 'gotos' que hacen que nunca haya salida. Esto evita ese problema, limitando a cuantas instrucciones procesará. Si el ser vivo no tiene salida, se elimina.<br /> <b>De 1 a N instrucciones:</b> Si esta chequeado, los algoritmos generados, aleatoriamente decidirán cuantas instrucciones tener hasta el máximo evaluado. Por ejemplo, si es 10 instrucciones, se generaran algoritmos que tendrán de 1 a 10 instrucciones. Al no chequearlo se generan un número fijo de instrucciones, por ejemplo si es 10 instrucciones se generarán algoritmos de 10 instrucciones.<br /> <b>Iniciar:</b> Inicializa todo los valores, empieza la simulación.<br /> <b>Detener:</b> Detiene la simulación.<br /> <b>Continuar:</b> Continua la simulación detenida.</p>
+				<p><b>Propiedades Avanzadas:<br /> Probabilidad de IF, Asignación:</b> El usuario decide con que probabilidad se generaran instrucciones de un tipo u otro.<br /> <b>Variable Activa:</b> Probabilidad de que variable estará en las expresiones<br /> <b>Operador:</b> Probabilidad de que tipo de validación aparecerán: &gt;, &lt;, =, !<br /> <b>Longitud:</b> Tamaño máximo en caracteres de la expresión.<br /> <b>X, Paréntesis, Número:</b> Probabilidades para que aparezcan estos tres objetos en las expresiones.</p>
+				<p><b>Algoritmo optimizado para mayor velocidad</b>. El evaluador de expresiones fue rediseñado para ofrecer mejor desempeño. Consulte el código fuente para mas información.</p>
+				<p><a href="../Download/Motor05.zip">Baje el código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

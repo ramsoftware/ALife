@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 18.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 19. Varias curvas Z=F(X,Y,T), juntas pero no suman. Mejoras en ingreso de los ángulos.</h2>
+		</header>
+		<section>
+			<p>En el programa anterior se mostró el comportamiento de una sola curva Z=F(X,Y,T). Cómo esta investigación es sobre colaboración, lo que se hizo fue poner tres curvas a las que llamaré Z1, Z2, Z3. Cada una es una ecuación distinta. Lo que se hace es que cada una por separado es evaluada, girada, animada y genera sus propios polígonos. Pero, al mostrar el resultado final, lo que se hace es que todos los polígonos generados por las tres curvas, se juntan y son ordenados del más alejado al más cercano y se grafica. Obteniéndose esto: <p>
+		</section>
+		<section>
+			<canvas id="MiCanvas" width="800" height="800" ></canvas><br>
+
+			<form id = "configura" onsubmit = "IniciaTodo(); return false;">
+				<table id = "angulos">
+					<tr><th>Ángulo en X</th><th>Ángulo en Y</th><th>Ángulo en Z</th></tr>
+					<tr>
+					<td><input type="button" value="+" class="estiloboton" id="angXs" onclick = "angXSube()"><input type="number" id="AnguloX" value="45" class="estiloangulo" onchange="CambioAngulo()"><input type="button" value="-" class="estiloboton" id="angXb" onclick = "angXBaja()"></td>
+					<td><input type="button" value="+" class="estiloboton" id="angYs" onclick = "angYSube()"><input type="number" id="AnguloY" value="45" class="estiloangulo" onchange="CambioAngulo()"><input type="button" value="-" class="estiloboton" id="angYb" onclick = "angYBaja()"></td>
+					<td><input type="button" value="+" class="estiloboton" id="angZs" onclick = "angZSube()"><input type="number" id="AnguloZ" value="45" class="estiloangulo" onchange="CambioAngulo()"><input type="button" value="-" class="estiloboton" id="angZb" onclick = "angZBaja()"></td>
+					</tr>
+				</table><br>
+
+				<table id = "datosconf">
+				<tr><td><label for="Expresiones">Expresiones</label></td><td> <textarea class="estilotextarea" rows="5" cols="60" id="Expresiones" placeholder="Ecuaciones">sen(x*x*t+y*y*t)+cos(x*x*t+y*y*t);cos(x*t+y*t)+cos(x*t+y*t);cos(x*x*t-y*y*t)+sen(x*x*t-y*y*t)</textarea></td></tr>
+				<tr><td><label for="MinimoX">Mínimo X</label></td><td><input type="number" id="MinimoX" value = "-1" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="MaximoX">Máximo X</label></td><td><input type="number" id="MaximoX" value = "1" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="MinimoY">Mínimo Y</label></td><td><input type="number" id="MinimoY" value = "-1" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="MaximoY">Máximo Y</label></td><td><input type="number" id="MaximoY" value = "1" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="MinimoT">Mínimo T (tiempo)</label></td><td><input type="number" id="MinimoT" value="1" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="MaximoT">Máximo T (tiempo)</label></td><td><input type="number" id="MaximoT" value="3" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="IncrementoT">Incremento T</label></td><td><input type="number" id="IncrementoT" value="0.05" min="0.01" step="any" class="estiloinput"></td></tr>
+				<tr><td><label for="NumLineas">Líneas a dibujar</label></td><td><input type="number" id="NumLineas" value="30" class="estiloinput" min="10"></td></tr>
+				<tr><td><input type="submit" class="estilotextarea" value ="Calcular y dibujar"></td></tr>
+				<tr><td><label for="Observacion">Observaciones</label></td><td> <textarea class="estilotextarea" rows="5" cols="60" id="Observacion" placeholder="Si hay algún problema se muestra aquí"></textarea></td></tr>
+				</table>
+			</form>
+
+			<script src="./c19/Evaluador4.js"></script>
+			<script src="./c19/Grafico.js"></script>
+			<script src="./c19/Fotograma.js"></script>
+			<script src="./c19/Poligono.js"></script>
+			<script>
+			var GraficoXYT = new Grafico();
+				
+			//Captura el canvas
+			var Canvas = document.getElementById('MiCanvas');
+
+			//Captura el lienzo
+			var Lienzo = Canvas.getContext('2d');
+
+			IniciaTodo();
+
+			function IniciaTodo(){
+				GraficoXYT.DatosEntrada(Canvas);
+				Graficar();
+			}
+
+			function Graficar(){
+				Lienzo.fillStyle = 'black';
+				Lienzo.fillRect(0, 0, Canvas.width, Canvas.height);
+				GraficoXYT.Graficar(Lienzo);
+				requestAnimationFrame(Graficar);
+			}
+
+			function angXSube(){
+				document.getElementById("AnguloX").value++;
+				CambioAngulo();
+			}
+
+			function angXBaja(){
+				document.getElementById("AnguloX").value--;
+				CambioAngulo();
+			}
+
+			function angYSube(){
+				document.getElementById("AnguloY").value++;
+				CambioAngulo();
+			}
+
+			function angYBaja(){
+				document.getElementById("AnguloY").value--;
+				CambioAngulo();
+			}
+
+			function angZSube(){
+				document.getElementById("AnguloZ").value++;
+				CambioAngulo();
+			}
+
+			function angZBaja(){
+				document.getElementById("AnguloZ").value--;
+				CambioAngulo();
+			}
+
+			function CambioAngulo(){
+				GraficoXYT.CalculaPoligono(document.getElementById("AnguloX").value, document.getElementById("AnguloY").value, document.getElementById("AnguloZ").value, Canvas);
+			}
+
+			</script>
+		</section>
+		<section>
+			<p>Son tres curvas graficadas que parecen trabajar juntas, pero no suman. Tan sólo son sus polígonos generados por cada curva que se le aplica lo de mostrar aquellos que son visibles.</p>
+			<p>El programa en JavaScript puede <a href="../Download/colaborar19.zip">descargarlo aquí.</a></p>
+		</section>
+	</body>
+</html>

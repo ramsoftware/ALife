@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 07</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 07"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 07</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Las simulaciones de vida artificial demandan enormes ciclos de CPU (muchos cálculos). Java es un excelente lenguaje de programación, es completamente orientado a objetos, es multiplataforma, liviano, estable, descomplicado y diseñado para trabajar en ambientes interconectados. Pero por su misma naturaleza, en aplicaciones que requieren grandes cantidades de cálculos, Java comienza a mostrar su lado débil: lentitud. Y por dos razones: la primera es un lenguaje interpretado (requiere de una máquina virtual Java para ejecutar programas Java) y por su protección sobre la memoria (recolección de basura, verificación de pilas).</p>
+				<p>Por esa razón se cambió a C++, el cual ofrece un ambiente también de objetos, las instrucciones son muy parecidas a las de Java y por su velocidad. Los programas en C++ son compilados y optimizados para la plataforma. Para mantener la característica multiplataforma se escribió la aplicación en modo caracter (consola) y usando librerías estándar de C++. El código fuente esta disponible y el ejecutable esta para ambientes Windows 95/98/NT. Se usó Visual C++ para compilarlo.</p>
+				<p>Además de la simple traducción Java a C++, también se trabajó bastante en la optimización de varias funciones. El desempeño se elevó dramáticamente y se pudo agregar cierta funcionalidad a la simulación: almacenar en un archivo plano como va progresando la evolución de los algoritmos. Con los nuevos datos, se puede graficar como los algoritmos generados se van acercando (adaptando) poco a poco a la serie de salida.</p>
+				<p><b>Código fuente en C++ esta disponible:</b> <a href="../Download/Motor07cpp.zip">De clic aquí</a></p>
+				<p><b>Código ejecutable para Windows 95/98/NT/2000:</b> <a href="../Download/Motor07exe.zip">De clic aquí</a> OJO!: Chequee con un antivirus cualquier ejecutable que baje de Internet antes de ejecutarlo.</p>
+				<p>A continuación una serie de pruebas realizadas:</p>
+				<p><b>Motor 05. Serie Alterna. 100.000 intentos. 1-N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,<br /> Intentos: 100.000<br /> CPU: 130<br /> Hay libertad de generar de 1 a N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50%, Asignación: 50%<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25%, '&gt;':25%, '&lt;':25%, '!=':25%<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33%, Paréntesis:33%, Números=34%<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25%, X=25%, Y=25%, Z=25%</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>96770</td>
+						<td>74.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>28214</td>
+						<td>72.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>26002</td>
+						<td>81.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>97956</td>
+						<td>17.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>84482</td>
+						<td>19.000000</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>27982</td>
+						<td>52.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>54042</td>
+						<td>60.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>83584</td>
+						<td>52.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>71772</td>
+						<td>12.200273</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>86</td>
+						<td>84.000000</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>29786</td>
+						<td>42.000000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>93596</td>
+						<td>6.000000</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>47,60002275</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf01.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L1.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Alterna. 1.000.000 intentos. 1-N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,<br /> Intentos: 1.000.000<br /> CPU: 130<br /> Hay libertad de generar de 1 a N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+					<tr>
+						<th>Instrucciones</strong></th>
+						<th>Intento</strong></th>
+						<th>Aproximación</strong></th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>66134</td>
+						<td>54.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>69524</td>
+						<td>62.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>103596</td>
+						<td>48.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>146054</td>
+						<td>12.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>780072</td>
+						<td>8.000000</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>47348</td>
+						<td>72.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>45408</td>
+						<td>71.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>700642</td>
+						<td>0.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>900170</td>
+						<td>71.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>543176</td>
+						<td>4.745922</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>44000</td>
+						<td>72.000000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>988810</td>
+						<td>0.729301</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>39.62293525</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf02.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L2.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Alterna. 1.000.000 intentos. N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,<br /> Intentos: 1.000.000<br /> CPU: 130<br /> Es obligatorio generar N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>455540</td>
+						<td>46.377579</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>406882</td>
+						<td>74.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>954214</td>
+						<td>50.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>132076</td>
+						<td>0.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>830196</td>
+						<td>60.000000</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>126036</td>
+						<td>0.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>956184</td>
+						<td>6.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>9900</td>
+						<td>76.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>53850</td>
+						<td>74.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>218738</td>
+						<td>2.000000</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>438996</td>
+						<td>0.000000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>718944</td>
+						<td>58.000000</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>37.1981315833333</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf03.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L3.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Ascendente. 1.000.000 intentos. 1-N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,<br />  Intentos: 1.000.000<br /> CPU: 130<br /> Hay libertad de generar de 1 a N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+				<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>102874</td>
+						<td>45.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>957520</td>
+						<td>39.447639</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>996508</td>
+						<td>18.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>99218</td>
+						<td>53.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>98898</td>
+						<td>45.999977</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>58268</td>
+						<td>43.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>254238</td>
+						<td>45.000000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>258604</td>
+						<td>35.066643</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>157938</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>532500</td>
+						<td>24.766191</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>986362</td>
+						<td>32.444435</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>915824</td>
+						<td>59.420959</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>41.345487</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf04.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L4.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Ascendente. 1.000.000 intentos. N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,<br />  Intentos: 1.000.000<br /> CPU: 130<br /> Es obligatorio generar N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+				<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>122572</td>
+						<td>53.600006</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>417310</td>
+						<td>27.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>654810</td>
+						<td>34.000000</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>208450</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>603730</td>
+						<td>33.999989</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>147940</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>996706</td>
+						<td>21.421265</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>606862</td>
+						<td>20.666660</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>797128</td>
+						<td>22.205971</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>872330</td>
+						<td>31.037468</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>412528</td>
+						<td>36.099998</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>766004</td>
+						<td>42.036350</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>39.4510995</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf05.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L5.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Descendente. 1.000.000 intentos. 1-N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,<br />  Intentos: 1.000.000<br /> CPU: 130<br /> Hay libertad de generar de 1 a N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>225600</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>267792</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>826532</td>
+						<td>130.333328</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>494418</td>
+						<td>38.000000</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>682964</td>
+						<td>115.000000</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>327902</td>
+						<td>42.999989</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>681266</td>
+						<td>63.500000</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>148404</td>
+						<td>66.000000</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>109558</td>
+						<td>55.000000</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>872290</td>
+						<td>47.750000</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>670486</td>
+						<td>51.660690</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>823014</td>
+						<td>110.548561</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>69.232714</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf06.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L6.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<p><b>Motor05. Serie Descendente. 1.000.000 intentos. N instrucciones<br /></b> Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,<br />  Intentos: 1.000.000<br /> CPU: 130<br /> Es obligatorio generar N instrucciones</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<table>
+					<tr>
+						<th>Instrucciones</th>
+						<th>Intento</th>
+						<th>Aproximación</th>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>887920</td>
+						<td>54.361118</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>959694</td>
+						<td>71.290817</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>640616</td>
+						<td>54.517761</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>661534</td>
+						<td>20.999996</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>938140</td>
+						<td>81.268394</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>488632</td>
+						<td>156.401413</td>
+					</tr>
+					<tr>
+						<td>35</td>
+						<td>764022</td>
+						<td>76.391617</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>997558</td>
+						<td>89.551041</td>
+					</tr>
+					<tr>
+						<td>45</td>
+						<td>897256</td>
+						<td>74.512314</td>
+					</tr>
+					<tr>
+						<td>50</td>
+						<td>972084</td>
+						<td>81.805405</td>
+					</tr>
+					<tr>
+						<td>55</td>
+						<td>824960</td>
+						<td>191.000000</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>998342</td>
+						<td>56.475044</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Promedio:</td>
+						<td>84.04791</td>
+					</tr>
+				</table>
+				<p><img src="../Imagen/M05Graf07.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor07L7.zip">clic aquí</a> para bajarse el archivo generado por esta simulación.</p>
+				<h2>Conclusiones:</h2>
+				<p>1. Es llamativo que hay simulaciones que la aproximación es cero o muy cercana, y la siguiente la aproximación esta lejos. Para el propósito de buscar la mejor adaptación es bueno estudiar los algoritmos que dieron una aproximación lejana. ¿Por que? Porque pueden dar claves de la falla de la mutación y como implementar mejores mecanismos de mutación.</p>
+				<p>2. Nótese que la serie descendente siempre da una aproximación más lejana que una serie ascendente.</p>
+				<p>3. El número de instrucciones poco afecta a las simulaciones.</p>
+				<p>4. Con este aumento dramático de velocidad (simulaciones que tomaban días ahora toman horas), se puede implementar algoritmos mas complejos. Las nuevas simulaciones que usan procedimientos como Atrofia, Reproducción Sexual, Energía, Competencia, Cambios Ambientales serán implementadas en C++. En un futuro se implementará el uso de gráficos.</p>
+			</article>
+		</section>
+	</body>
+</html>

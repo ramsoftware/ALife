@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 06</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 06"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 06</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>La generación aleatoria de algoritmos (que hace parte del proyecto "Motor de Vida Artificial"), ha mostrado su utilidad en las diferentes pruebas hechas anteriormente sobre adaptación a series numéricas de entrada y salida.</p>
+				<p>Sin embargo, estos algoritmos generados en forma aleatoria (incluyendo las mutaciones que se le hacen al mejor adaptado) presentan el inconveniente que algunas de sus instrucciones (genes) no son útiles. Estos son los casos estudiados:</p>
+				<p>1. Instrucciones que nunca son ejecutadas<br /> Como el organismo es probado en un ambiente finito de series de entrada para generar un ambiente finito de salida, algunas instrucciones nunca son ejecutadas.</p>
+				<p>2. Instruciones IF que siempre dan FALSO<br /> Las instrucciones IF generadas, son de un modelo bastante simple, si la condición es verdadera entonces hace un salto a una instrucción. Sin embargo, algunas instrucciones IF probadas en el ambiente finito siempre dan como resultado FALSE y no hay salto, simplemente la ejecución sigue de largo.</p>
+				<p>3. Instrucciones de Asignación que no cambian el valor de la variable de destino.<br /> En ocasiones se generan instrucciones de Asignación donde la variable de destino nunca cambia su valor (por ejemplo: X = X + X -X + 4 - 2 * 2).</p>
+				<p>El problema con este tipo de instrucciones inútiles son que recargan el algoritmo (haciendo más lenta su prueba) y principalmente que durante el proceso de Mutación (el cual cambia una instrucción o gen) los cambios no alteran el comportamiento del algoritmo en si (si una instrucción inútil es reemplazada por otra, igual no se ejecutará).</p>
+				<p>Al leer el artículo: La gran decisión: ¿Cabeza o Cola?, se decidió que se implementaría un proceso de atrofia, el cual eliminaría las instrucciones inútiles de los algoritmos mejor adaptados, de tal manera que sus mutaciones tengan una probabilidad mucho mayor de cambiar su comportamiento para adaptarse mejor o no al ambiente. Los tres casos mencionados anteriormente, son corregidos en esta nueva simulación. Poco a poco se va añadiendo "inteligencia" a la generación de algoritmos aleatorios.</p>
+				<p>Nota: Existen mas casos con el cual se podría optimizar aún más los algoritmos generados, por ejemplo, dos asignaciones continuas a la misma variable, o asignaciones que no alteran en ninguna forma la variable de salida. Optimizar un algoritmo así puede ser costoso en tiempo y diseño. Los tres primeros casos son comunes y fáciles de corregir.</p>
+				<p><img src="../Imagen/Motor06.gif" alt="image" /><br /> Simulación parcial con el Motor06...promedio de acercamiento: 55,6203706666...</p>
+				
+				<h2>Conclusiones:</h2>
+				<p>1. La optimización (mediante el proceso de atrofia o eliminación de instrucciones inútiles) aprovecha mejor el proceso de mutación. Sin embargo, la simulación muestra un promedio de acercamiento lejano al promedio de acercamiento del <a href="Motor05.htm">Motor 05</a>.</p>
+				<p>2. Las causas de este comportamiento son por el proceso de optimización mismo: Eliminando instrucciones inútiles), Mutando instrucciones (IF siempre falsos, Asignaciones inútiles) y mutando una al azar. Tantos cambios (mutaciones) al tiempo dañan el mejor organismo. <b>Una lección nueva: las mutaciones deben hacerse poco a poco, un cambio por vez.</b></p>
+				<p>En posteriores simulaciones el proceso de optimización se hará de una manera más discreta, menos traumática para el organismo.</p>
+				<p><a href="../Download/Motor06.zip">Baje el código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

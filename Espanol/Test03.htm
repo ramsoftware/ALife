@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Uso de Poblaciones: Pruebas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Uso de Poblaciones: Pruebas"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Uso de Poblaciones: Pruebas</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En pasadas simulaciones, se observó que las expresiones simples se acercaban más a la serie esperada (una adaptación más rápida), comparada con la generación de algoritmos en forma aleatoria.</p>
+				<p>Esta vez usando poblaciones, funciones y algoritmos se repiten las pruebas.</p>
+				<h2>Metodología de las Pruebas</h2>
+				<p>Las pruebas son:</p>
+				<ol>
+					<li>Serie de salida ascendente;</li>
+					<li>Serie de salida descendente; y,</li>
+					<li>Serie de salida alterna (valor positivo, valor negativo, valor positivo, valor negativo, ..)</li>
+				</ol>
+				<p>1. Serie de salida ascendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,</p>
+				<table>
+					<tr>
+						<th>Pruebah</th>
+						<th>Adaptaciónh</th>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>26,707367</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>89,662544</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>26,146486</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>58,743015</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>28,937485</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>35,025337</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>44,2037057</td>
+					</tr>
+				</table>
+				<p>2. Serie de salida descendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,</p>
+				<table>
+					<tr>
+						<td><strong>Prueba</strong></td>
+						<td><strong>Adaptación</strong></td>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>54,639008</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>23,097239</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>85,941895</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>625,054810</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>433,157959</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>625,000122</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>307,815172</td>
+					</tr>
+				</table>
+				<p>3. Serie de salida alterna</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,</p>
+				<table>
+					<tr>
+						<td><strong>Prueba</strong></td>
+						<td><strong>Adaptación</strong></td>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>84,000000</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>84,000000</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>5,583781</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>23,655426</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>3,174961</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>84,000000</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>47.4023613</td>
+					</tr>
+				</table>
+				<h2>Conclusiones</h2>
+				<p>Después de estas pruebas, podemos observar que:</p>
+				<p>1. Un padre genera una serie de hijos que a pesar de que estos tienen modificaciones, dan el mismo resultado del padre (la mutación fue en una instrucción no ejecutada) y a veces da como resultado un efecto no deseado: invaden completamente la población con estos algoritmos que han caído en un mínimo local. Por eso las pruebas de orden descendente, tuvieron resultados malos.</p>
+				<p>2. Por esta razón en la siguiente simulación se cambia este efecto: el hijo debe ser mejor que el padre para poder sobrevivir en la población, si tiene un desempeño igual simplemente se elimina.</p>
+			</article>
+		</section>
+	</body>
+</html>

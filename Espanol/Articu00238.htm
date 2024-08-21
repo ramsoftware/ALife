@@ -1,0 +1,156 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Hipótesis: Simulaciones y vida real</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Hipótesis: Simulaciones y vida real"/>
+		<meta name="keywords" content="Vida Artificial, Hipótesis"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<style type="text/css">
+		.auto-style2 {
+			font-family: "Courier New";
+			margin-left: 40px;
+		}
+		.auto-style3 {
+			font-family: "Courier New";
+			margin-left: 80px;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>La complejidad. Un problema difícil. Parte 4</h1>
+		</header>
+
+		<section>
+			<article>
+				<p><b>Sensores, análisis y reacción. Parte 2</b></p>
+				<p>Supongamos que tenemos un sensor de un solo bit. En el caso que se dé un determinado evento detectado por el sensor, este se pone a verdadero, en caso contrario, por defecto, está en falso. ¿Cuánto dura el envío de la señal de verdadero por parte del sensor? Mientras se dé el evento.</p>
+				<p>El algoritmo se vería así:</p>
+				<p class="auto-style2">Si sensor = verdadero entonces</p>
+				<p class="auto-style3">Realizar determinada acción</p>
+				<p class="auto-style2">Fin si</p>
+				<p>No hay una instrucción &ldquo;de lo contrario&rdquo; porque por defecto se considera que no hay ese evento que dispare el sensor.</p>
+				<p>Ahora el sensor es de 2 bits, luego así luciría el algoritmo:</p>
+				<p class="auto-style2">si sensor = 01 entonces</p>
+				<p class="auto-style3">realizar acción 1</p>
+				<p class="auto-style2">de lo contrario si sensor = 10 entonces</p>
+				<p class="auto-style3">realizar acción 2</p>
+				<p class="auto-style2">de lo contrario si sensor = 11 entonces</p>
+				<p class="auto-style3">realizar acción 3</p>
+				<p>No hay un &ldquo;si sensor = 00&rdquo; porque es el estado por defecto.</p>
+				<p>En el problema de la complejidad, el algoritmo es una sucesión de si condicionales, entre más existan, más complejo podríamos decir que es.</p>
+				<p>Lo interesante es que a medida que el sensor ofrezca más información, la cantidad de instrucciones suben como espuma. Veamos la tabla:</p>
+				<p>&nbsp;<table border="1" cellpadding="0" cellspacing="0">
+					<tr>
+						<td valign="top" width="294">
+						<p>Bits del sensor</p>
+						</td>
+						<td>
+						<p>Número de si condicionales</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>1</p>
+						</td>
+						<td>
+						<p>1</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>2</p>
+						</td>
+						<td>
+						<p>3</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>3</p>
+						</td>
+						<td>
+						<p>7</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>4</p>
+						</td>
+						<td>
+						<p>15</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>5</p>
+						</td>
+						<td>
+						<p>31</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>6</p>
+						</td>
+						<td>
+						<p>63</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>7</p>
+						</td>
+						<td>
+						<p>127</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>8</p>
+						</td>
+						<td>
+						<p>255</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>9</p>
+						</td>
+						<td>
+						<p>511</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>n</p>
+						</td>
+						<td>
+						<p>2^n - 1</p>
+						</td>
+					</tr>
+				</table>
+				</p>
+				<p>&nbsp;</p>
+				<p>Y el resultado es de 2^n &ndash; 1 instrucciones, donde n es el número de bits que maneja y arroja el sensor. </p>
+				<p>Un pixel de color verdadero maneja 24 bits (http://es.wikipedia.org/wiki/Profundidad_de_color ), luego sólo este pixel generaría 2^24-1 o 16.777.215 de instrucciones. Una cantidad increíblemente grande, porque una imagen sencilla de 1024*768 tiene 786.432 pixeles, luego estaríamos hablando de 786.432 * 16.777.215 = 13.194.138.746.880 instrucciones de si condicional y con el operador Y (AND), y todavía faltan las instrucciones de acción, una astronómica cantidad prácticamente imposible de ser procesada, eso sí, sería la visión artificial perfecta porque identificaría todo lo posible que hubiese en una imagen de 1024*768</p>
+				<p>Luego no es práctico el sistema de si condicionales continuos, requiere mucha energía de procesamiento y los seres vivos no están para dilapidar recursos energéticos.</p>
+				<p>&nbsp;</p>
+				<p><strong>El esquema propuesto</strong></p>
+				<p>Los sensores capturan información del entorno, lo que físicamente puedan detectar del ambiente. Por ejemplo, los ambientes son muy ricos en colores, pero si el ojo (sensor) sólo puede capturar en escala de grises, la información que envía al individuo será parcial, pero es lo que hay. Esa información (parcializada) servirá para generar un ambiente interno en el individuo, y en ese ambiente habrá procesos evolutivos de seres virtuales que serán los que dictarán la forma de actuar del individuo en el mundo real. Una buena adaptación hará que el individuo sobreviva junto con los seres virtuales. A todos les conviene.</p>
+				<p>&nbsp;</p>
+				<p><strong>¿Qué sería la complejidad?</strong></p>
+				<p>A medida que los sensores envían más información al individuo, más rico y variado será el ambiente interno, luego eso generará variedad y riqueza en los seres virtuales. De acuerdo, esta última afirmación hay que probarla. ¿Un ambiente muy variado genera individuos muy variados? Podría afirmarlo porque los individuos tienden a ocupar nichos, microambientes, y una especie en un ambiente es diferente a otra especie en otro ambiente. Cada especie consumirá determinados recursos convirtiéndolos en otros tipos que a su vez serán consumidos por otras especies.</p>
+				<p>Una especie consume el recurso A y en ese proceso genera recursos B y C, habrá individuos que consumirán B y otros C, generando otros tipos de recursos. Se formará un tejido denso de consumo y transformación tan variado que visto desde lejos será un ecosistema. ¿Cómo se evita que todo ese ecosistema colapse como dicta la entropía? Sencillo, porque ese ambiente interno está siendo alimentado por una entidad externa que son los sensores que envían información (datos que se convierten en ambientes).</p>
+				<p>&nbsp;</p>
+				<p><strong>¿Y cómo los seres virtuales dictarán el comportamiento del individuo?</strong></p>
+				<p>Así como los sensores envían información del entorno al medioambiente interno, debe haber un proceso inverso, en el que la información (proceso adaptativo) del ambiente interno se proyecta al ambiente externo en forma de acción, una traducción, ¿Cómo? Lo trataré en un próximo artículo.</p>
+				<p>Si la actuación del organismo es mala, los sensores no tardarán en enviar que el entorno se ha vuelto hostil, es decir, que definitivamente la actuación fue mala, luego el ambiente interno cambia con la nueva información de los sensores, otros individuos virtuales toman ventaja y dictarán otra forma de actuar.</p>
+			</article>
+		</section>
+	</body>
+</html>

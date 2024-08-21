@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 13: Múltiples ambientes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 13: Múltiples ambientes"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 13: Múltiples ambientes y Organismos que se adaptan. Simple.</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Como sucede en la naturaleza, existen multitud de ambientes (temperatura, humedad, salinidad, PH, presión, gravedad, etc..), por esta razón estas nuevas simulaciones se tendrá en cuenta que hay múltiples ambientes. A diferencia de las anteriores simulaciones en las cuales solo hay un ambiente de entrada y salida (representadas por series numéricas), en esta simulación hay múltiples ambientes (múltiples series numéricas).</p>
+				<p>El usuario define en el archivo de inicialización Motor13.ini cuantos ambientes va a crear (hasta 14 ambientes), luego el programa generará organismos que se adapten a estos ambientes. Cada organismo tendrá una serie de entrada y otra de salida. Quedando de la siguiente forma:</p>
+				<p><img src="../Imagen/Motor13p1.gif" alt="image" /></p>
+				<p>Cada cilindro es un organismo, en este gráfico se han generado tres(3) organismos, los <i>Ambiente2</i> y <i>Ambiente5</i> no alteran los organismos (suele ocurrir).</p>
+				<p>Con esto comienzo los primeros pasos para implementar la simbiosis: <a href="Articu00020.htm">Dualidad -Ambiente<br /></a> Por ahora es muy sencilla esta implementación:</p>
+				<ol>
+					<li>Se analiza cada ambiente.</li>
+					<li>Se generan simples organismos al azar de tan solo una instrucción.</li>
+					<li>No hay mutaciones.</li>
+					<li>En un archivo se imprime los resultados de la adaptación.</li> 
+				</ol>
+				<p>Debe el usuario cambiar el archivo Motor13.ini</p>
+				<p><img src="../Imagen/Motor13.gif" alt="image" /></p>
+				<p>Esta simple simulación generará organismos de tan sola una(1) instrucción, que se adapten a los ambientes definidos por el usuario (<i>sAmbiente00</i> hasta <i>sAmbiente13</i>), para que el organismo se evalúe como adaptado, el índice de error no debe superar a <i>fMaximoError</i>.<br /> El programa se detiene hasta que haya calculado 30 organismos.</p>
+				<p>Este es un listado de lo generado por este organismo:<br /></p>
+				<p>MOTOR13. Simbiosis. Parte 1.<br /> Ambientes. Total: [5]<br /> [0] 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,<br /> [1] 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> [2] -1,2,-3,4,-5,6,-7,8,-9,10,-11,12,-13,<br /> [3] -1,-2,-3,-4,-5,-6,-7,8,9,10,11,12,13,<br /> [4] 1,2,3,-4,5,6,7,-8,-9,10,-11,-12,-13,</p>
+				<p>Posibilidades:<br /> 1. Tipo de Instrucciones. If Condicional: 50, Asignación: 50<br /> 2. En Instrucciones de If Condicional, el operador de comparación es: '==':25, '&gt;':25, '&lt;':25, '!=':25<br /> 3. Longitud de la expresión (número de operadores): 2</p>
+				<p>4. Construcción de las expresiones, posibilidad de salir X=33, Paréntesis:33, Números=34<br /> 5. Variables que se asignaran, compararan o estarán al interior de las expresiones: W=25, X=25, Y=25, Z=25</p>
+				<p>Número de ciclos CPU: 130<br /> Error máximo de adaptación: 30.000000</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = X-X+X+2-X-X;<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (7-1)-((8+X));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 24.259426<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 7+(2*6/9/(X/5));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (1)-4-X+(X/X);<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (7-1)-((8+X));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 0.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (1-(X+((1/1))));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 13.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = ((2-1*X-(X/X)));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 13.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (X-(((2)*X+1)));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 29.922321<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 4/X+7+(X/((X+X)));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 13.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = X+(X)/X-2*X;<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 24.259426<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 7+(2*6/9/(X/5));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 5+(7)-(9+X+5);<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 27.250000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 5/5+(X/4)+5;<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [2] Salida: [0]<br /> Error: 14.375000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = X/8-((X-X/X));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [3] Salida: [1]<br /> Error: 24.259426<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 7+(2*6/9/(X/5));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 0.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = (((X+X-(3*X))));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [2] Salida: [0]<br /> Error: 14.375000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = X/8-((X-X/X));<br /> return Y;<br /> }</p>
+				<p>Ambientes Entrada: [0] Salida: [2]<br /> Error: 26.000000<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;</p>
+				<p>1: Y = 3-1-(((X-1+1)));<br /> return Y;<br /> }</p>
+				<p>Descargue el fuente: <a href= "../Download/Motor13cpp.zip">De clic aquí</a><br /> Descargue el ejecutable para Windows: <a href= "../Download/Motor13exe.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

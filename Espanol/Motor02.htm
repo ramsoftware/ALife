@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 02. Control y Mutación</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 02. Control y Mutación"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 02. Control y Mutación</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Se generan tres algoritmos aleatoriamente y luego se mutan sus genes, se ordena por el mas apto. El usuario tiene control sobre la generación aleatoria.</p>
+				<p>Esta simulación prueba diferentes algoritmos que dado unos valores de entrada generen los valores de salida requeridos por el usuario. Los programas son generados en forma aleatoria. Usted puede crear cualquier programa con solo asignaciones e instrucciones IF. Los programas generados manejan solo 4 variables, entre estas una es de entrada X y una es de salida Y, W y Z son temporales.<br /> Las líneas de código son de dos tipos:<br /> 1. Asignación<br /> 2. Validación IF</p>
+				<p>En la asignación el modelo de construcción es:<br /> <b>Label: Variable = Expresión;<br /></b> Donde <em>Variable</em> puede ser W, X, Y, Z y <em>Expresión</em> es una expresión matemática de una sola variable independiente (que puede ser W, X, Y, Z), esta variable independiente la he llamado variable activa de la expresión.<br /> Ejemplos de asignaciones:<br /> X = Y * 3 / 2 + Y * Y - 7;<br /> W = 45 + (3 * Z - Z * Z * Z);<br /> Z = 4 * Z - 2 * Z * Z;</p>
+				<p>En la validación IF el modelo de construcción es:<br /> <b>Label: IF ( Variable Condición Expresión ) Goto LineaCodigo<br /></b> Donde <em>Variable</em> puede ser W, X, Y, Z; Condición puede ser &gt;, &lt;, !, = ; <em>Expresión</em> es una expresión matemática de una sola variable independiente (que puede ser W, X, Y, Z), esta variable independiente la he llamado variable activa de la expresión; LineaCodigo es a que línea de código el programa irá si la condición es evaluada como verdadera.<br /> Ejemplos de validaciones son:<br /> IF ( X &gt; (4 * Y - Y * Y + 7) ) Goto 2;<br /> IF ( Z ! (12 -X + X * X + 7) ) Goto 8;<br /> IF ( W &lt; (W * W - 7 * W - 43) ) Goto 2;</p>
+				<p>Uniendo asignaciones con validaciones obtenemos un programa, por ejemplo:<br /> 1: IF ( X&gt; (3 + X + X*X )) Goto 3; // Es in If condicional<br /> 2: Y = 4 - Z +Z * Z * Z; // Es una asignación<br /> 3: Y = 10 - W * W;</p>
+				<p>Nota: Goto 0 es finalización del programa.</p>
+				<p>Modo de Uso:<br /> <b>Serie de Entrada:</b> El valor X que tomarán los algoritmos generados para operar.<br /> <b>Serie de Salida</b>: Valores esperados, se comparan con el valor de salida Y de los algoritmos generados.<br /> <b>Número de Genes</b>: Máximo número de instrucciones generadas para el algoritmo.<br /> <b>Máximo Ciclos de CPU:</b> Muchos algoritmos pueden tener 'gotos' que hacen que nunca haya salida. Esto evita ese problema, limitando a cuantas instrucciones procesará. Si el ser vivo no tiene salida, se elimina.<br /> <b>Iniciar:</b> Inicializa todo los valores, empieza la simulación.<br /> <b>Detener:</b> Detiene la simulación.<br /> <b>Continuar:</b> Continua la simulación detenida.</p>
+				<p><b>Propiedades Avanzadas:<br /> Probabilidad de IF, Asignación:</b> El usuario decide con que probabilidad se generarán instrucciones de un tipo u otro.<br /> <b>Variable Activa:</b> Probabilidad de que variable estará en las expresiones<br /> <b>Operador:</b> Probabilidad de que tipo de validación aparecerán: &gt;, &lt;, =, !<br /> <b>Longitud:</b> Tamaño máximo en caracteres de la expresión.<br /> <b>X, Paréntesis, Número:</b> Probabilidades para que aparezcan estos tres objetos en las expresiones.</p>
+				<p><a href="../Download/Motor02.zip">Baje el código fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

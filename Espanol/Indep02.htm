@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 02: Número de Variables</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Independencia 02: Número de Variables"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 02: Número de Variables</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En la simulación anterior, para jugar el "cuatro en línea", programé dos sensores (tamaño del tablero y saber si había una celda ocupada) y una acción (colocar un símbolo en una celda). Los algoritmos generados manejaban solo cuatro variables: w, x, y, z. Como programador se que son muy pocas ¿entonces cuantas variables deben haber?.</p>
+				<p>La respuesta esta en la propia naturaleza de sensores y acciones. Cada sensor envía una serie de datos al organismo, cada dato es entonces una variable de lectura, una acción en cambio es enviada por el organismo, luego son variables de escritura.</p>
+				<p>Con esto en mente se optimiza la generación de organismos:</p>
+				<p>Variable_Accion = Funcion (Variable_Sensor);</p>
+				<p>IF ( Variable_Sensor &gt;,&lt;,=,&lt;&gt; Condicion (otras variables de sensor) ) THEN</p>
+				<p>El hecho es generar en forma aleatoria pero con mayor probabilidad de éxito los organismos jugadores. Se mantiene la independencia del algoritmo evolutivo.</p>
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td> &nbsp;</td>
+						<td>&nbsp;</td>
+						<td>x</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>x</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>x</td>
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+						<td></td>
+						<td>&nbsp;</td>
+						<td>x</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>x</td>
+					</tr>
+				</table>
+				<p>Para esta simulación se crean dos sensores y una acción:</p>
+				<p>1. Sensor de tamaño del tablero: devuelve en cuatro variables las coordenadas de la celda inicial (0,0) y las coordenadas de la celda final (10, 10).</p>
+				<p>2. Sensor de ocupación de celda: El organismo envía dos variables de acción (coordenadas de celda) y el sensor retorna si esta esta ocupada (tiene X) o vacía.</p>
+				<p>3. Acción (llenado de celda): El organismo envía otras dos variables de acción (coordenadas de celda) y la acción llena la celda; retorna si hubo éxito o no de esta acción.</p>
+				<p>Tendremos al final, 6 variables de sensor y 4 variables de acción.</p>
+				<p>Un algoritmo aleatorio se vería así:</p>
+				<p>Casillas Llenas: [7]<br /> function Organismo.fSerVivo(Sensores: real, Acciones: real):real;<br /> begin<br /> 1: F:1;<br /> 2: A4 := S1+S1-S1-S1*7+S1/S1;<br /> 3: F:2;<br /> 4: A4 := ((S2-S2/S2+S2-S2+S2));<br /> 5: A1 := 7*9+((S2-S2/((4)+3)));<br /> 6: A1 := S6/S6+4-(S6-4-2);<br /> 7: F:2;<br /> 8: F:3;<br /> 9: if S2 &lt; S3-3/S3+S3-S3*S3/S3 then Goto 38;<br /> 10: A3 := 2+S6/((S6)*6)+S6;<br /> 11: if S2 &gt; (S1+S1/1/9/S1+7) then Goto 40;<br /> 12: F:3;<br /> 13: F:3;<br /> 14: F:1;<br /> 15: if S6 &lt; S2/S2/S2*S2*S2+S2/S2 then Goto 14;<br /> 16: F:1;<br /> 17: if S3 &lt; (9-5-S4/S4/S4-S4) then Goto 34;<br /> 18: A1 := 2*(9-S6*(7+S6+1));<br /> 19: A3 := S5-3/1+5/(5-4);<br /> 20: A4 := 6-S5/S5+S5*((S5*4));<br /> 21: F:3;<br /> 22: A3 := (S4)-5*S4*(S4*S4);<br /> 23: if S2 &gt; S3/((S3)+((2+S3))) then Goto 5;<br /> 24: F:3;<br /> 25: A1 := S4+S4-(8+S4-3/S4);<br /> 26: if S2 &lt; 1-(((S4+(2+S4*4)))) then Goto 15;<br /> 27: F:3;<br /> 28: F:1;<br /> 29: A2 := 2*S1/S1/S1*(S1-3);<br /> 30: A1 := (5+7)-(S5-6/S5);<br /> 31: A4 := 5*S6+(S6+7*S6/S6);<br /> 32: A3 := S3*(S3+S3*S3)/S3+S3;<br /> 33: A4 := 4-S5+6*S5-S5+S5-S5;<br /> 34: if S1 &lt; S6*S6/2*S6+8-S6+1 then Goto 1;<br /> 35: A3 := 4-(S6/S6-S6)+7/5;<br /> 36: A3 := 5-S4-(7*S4-S4/S4);<br /> 37: F:1;<br /> 38: F:1;<br /> 39: A2 := S5-5/S5*S5+(S5-1);<br /> 40: A2 := S2*7*(S2+8-S2+S2);<br /> end;</p>
+				<p>Las variables A1, A2, A3 y A4 son variables de acción.<br /> Las variables S1, S2, S3, S4, S5, S6 son variables de sensor.<br /> F:1, F:2, F:3 son las funciones.</p>
+				<p>Los resultados de esta segunda simulación son algo desalentadores, son menos exitosos que la simulación anterior en el cual teníamos tan solo cuatro variables. Esto puede entenderse a simple vista: hay 6 variables de sensor y 4 variables de acción (10 variables en total), luego el número de combinaciones es inmensamente mas alto que el uso de solo cuatro (a pesar de que este último es una mezcla sin sentido de valores).<br /> Observe el gráfico en que confronto la simulación anterior (independencia 01) con esta nueva (mas alto es mejor). Desde 100 mil a 1 millón de algoritmos generados.</p>
+				<p><img src="../Imagen/Indep02.gif" alt="image" /></p>
+				<p><a href="../Download/Indep02.zip">Descargue código fuente</a></p>
+				<p><a href="../Download/IndeT02.zip">Descargue Pruebas</a></p>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 16. MacroOrganismo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Motor 16. MacroOrganismo"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 16. MacroOrganismo</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En la <a href= "EvolSim7.htm">Simulación VII. La Memoria Cíclica</a> quedaron varias preguntas sin resolver sobre la naturaleza de un reloj biológico. El punto crucial fue como evolucionó un organismo para que tuviese un reloj biológico para adaptarse a un ambiente cíclico.</p>
+				<p>Una solución a este problema se deriva de las simulaciones <a href="Motor13.htm">Motor 13</a>, <a href="Motor14.htm">Motor 14</a> y <a href="Motor15.htm">Motor 15</a>.</p>
+				<p>La teoría de que un ser vivo complejo es en realidad una perfecta simbiosis de organismos simples toma fuerza. Tómese un ambiente cíclico, en cada estado se genera un organismo que se adapte bien, luego para todo un ciclo se generan múltiples organismos simples. Se colaboran entre si (un proceso simbiótico). Observe el siguiente ejemplo:</p>
+				<p>Un ambiente simple que alterna regularmente entre frío y caliente. Para generar un organismo complejo que logre sobrevivir en dicho ambiente, se genera entonces dos organismos simples, uno que se adapte al frío (OrgA) y otro al calor (OrgB). Ambos organismos se relacionan y cuando el ambiente este frío, OrgA "protege" a OrgB, cuando el ambiente este caliente, OrgB "protege" a OrgA.</p>
+				<p>De esta manera se mantiene la simplicidad y escalabilidad del modelo.</p>
+				<p>Para simular un comportamiento así, se debe tener en cuenta el uso de recursos (visto en la <a href= "EvolSim6.htm">Simulación VI</a>.). También la generación de ambientes cíclicos y debe escribirse un algoritmo que haga la simbiosis, es decir, que busque los mejores organismos de cada estado del ambiente y los reúna. Observe la figura:</p>
+				<p><img src="../Imagen/Ciclo.gif" alt="image" /></p>
+				<p>La línea sinusoidal representa el comportamiento de un ambiente cíclico, Org1 es un organismo bien adaptado a un estado (cresta superior) de este ambiente, Org3 y Org2 igual son organismos bien adaptados, en cambio, Org4 no se adapta y estará condenado a desaparecer.</p>
+				<p>Un macroorganismo será entonces la simbiosis entre Org1, Org2 y Org3.</p>
+				<h2>La Simulación</h2>
+				<p>Esta simulación es sencilla para implementar un MacroOrganismo.</p>
+				<p>Se simula el comportamiento cíclico de un ambiente. Por ejemplo:</p>
+				<p>Ambiente = sin(y) * (4+3*X-X*X)<br /> Genero un valor Y=PI/2 y doy valores de X = 1..10 entonces:</p>
+				<p>sin(PI/2) * (4+3*X-X*X) = 1 * (4+3*X-X*X) = 6,6,4,0,-6,-14,-24,-36,-50,-66</p>
+				<p>Ahora genero un organismo que se adapte a ese ambiente (6,6,4,0,-6,-14,-24,-36,-50,-66)</p>
+				<p>Luego cambio el valor de Y=PI/3 y doy valores de X=1..10 entonces obtengo el ambiente<br /> 5.1961, 5.1961, 3.4641, 0, -5.1961, -12.1243, -20.7846, -31.1769, -43.30127, -50.1576<br /> Ahora genero otro organismo para dicho ambiente.</p>
+				<p>Y así sucesivamente de Y=0 hasta PI.</p>
+				<p>Con eso obtengo una serie de organismos que se adaptan a todo un ciclo.</p>
+				<p>Descargue el fuente: <a href= "../Download/Motor16cpp.zip">De clic aquí</a><br /> Descargue el ejecutable para Windows: <a href= "../Download/Motor16exe.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

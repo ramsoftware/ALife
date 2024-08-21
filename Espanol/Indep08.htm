@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 08: Jugar...</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Independencia 08: Jugar..."/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 08: Jugar...</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Esta es la primera versión en la cual los algoritmos genéticos se enfrentan para sacar el mejor jugador. ¿En que consiste el juego?. En independencia 01 se menciona:</p>
+				<ol>
+					<li>Dos jugadores.</li>
+					<li>El jugador 1 comienza colocando su símbolo en alguna celda vacía de la cuadricula.</li>
+					<li>Sigue el jugador 2 colocando su símbolo en otra celda vacía de la cuadricula.</li>
+					<li>El objetivo es hacer líneas horizontales o verticales con N mismos símbolos contínuos.</li>
+					<li>Ambos jugadores continúan jugando hasta que la cuadricula este llena.</li>
+					<li>Gana el jugador que complete mas líneas horizontales y verticales.</li>
+				</ol>
+				<table>
+					<tr>
+						<td>x</td>
+						<td>0</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+					</tr>
+				</table>
+				<p>Dado N=4 (gana los de 4 horizontal o vertical) el jugador con símbolo "x" es el vencedor con 1 horizontal y una vertical, es decir 2 puntos, el jugador con símbolo "0" no tiene puntos.</p>
+				<p>Lo llamativo es que los algoritmos genéticos se generan al azar y por procesos de filtración (selección natural), solo quedan aquellos que juegan bien. Los algoritmos genéticos empiezan sin saber que están en un juego.</p>
+				<p>¿Cómo se interrelacionan con el juego? El juego o ambiente tiene tres(3) funciones:<br /> 1. Retorna el tamaño del tablero (afecta a dos variables).<br /> 2. Retorna si determinada casilla esta llena o vacía (el algoritmo envía dos variables o sensores que serían las posiciones X y Y del tablero), en una tercera variable se retorna la posición.<br /> 3. Coloca la ficha en determinada casilla (el algoritmo envía dos variables o sensores que serían las posiciones X y Y del tablero).</p>
+				<p>¿Cómo es el sistema de filtrado?<br /> Son los siguientes pasos:<br /> 1. Se genera al azar el algoritmo genético.<br /> 2. Prueba 1: ¿El algoritmo llama las tres funciones? Caso negativo. Vuelve a 1.<br /> 3. Prueba 2: ¿El algoritmo al menos llena una casilla? Caso negativo. Vuelve a 1.<br /> 4. Prueba 3: Mutar el algoritmo hasta que logre llenar un mínimo de casillas.<br /> 5. Los algoritmos que hayan pasado las tres pruebas entran en un torneo. Se escogen al azar los contrincantes y comienzan a competir.<br /> 6. Finalizado el torneo, los algoritmos con mayor puntaje se reproducen (sus hijos mutan), sobreescribiendo a los algoritmos perdedores. Vuelve a 5.</p>
+				<p>Al principio los resultados fueron muy pobres, pero mejoraron notablemente cuando el tablero comenzaba con las coordenadas (1,1). Antes el tablero comenzaba con las coordenadas (0,0). ¿En que afecto este cambio tan minúsculo? Las variables de los algoritmos genéticos eran inicializadas en 0, luego cualquier algoritmo que no tocara las variables al menos llenaba la casilla (0,0) pasando la prueba 2, pero en la prueba 3 fallaban estrepitosamente. Al cambiar a (1,1) la prueba 2 se volvió mas estricta y como es rápida, los resultados mejoraron.</p>
+				<p>Una vez que los suficientes algoritmos genéticos pasaron las tres pruebas, empezó el torneo, una vez finalizaba, los mejores se reproducían (los hijos mutaban y heredaban el puntaje del padre). En varias pruebas, esta herencia del puntaje del padre salió contraproducente porque finalmente los hijos del mejor jugador ocupaban el resto de la tabla de posiciones y después de varios ciclos de torneos, ya ningún jugador ganaba ni perdía. Las mutaciones no afectaban a los hijos. Para solucionar esto, simplemente los hijos heredaban el puntaje del padre - 1 (restándole uno). Los resultados fueron bien interesantes.</p>
+				<p>¿Que se concluye de todo esto?</p>
+				<ol>
+					<li>Los filtros de algoritmos genéticos deben estar muy bien diseñados.</li>
+					<li>Hacer muchas pruebas por cada filtro. La "evolución" aprovecha el mas mínimo agujero para irse por el camino del menor esfuerzo.</li>
+					<li>Verificar los valores que manejan los algoritmos genéticos, para no dejarle agujeros a la "evolución".</li>
+				</ol>
+				<p><a href="../Download/Indep08.zip">Descargar código Fuente</a></p>
+			</article>
+		</section>
+	</body>
+</html>

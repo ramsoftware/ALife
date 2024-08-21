@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Hipótesis: Simulaciones y vida real</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Hipótesis: Simulaciones y vida real"/>
+		<meta name="keywords" content="Vida Artificial, Hipótesis"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>La complejidad. Un problema difícil. Parte 1</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En mi investigación sobre regresión simbólica, que consiste en encontrar el patrón que explique el comportamiento de unos datos históricos, el primer acercamiento fue utilizar expresiones algebraicas. Un primer libro nació de esta investigación con un software que leía una serie de datos históricos, utilizando una implementación inspirada en los algoritmos genéticos se encontraba la mejor ecuación y= f(x) que superara en aproximación a un típico ajuste de curvas determinista (como el uso de curvas cuadráticas, exponenciales o logarítmicas).</p>
+				<p>En una segunda investigación sobre regresión simbólica se planteó mejorar la aproximación de las ecuaciones haciendo que estas tuviesen acceso a un número mayor o infinito de funciones. No serían ecuaciones algebraicas simples, sino expresiones. Las funciones las define el desarrollador y harían parte de la expresión, por ejemplo:</p>
+				<p>&nbsp;y = seno(x) + fnA(x) &ndash; fnB(x) + coseno(x)</p>
+				<p>Donde fnA(x) y fnB(x) son funciones propias desarrolladas por un usuario.</p>
+				<p>La esperanza es que, teniendo acceso a tan ilimitada cantidad de funciones, se tendría mayor acercamiento y precisión en la regresión simbólica. Las primeras pruebas alentaron eso, las expresiones eran ligeramente mejores que las ecuaciones, pero no era algo impresionante. La sorpresa vino luego cuando se utilizaron piezas previamente definidas del tipo:</p>
+				<p>&nbsp;Función Variable Operador Variable</p>
+				<p>Combinando piezas se pueden construir cualquier tipo de ecuaciones. La nueva implementación funcionaba así: se generaban al inicio una buena cantidad de piezas, inmutables y se jugó con combinarlas para generar ecuaciones. A pesar de que las combinaciones son finitas, el número de ecuaciones que se pueden generar es gigantesco y aquí vino la sorpresa: esta implementación lograba mejores resultados de aproximación que las ecuaciones o las expresiones con infinitas modificaciones. A pesar de mis esfuerzos, no hubo forma que las ecuaciones o expresiones fueran mejores que las ecuaciones nacidas de N combinaciones de piezas previamente definidas. Todo eso quedó consignado en un segundo libro.</p>
+				<p>¿Y ahora? No niego que quedé confundido por ese resultado. Mi razonamiento primario era que, a mayor acceso de las ecuaciones a funciones novedosas, mejor aproximación habría y eso me daría herramientas para explicar la complejidad y hasta como medirla (en el tema de regresión simbólica). Haciendo una analogía es como si pongo a competir a dos chefs de cocina, a uno le doy acceso a infinitos ingredientes y al segundo a un número limitado de ingredientes, al final de la competencia el segundo chef es el que obtiene los mejores platos.</p>
+				<p>Otra estrategia un poco más extrema de regresión simbólica era generar algoritmos y dar con aquel que se aproxime a la serie histórica buscada. Los resultados pueden decepcionar porque ante una serie como: (1,3) (2,7) (3,11) (4,17) (5,24) (6,38)&#8230;. (x,y) en búsqueda de la mejor ecuación obtendría esto:</p>
+				<p>&nbsp;y = (1,69109911511006+(ln(abs(tan(x/0,405818212706964)+0,174068820652021))+abs(x*x))) Con una aproximación de 0,949020448186554 (entre más cerca de cero es mejor)</p>
+				<p>Y en algoritmos podría obtener esto:</p>
+				<p>Algoritmo Aproxima<br>Inicio<br>&nbsp;Leer x<br>&nbsp;Si x=1 entonces y=3<br>&nbsp;Si x=2 entonces y=7<br>&nbsp;Si x=3 entonces y=11<br>&nbsp;Si x=4 entonces y=17<br>&nbsp;Si x=5 entonces y=24<br>&nbsp;Si x=6 entonces y=38<br>&nbsp;Imprima y<br>Fin</p>
+				<p>El algoritmo logra una aproximación perfecta, pero es completamente inútil para interpolar o extrapolar. En esos casos en vez de permitir que el algoritmo creciera sin limitaciones, se configura para tener un número máximo de instrucciones. ¿No va eso en contra de un crecimiento de supuesta complejidad?</p>
+				<p>Unos pensamientos entonces me asaltan: ¿No será la complejidad un efecto emergente, un resultado secundario sin ninguna importancia? ¿Vale la pena preocuparse por aumentar algo que lo llamo complejidad sin saber que significa o como se mide?  </p>			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Historia de la investigación.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Historia de la investigación."/>
+		<meta name="keywords" content="Vida Artificial, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Registro histórico de la investigación</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Desde 1999 en el que se empezó esta investigación sobre vida artificial, se han abordado varios temas. El primer tema fue sobre la adaptación (porque la vida hace eso, adaptarse al ambiente). Se empezó por lo más básico: dada una serie de valores (x,y), hallar la función y=f(x) que mejor se ajuste a esa serie, es decir, dar con la mejor línea de tendencia. Cabe aclarar que ya existen métodos matemáticos para lograrlo. Lo que se buscaba, en realidad, con este ejercicio era aprender a usar el concepto de algoritmos genéticos y evolutivos resolviendo este problema de dar con la mejor línea de tendencia.</p>
+				<p>Durante años se trabajaron con diversos enfoques que están registrados a continuación. Algunos enfoques se abandonaron por no obtener los resultados deseados, otros fueron abordados de nuevo varios años después descubriendo cosas nuevas. Por ejemplo, las expresiones algebraicas que se adaptan a series de datos que fueron analizadas de nuevo en varias investigaciones desarrolladas en la Universidad Libre - Cali, dando origen a dos libros y variado software.</p>
+				
+				<br><h2>1. Búsqueda de la mejor expresión algebráica que se adapte a una serie dada</h2>
+				<p>La generación de expresiones simples para la búsqueda de patrones dio acercamientos notables. El tema ha sido retomado varias veces y generó dos libros de regresión simbólica, además de investigaciones desarrolladas en la Universidad Libre - Cali haciendo uso no sólo de algoritmos genéticos sino también redes neuronales. El tema subió en complejidad porque no sólo era dar con una serie de puntos (x,y) sino a más datos como registros con valores (x,y,z) o más variables.</p>
+				
+				<br><h2>2. Búsqueda del mejor algoritmo que se adapte una serie dada</h2>
+				<p>El siguiente paso es la generación de algoritmos al azar, para mejorar esta aproximación. Las simulaciones en este capítulo fueron llamadas "Motores" porque de ahora en adelante la investigación estará encaminada en la búsqueda del algoritmo que logre adaptarse a cualquier ambiente. A este algoritmo se ha llamado: "Motor de Vida Artificial".</p>
+				<p>ACTUALIZACIÓN (2021): Los algoritmos generados al azar fueron abordados en los libros de regresión simbólica y las investigaciones en la Universidad Libre - Cali y se llegó a la conclusión que las expresiones algebraicas lograban mejor aproximación, además de ser muchísimo más rápidas. Luego el término "Motor" como se abordó en este capítulo ha quedado obsoleto.
+				<table> 
+					<tr>
+						<td><a href="Motor01.htm">Motor 01: Algoritmos aleatorios</a></td>
+						<td>Usando la misma filosofía de la Regresión Simbólica se generan algoritmos de manera aleatoria que usando los valores de entrada proporcionados por el usuario, trate de aproximarse a los valores esperados proporcionados por el usuario.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor02.htm">Motor 02: Mutación y Control</a></td>
+						<td>Similar a la simulación anterior, en este caso se generan tres algoritmos aleatoriamente y luego se mutan, dejando en primer lugar los mas aptos. El usuario tiene mas control sobre la generación aleatoria.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor03.htm">Motor 03: Mutación, Generación aleatoria, Control.</a></td>
+						<td>Combinación de mutación y generación aleatoria. Mayor facilidad para descargar los fuentes.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor04.htm">Motor 04: Estudio Estadístico</a></td>
+						<td>¿Entre mas instrucciones o genes, mas rápida o más precisa es la adaptación?. Esta simulación puede contestar esta pregunta. Ahora mas pruebas se han hecho con nuevos ambientes y resultados.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor05.htm">Motor 05: Estudio Estadístico. Generación Aleatoria y Mutación</a></td>
+						<td>Similar al Motor 04. Se mezclan Generación Aleatoria y Mutación de algoritmos. Optimización del algoritmo para mayor velocidad.</td>
+					</tr> 
+					<tr>
+						<td><a href="Test01.htm">Pruebas: Expresiones Simples vs Algoritmos Aleatorios</a></td>
+						<td>¿Que se adapta más rápido? ¿Expresiones simples o algoritmos (ambos generados aleatoriamente)?. Durante varios días realicé pruebas para saber mas sobre este tópico.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor06.htm">Motor 06: Proceso de Atrofia</a></td>
+						<td>En el artículo: <strong>La gran decisión: ¿Cabeza o cola?</strong>, se menciona como los organismos a través de la evolución se van deshaciendo de partes ya no útiles de su cuerpo (atrofia). Este proceso es simulado cuando los algoritmos son optimizados.</td>
+					</tr> 
+						<tr>
+						<td><a href="Motor07.htm">Motor 07: &iexcl;Velocidad!. Motor 05 escrito en C++</a></td>
+						<td>Se reescribe el "Motor 05" en C++ y se optimizan varias funciones. El resultado: un aumento dramático de velocidad y mayor información. Pruebas hechas con un(1) millón de intentos.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor08.htm">Motor 08: Proceso de Atrofia. Reescrito en C++</a></td>
+						<td>Gracias a la velocidad alcanzada por los nuevos motores en C++. Se hacen estudios sobre como mejorar el proceso de mutación (similar al Motor 06 en Java).</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor09.htm">Motor 09: Sutil</a></td>
+						<td>Busca algoritmos al azar, luego el mejor lo talla (muta) fuertemente y finalmente lo retoca (cambios sutiles en alguna instrucción).</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor10.htm">Motor 10: Sutil Mejorado</a></td>
+						<td>Se examinan los procesos de generación y mutación para hacerlos mas eficientes.</td>
+					</tr> 
+					<tr>
+						<td><a href="Motor11.htm">Motor 11: Unión</a></td>
+						<td>Unión. En vez de enfrentar, se unen las dos estrategias para acercamiento: expresión simple y algoritmos. Una simbiosis que suma las fortalezas de ambas y neutraliza las debilidades.</td>
+					</tr> 
+					<tr>
+						<td><a href="Test02.htm">Confrontación: Motor 10 y 11</a></td>
+						<td>Observando los resultados anteriores, determiné que era necesario probar estos motores y decidir de una vez por todas cual es el mejor. Aquí están los resultados.</td>
+					</tr>
+				</table>
+ 
+				<h3>Uso de Poblaciones</h3>
+ 
+				<table> 
+					<tr>
+						<td><a href= "Poblacion1.htm">Población y desempeño</a> (diseño)</td>
+						<td>Mas sencillo y mucho mas rápida la evaluación de algoritmos genéticos. Se introduce el concepto de población.</td>
+					</tr> 
+					<tr>
+						<td><a href="Poblacion2.htm">Primera Implementación</a></td>
+						<td>Primera simulación donde se implementa los conceptos de población, manejo de bytes directamente.</td>
+					</tr> 
+					<tr>
+						<td><a href="Poblacion3.htm">Segunda implementación mejorada</a></td>
+						<td>Segunda simulación donde se filtra mas fuerte los organismos y lee un archivo de inicialización. La mejora es que hay un manejo dinámico de memoria (ya no hay límites) y genera los algoritmos genéticos listos para ser compilados en C++ (y validar que los resultados son ciertos).</td>
+					</tr> 
+					<tr>
+						<td><a href="Poblacion5.htm">Tercera implementación (Fuertes Mejoras)</a></td>
+						<td>Esta versión del algoritmo genético en C++ trae importantes funcionalidades que supera ampliamente la segunda implementación.</td>
+					</tr> 
+					<tr>
+						<td><a href="Test03.htm">Pruebas (ascendente, descendente, alterno)</a></td>
+						<td>Se repiten las pruebas usando como datos las <a href="Test02.htm">usadas previamente</a>.</td>
+					</tr> 
+					<tr>
+						<td><a href="Poblacion6.htm">Cuarta implementación (mejoras)</a></td>
+						<td>El nuevo algoritmo presenta notables mejoras en las pruebas con un sencillo cambio.</td>
+					</tr> 
+					<tr>
+						<td><a href="Test04.htm">Pruebas (ascendente, descendente, alterno)</a></td>
+						<td>Se repiten las pruebas usando como datos las <a href="Test02.htm">usadas previamente</a>.</td>
+					</tr> 
+					<tr>
+						<td><a href= "Test05.htm">Programación Genética + Población + Aislamiento</a></td>
+						<td>La generación de ecuaciones en forma aleatoria (conocido como Programación Genética) la abordé en el Capítulo 1 pero faltaban ciertas pruebas que se desarrollan ahora.</td>
+					</tr>
+				</table>
+				
+				<br><h2>3. Ambientes, sensores y adaptación</h2>
+				<p>Los sentidos (sensores) informan al organismo de lo que sucede en su medio-ambiente, entre mas especializado este el sensor, mayor es la calidad de esta información. La cantidad y calidad de la información determinan como reacciona el organismo y finalmente influye en su evolución.
+				<p>Este capítulo simula la multiplicidad de ambientes y como el organismo debe enfrentarlos. Una solución sencilla y escalable es que un organismo con múltiples sensores y múltiples reacciones, es en realidad un conjunto de micro-organismos, donde cada uno tiene una entrada y una salida. <a href="Capit03.htm">Inicio del capítulo aquí.</a></p>
+			
+				<br><h2>4. Universo y vida</h2>
+				<p>Los seres vivos están formados por materiales que nacen de procesos físicos y químicos del Universo. Somos seres basados en la química del carbono. En síntesis, el Universo proporciona los materiales, las leyes y la energía, los cuales son tomados por "el algoritmo evolutivo" para generar y evolucionar seres vivos.</p> 
+				<p><a href="Capit04.htm">¿Es "el algoritmo evolutivo" dependiente de lo ofrecido por el Universo?.</a></p>
+			
+				<br><h2>5. Independencia del Algoritmo Evolutivo</h2>
+				<p>El capítulo anterior se finalizó porque no hubo una manera clara de separar los materiales y su comportamiento del algoritmo evolutivo (el que genera organismos). Mi hipótesis es que la vida es independiente de los materiales y es posible que esta exista en ambientes virtuales donde no operan las leyes físicas.</p>
+				<p>El objetivo de este capítulo es precisamente investigar como hacer <a href="Capit05.htm">un algoritmo que evolucione y sea independiente del ambiente</a>. Lo importante es la adaptación y la estabilidad.</p>
+			
+				<br><h2>6. Torneo</h2>
+				<p>La vida es un torneo, una infinita competencia entre organismos de la misma especie o diferente especie, una carrera armamentista en donde se crean nuevas armas, contra-armas y estrategias. Depredadores vs Presas. <a href="Capit06.htm">El premio: vivir, perder es morir</a></p>
+				
+				<br><h2>7. Hipótesis</h3>
+				<p><a href="Hipotesis.htm">Hipótesis planteadas durante la investigación</a></p>
+			</article>
+		</section>
+	</body>
+</html>

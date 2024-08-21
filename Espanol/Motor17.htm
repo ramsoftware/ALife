@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Motor 17: Estudio Cíclico</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Motor de Vida Artificial: Motor 17: Estudio Cíclico"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Motor 17: Estudio Cíclico</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En la anterior simulación, se trabajó con organismos que se adaptan a un ambiente cíclico. Con este motor, el usuario puede definir cuantos organismos cubrirán todo un ciclo. El estudio de esta simulación es ver si un organismo poco a poco modifica su estructura para acomodarse al ciclo. Entre mas organismos mas fino se vería el cambio. También como los organismos se generan aleatoriamente y son ubicados donde mejor se adapten.</p>
+				<p>En las próxima actualización se mostrará los resultados de estas adaptaciones, de allí se parte al concepto mas complejo de MacroOrganismo y la simbiosis.</p>
+				<p>Esto es lo que se debe modificar:</p>
+				<p><img src="../Imagen/Motor17.gif" alt="image" /></p>
+				<h2>Resultados de las Pruebas</h2>
+				<p>Se hicieron varias pruebas con esta simulación, y los resultados sorprendieron. A pesar de que la variación entre ambientes era realmente muy pequeña (PI/40 o PI/70), los algoritmos generados eran radicalmente distintos, obsérvese esto (cambian las instrucciones y hasta el número de ellas):</p>
+				<table>
+					<tr>
+						<td>PosY: 6*PI/70, Error: [2.022986]<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;<p>1: Y = (X/(4/X));<br /> 2: Y = (Y-(3/Y));<br /> 3: if( Z = ((3-5*Y)) ) goto 1;<br /> 4: if( X &lt; W/5/7-W ) goto 5;<br /> 5: if( Y = Z/1/5-Z ) goto 4;<br /> 6: if( Y &gt; 5*Y-(((4*Y))) ) goto 2;<br /> 7: X = X-(((X)-2));<br /> return Y;<br /> }</td>
+						<td>PosY: 7*PI/70, Error: [3.843365]<br /> Organismo<br /> float fSerVivo(float X)<br /> {<br /> float W=0, Y=0, Z=0;<p>1: Y = X/9*X*8;<br /> 2: if( Z &lt; (W-((3*6))) ) goto 4;<br /> 3: if( W &lt; Y-(7/8) ) goto 4;<br /> 4: Z = X*(X-6);<br /> 5: W = X/7+(X-4);<br /> 6: Y = 5+((Y)-7);<br /> 7: X = (6/((Y*4)));<br /> 8: Z = Z-(6+2);<br /> 9: if( W &gt; 3+7+6/7 ) goto 2;<br /> 10: Y = ((Y)/3);<br /> return Y;<br /> }</td>
+					</tr>
+				</table><p>Una razón posible de ello es que el Motor 17 intencionalmente muta (fuerte o sutilmente) los algoritmos antes de probarlos en alguna otra parte del ciclo. Pero no se esperaba cambios tan radicales, se esperaba cambios sutiles y el nacimiento del concepto de especie.</p>
+				<p>Debido a esto, en el Motor 18, se harán algunos cambios que emularán mejor el comportamiento natural, se permitirá que algoritmos bien adaptados a una parte del ciclo sean probados sin mutar en otra parte del ciclo. Igualmente se optimizará la velocidad y mejoras en la adaptación. Las conclusiones nacerán según las pruebas efectuadas en el próximo Motor.</p>
+				<p>Descargue el fuente: <a href= "../Download/Motor17cpp.zip">De clic aquí</a><br /> Descargue el ejecutable para Windows: <a href= "../Download/Motor17exe.zip">De clic aquí<br /></a> Descargue las pruebas: <a href="../Download/Motor17R.zip">De clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

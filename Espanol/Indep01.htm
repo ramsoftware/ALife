@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial: Independencia 01: ¿En que consiste el juego?</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Independencia 01: ¿En que consiste el juego?"/>
+		<meta name="keywords" content="Vida Artificial, Simulación"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial: Independencia 01: ¿En que consiste el juego?</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En la revista Muy Interesante Año 17 Número 195, el tema de portada es la Inteligencia Artificial. Leí un párrafo que me llamó la atención el cual dice: "Incluso la poderosísima Deep Blue, tan inteligente que es capaz de ganarle una partida de ajedrez a Kasparov, perdería con un niño un juego de triqui ". Es cierto, Deep Blue fue programada para jugar exclusivamente ajedrez, todos sus algoritmos y bancos de memoria están diseñados para producir la próxima jugada analizando con fuerza bruta (potencia de computo) millones de movimientos. Deep Blue no conoce el triqui, para esto, un programador tendría que sentarse y programarla para ser invencible en este juego y así sucesivamente por cada juego nuevo.</p>
+				<p>¿Por qué no construir un software capaz como el humano de entender un juego de mesa y poder jugarlo?</p>
+				<p>Un juego es un ambiente con unas reglas lógicas, estas reglas hacen que un jugador gane, pierda o empate durante la partida. Un jugador es un ser vivo que debe adaptarse a ese ambiente: una buena adaptación significa que es ganador, una mala adaptación es un perdedor.</p>
+				<p>Igual que sucede con los grandes torneos, los que ganan, aseguran un cupo para las siguientes partidas, los perdedores son eliminados. Selección natural simple.</p>
+				<p>El objetivo de esta simulación es tomar un juego simple de mesa: Hacer líneas horizontales y verticales con N piezas. Estas son las reglas:</p>
+				<ol>
+					<li>Dos jugadores.</li>
+					<li>El jugador 1 comienza colocando su símbolo en alguna celda vacía de la cuadricula.</li>
+					<li>Sigue el jugador 2 colocando su símbolo en otra celda vacía de la cuadricula.</li>
+					<li>El objetivo es hacer líneas horizontales o verticales con N mismos símbolos contínuos.</li>
+					<li>Ambos jugadores continúan jugando hasta que la cuadricula este llena.</li>
+					<li>Gana el jugador que complete mas líneas horizontales y verticales.</li> 
+				</ol>
+				<table>
+					<tr>
+						<td>x</td>
+						<td>0</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+						<td>x</td>
+					</tr>
+				</table>
+				<p>Dado N=4 (gana los de 4 horizontal o vertical) el jugador con símbolo "x" es el vencedor con 1 horizontal y una vertical, es decir 2 puntos, el jugador con símbolo "0" no tiene puntos.</p>
+				<p>¿Podremos decirle a un programa evolutivo que entienda un juego como este? Yo pienso que es posible. Se generan algoritmos en forma aleatoria y luego por selección sobreviven aquellos que puedan ser buenos jugadores en este tipo de juego. Los sobrevivientes son reproducidos con ligeras mutaciones hasta que después de millones de ciclos salga un algoritmo lo suficientemente bueno como para jugar contra un humano.</p>
+				<p>Se observa que la idea no es tan descabellada, es posible, se requiere eso si gran capacidad de computo y algoritmos optimizados.</p>
+				<p>Durante el desarrollo de este algoritmo logré separar los algoritmos que evolucionan de los componentes del ambiente. Se nota claramente que en esta hay:</p>
+				<ol>
+					<li>Un ambiente</li>
+					<li>Sensores (Retornan estados del ambiente)</li>
+					<li>Acciones (Hacen algo sobre el ambiente)</li>
+					<li>Un proceso de selección natural.</li>
+					<li>Algoritmo Evolutivo en si.</li>
+				</ol>
+				<p>El algoritmo evolutivo puede estar completamente independiente en una DLL o un ActiveX, el programador aparte, solo debe programar el ambiente (en este caso el tablero del juego), los sensores (retornan las dimensiones del tablero y si una casilla esta ocupada o no), las acciones (colocar un símbolo en determinada casilla) y el proceso de selección natural (cuantas líneas creó).</p>
+				<p>La primera aproximación es que simplemente el algoritmo evolutivo logre colocar sus símbolos sobre el tablero (todavía no compite). Era de esperarse que generando al azar algoritmos usando dos sensores y una acción, se tardara muchísimo en lograr un algoritmo que llenara el tablero.</p>
+				<p>Probando un tablero de 10 * 10, los primeros algoritmos no lograban siquiera llenar una sola casilla, luego llenaban solo una y de vez en cuando dos, lo ideal sería que llenara las 100 casillas. Es tan bajo el nivel de éxito que personalmente llegué a pensar que la investigación no debe llevarse por este camino, pero a medida que probaba simulaciones con miles de algoritmos, la efectividad creció alrededor del 7%, luego no es prudente desechar esto, hay que hacer mas pruebas.</p>
+				<p>Esta simulación solo es de algoritmos al azar, todavía no hay mutación fuerte o simple.</p>
+				<p>Ambiente: Tablero de 11*11</p>
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<p>Sensor 1: Informa dimensión del tablero 0 a 10.<br /> Sensor 2: Informa si una casilla esta vacía u ocupada con algún símbolo.<br /> Acción 1: Coloca un símbolo en determinada casilla.<br /> Proceso de Selección Natural: "Sólo aquellos algoritmos que logren colocar mas símbolos en el tablero estarán en la lista de los 40 mejores".</p>
+				<p>Las pruebas desde 100.000 organismos hasta 900.000 organismos se pueden ver en el siguiente gráfico:</p>
+				<p><img src="../Imagen/Indep01.gif" alt="image" /></p>
+				<p>Cómo se observa no es mucho el éxito para colocar símbolos en un tablero de 11*11 (121 casillas), el promedio oscilaba entre 7 y 12 casillas (5.7% a 9.9%). Son algoritmos al puro azar sin capacidad de reproducción (no son genéticos).</p>
+				<p><a href="../Download/Indep01.zip">Descargue código fuente</a></p>
+				<p><a href="../Download/IndeT01.zip">Descargue Pruebas</a></p>
+			</article>
+		</section>
+	</body>
+</html>

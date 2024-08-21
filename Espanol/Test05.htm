@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Programación Genética + Población + Aislamiento</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Programación Genética + Población + Aislamiento"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Programación Genética + Población + Aislamiento</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>La generación de ecuaciones en forma aleatoria (conocido como Programación Genética) la abordé en el <a href="Historia.htm">Capítulo 1</a> pero faltaban ciertas pruebas. Gracias a una oportunidad por un trabajo que debí desarrollar en Inteligencia Artificial en el tema de Computación Evolutiva, abordé el tema de la Programación Genética nuevamente y estos fueron los cambios:</p>
+				<p>1. Se reescribió completamente el evaluador de expresiones para que fuese compatible con entornos Windows y Linux en lenguaje C++ y optimizado.</p>
+				<p>2. Se replanteó completamente la generación de expresiones algebraicas en forma aleatoria:</p>
+				<ul>
+					<li>Se permiten expresiones mucho más largas.</li>
+					<li>Se permiten que las expresiones tengan funciones trigonométricas o matemáticas.</li>
+				</ul>
+				<p>3. Uso de población y aislamiento</p>
+				<ul>
+					<li>Ahora se generan N ecuaciones que compiten entre si en cada ciclo, los mejores engendran hijos con leves cambios (mutaciones) y esos hijos reemplazan a los peores de la generación anterior.</li>
+					<li>El concepto de islas donde da origen a una gran variedad de ecuaciones que se adaptan a un mismo ambiente.</li>
+					<li>Ambiente de entrada y salida con soporte para números flotantes.</li>
+				</ul>
+				<p>4. Mejor administración de resultados</p>
+				<ul>
+					<li>Los resultados ahora se emiten por consola, son mucho mas completos y pueden guardarse en archivos planos para futuros análisis.</li>
+				</ul>
+				<p>5. Mejor marco teórico</p>
+				<ul>
+					<li>El profesor en la Maestría me mostró diversas técnicas que dan como resultado mejores adaptaciones.</li> </ul><p><a href= "../Download/InformePG.zip">Descargue el informe de esta nueva simulación (como se hizo, como funciona).</a></p>
+				<p><a href="../Download/PG.zip">Descargue el código fuente de esta aplicación (compatible con Windows y Linux)</a>&nbsp; (Actualizado el 13 de Junio de 2009)</p>
+			</article>
+		</section>
+	</body>
+</html>

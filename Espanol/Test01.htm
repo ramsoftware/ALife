@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Pruebas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<meta name="description" content="Vida Artificial: Pruebas"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Pruebas</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Durante la construcción de las diferentes simulaciones, se observó que las expresiones simples se acercaban más a la serie esperada (una adaptación más rápida), comparada con la generación de algoritmos en forma aleatoria. Esto fue sorprendente, por lo que se decidió hacer una serie de pruebas con diferentes series de entrada y salida. Para esta prueba, se modificó una simulación (la IV.) para que aceptase valores de entrada y salida.</p>
+				<h2>Metodología de las Pruebas</h2>
+				<p>Se cambiaron los ambientes (valores de salida) en diversas formas:</p>
+				<ol>
+					<li>Serie de salida ascendente;</li>
+					<li>Serie de salida descendente; y,</li>
+					<li>Serie de salida alterna (valor positivo, valor negativo, valor positivo, valor negativo, ..)</li>
+				</ol>
+				<p>Resultados Expresiones Simples</p>
+				<p>1. Serie de salida ascendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,</p>
+				<table border="1">
+					<tr>
+						<th>Prueba</th>
+						<th>Puesto 1</th>
+						<th>Puesto 2</th>
+						<th>Puesto 3</th>
+					</tr>
+					<tr>
+						<td>1 (30000 intentos)</td>
+						<td>39,55234</td>
+						<td>39,55234</td>
+						<td>39,55234</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>41,909496</td>
+						<td>41,909496</td>
+						<td>41,909496</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>41,909496</td>
+						<td>41,909496</td>
+						<td>41,909496</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>55,0</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>42,766647</td>
+						<td>42,766647</td>
+						<td>42,766647</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>42,766644</td>
+						<td>42,766644</td>
+						<td>42,766644</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>54,383324</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>42,76664</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>52,374985</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>42,69556</td>
+						<td>42,69556</td>
+						<td>42,69556</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>40,1125132</td>
+						<td>47,1600183</td>
+						<td>47,1600183</td>
+					</tr>
+				</table>
+				<p>2. Serie de salida descendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,</p>
+				<table>
+					<tr>
+						<th>Prueba</th>
+						<th>Puesto 1</th>
+						<th>Puesto 2</th>
+						<th>Puesto 3</th>
+					</tr>
+					<tr>
+						<td>1 (30000 intentos)</td>
+						<td>41,941315</td>
+						<td>41,941315</td>
+						<td>41,941315</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>42,71286</td>
+						<td>42,993042</td>
+						<td>42,993042</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>55,0</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>41,99689</td>
+						<td>41,99689</td>
+						<td>41,99689</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>71,48251</td>
+						<td>71,48251</td>
+						<td>71,48251</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>62,16886</td>
+						<td>62,16886</td>
+						<td>62,16886</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>55,0</td>
+						<td>55,0</td>
+						<td>55,0</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>46,771816</td>
+						<td>46,771816</td>
+						<td>46,771816</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>93,31336</td>
+						<td>93,31336</td>
+						<td>93,31336</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>43,30601</td>
+						<td>43,30601</td>
+						<td>43,30601</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>55,3693621</td>
+						<td>55,3973803</td>
+						<td>55,3973803</td>
+					</tr>
+				</table>
+				<p>3. Serie de salida alterna</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,</p>
+				<table>
+					<tr>
+						<th>Prueba</th>
+						<th>Puesto 1</th>
+						<th>Puesto 2</th>
+						<th>Puesto 3</th>
+					</tr>
+					<tr>
+						<td>1 (30000 intentos)</td>
+						<td>75.3318</td>
+						<td>75.3318</td>
+						<td>75.3318</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>72.74801</td>
+						<td>72.74801</td>
+						<td>72.74801</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>78.05236</td>
+						<td>78.05236</td>
+						<td>78.05236</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>67.64937</td>
+						<td>67.64937</td>
+						<td>67.64937</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>72.0</td>
+						<td>72.0</td>
+						<td>72.0</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>81.08726</td>
+						<td>81.08726</td>
+						<td>81.08726</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>72.0</td>
+						<td>72.0</td>
+						<td>72.0</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>62.872818</td>
+						<td>62.872818</td>
+						<td>62.872818</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>72.02144</td>
+						<td>72.02144</td>
+						<td>72.02144</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>76.003716</td>
+						<td>76.003716</td>
+						<td>76.003716</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>72.9766774</td>
+						<td>72.9766774</td>
+						<td>72.9766774</td>
+					</tr>
+				</table>
+				<h2>Resultados Algoritmos Aleatorios (Motor 05. Generación Aleatoria y Mutación)</h2>
+				<p>1. Serie de salida ascendente (Longitud Expresión: 2 operandos);</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,<br />  Promedio ( ¿De 0 a N instrucciones? Si ): 88,30986166666...<br /> Promedio ( ¿De 0 a N instrucciones? No ): 104,9827540833333....</p>
+				<p><img src="../Imagen/AscAlg01.gif" alt= "image" /></p>
+				<p><img src="../Imagen/AscAlg02.gif" alt= "image" /></p>
+				<p>2. Serie de salida descendente (Longitud Expresión: 2 operandos);</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,<br />  Promedio ( ¿De 0 a N instrucciones? Si ): 186,6811570833333.....<br /> Promedio ( ¿De 0 a N instrucciones? No ): 210,4241325</p>
+				<p><img src="../Imagen/DesAlg01.gif" alt= "image" /></p>
+				<p><img src="../Imagen/DesAlg02.gif" alt= "image" /></p>
+				<p>3. Serie de salida alterna (Longitud Expresión: 2 operandos)</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,<br /> Promedio ( ¿De 0 a N instrucciones? Si ): 57,47668866666....<br /> Promedio ( ¿De 0 a N instrucciones? No): 47,36754533333.....<br /></p>
+				<p><img src="../Imagen/AltAlg01.gif" alt= "image" /></p>
+				<p><img src="../Imagen/AltAlg02.gif" alt= "image" /></p>
+				<p>&iexcl;Eureka!: Aproximación cero</p>
+				<p>En la siguiente prueba, después de 100.000 intentos, el Motor05 encontró el algoritmo que dada la serie de entrada, daba exactamente la serie de salida requerida (20 instrucciones), otros algoritmos se aproximaron por poco. La investigación esta dando sus frutos.</p>
+				<p><img src="../Imagen/Motor05K.gif" alt= "image" /></p>
+				<p>De <a href="../Download/Motor05K.txt">clic aquí</a> para bajar los algoritmos generados por esta simulación</p>
+				<h2>Conclusiones</h2>
+				<p>Después de estas pruebas, podemos observar que:</p>
+				<ol>
+					<li>Las expresiones simples se aproximan mas a series ascendentes y descendentes. En cambio, en series con salidas alternas, los algoritmos fueron mas precisos.</li>
+					<li>Queda en el aire estas dos preguntas: ¿En series alternas podríamos mejorar el acercamiento de las expresiones simples usando funciones sinusoidales? ¿Los algoritmos generados aleatoriamente requieren mas inteligencia en su generación?.</li>
+					<li>Mas adelante se harán pruebas con otras series ascendentes, descendentes y alternas, los resultados en forma compacta serán publicados más adelante.</li>
+				</ol>
+				<p>Nota: No se esta buscando la aproximación cero, existen procedimientos estadísticos que encontrarían expresiones con una aproximación bastante buena. El objetivo es observar el comportamiento de estas simulaciones y poder cuantificarlo. Por ejemplo, el uso de expresiones simples en unos casos es mejor que el uso de algoritmos, es mas, los algoritmos con pocas instrucciones son mas efectivos que los que poseen muchas. Eso da pistas sobre el modo de operar de la naturaleza: de manera simple, por la vía del menor esfuerzo.</p>
+			</article>
+		</section>
+	</body>
+</html>

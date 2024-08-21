@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Uso de Poblaciones: Pruebas II</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Uso de Poblaciones: Pruebas II"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Uso de Poblaciones: Pruebas II</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En pasadas simulaciones, se observó que las expresiones simples se acercaban más a la serie esperada (una adaptación más rápida), comparada con la generación de algoritmos en forma aleatoria.</p>
+				<p>Esta vez usando poblaciones, funciones y algoritmos se repiten las pruebas. Y los hijos deben ser mejor que los padres.</p>
+				<h2>Metodología de las Pruebas</h2>
+				<p>Las pruebas son:</p>
+				<ol>
+					<li>Serie de salida ascendente;</li>
+					<li>Serie de salida descendente; y,</li>
+					<li>Serie de salida alterna (valor positivo, valor negativo, valor positivo, valor negativo, ..)</li>
+				</ol>
+				<p>1. Serie de salida ascendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,</p>
+				<table>
+					<tr>
+						<th>Prueba</th>
+						<th>Mejor Adaptación</th>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>28,982616</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>19,122801</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>25,789879</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>23,052210</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>22,943380</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>17,193382</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>22,847378</td>
+					</tr>
+				</table>
+				<p>2. Serie de salida descendente;</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,<br />  Serie Salida: 97,89,83,79,73,71,67,61,59,53,47,43,41,37,31,29,23,19,17,13,11,7,5,3,2,</p>
+				<table>
+					<tr>
+						<th>Prueba</th>
+						<th>Adaptación</th>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>625,019165</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>85,293884</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>29,867367</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>199,594864</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>203,310211</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>37,024307</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>196,684966</td>
+					</tr>
+				</table>
+				<p>3. Serie de salida alterna</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,<br /> Serie Salida: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,</p>
+				<table>
+					<tr>
+						<th>Pruebah</th>
+						<th>Adaptación</th>
+					</tr>
+					<tr>
+						<td>1 (200.000 organismos)</td>
+						<td>25,259251</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>10,091278</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>0,000000 (total adaptación)</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>0,000000 (total adaptación)</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>23,029827</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>76,000000</td>
+					</tr>
+					<tr>
+						<td>Promedio</td>
+						<td>22.396726</td>
+					</tr>
+				</table>
+				<h2>Conclusiones</h2>
+				<p>Después de estas pruebas, podemos observar que:</p>
+				<p>1. Hubo una mejora en los resultados con respecto a la prueba anterior con hacer que el hijo fuese mejor que el padre. Sin embargo, la prueba de orden descendente no estuvo tan bien. Los parámetros de la simulación son estáticos y considero que eso afecta el resultado de las simulaciones.</p>
+				<p>2. Por esta razón en la siguiente simulación se buscará que el programa cambie los parámetros de número de instrucciones, probabilidades, etc.. de forma automática. Tardará más buscando la respuesta, pero espero que de mejores resultados.</p>
+			</article>
+		</section>
+	</body>
+</html>

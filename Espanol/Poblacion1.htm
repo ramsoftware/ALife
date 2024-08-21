@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Población y desempeño</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Población y desempeño"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Población y desempeño</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En los capítulos 1 y 2 fue el comienzo de las simulaciones en las cuales dada una entrada y una salida se buscaba la ecuación o el algoritmo que se acercara a esas condiciones de entrada y salida. Para tal fin, al inicio se hacia generación completamente al azar, luego la mejor ecuación o el mejor algoritmo empezaba a "tener hijos" con una pequeña diferencia con respecto al padre (a esto se le llamó mutación), algún hijo lo hacía mejor que el padre, entonces pasaba a ocupar el primer lugar desechando el antepasado. Aquí se detecta un problema y es conocido en el medio como caer en un "mínimo local" o "máximo local" y significa que se encontró un punto en donde hay una buena aproximación pero sin importar cuanto se mute no hay mucho progreso, en cambio, puede nacer otra ecuación o algoritmo radicalmente distinto al campeón local que al principio falla, pero a medida que muta va volviéndose mejor que el campeón local hasta llegar a lo que buscamos. En los capítulos 1 y 2 el campeón local le cierra las oportunidades a las prometedoras ecuaciones o algoritmos porque siempre es temporalmente mejor que las potenciales.</p>
+				<p>Por esa razón nace el concepto de Población, ahora pueden habitar N organismos donde cada uno se multiplica y los hijos "conviven" con los padres, ya no hay un campeón local sino varios distintos organismos compitiendo. El objetivo es dada la diversidad se encuentra el mejor organismo.</p>
+				<p>En cuanto al desempeño, han habido unos muy interesantes cambios que harán el código mas sencillo y mucho mas rápido.</p>
+				<p>Los organismos serán ecuaciones con la siguiente estructura:</p>
+				<table>
+					<tr>
+						<td>Identificación del Organismo</td>
+					</tr>
+					<tr>
+						<td>Instrucción 1</td>
+					</tr>
+					<tr>
+						<td>Instrucción 2</td>
+					</tr>
+					<tr>
+						<td>.</td>
+					</tr>
+					<tr>
+						<td>.</td>
+					</tr>
+					<tr>
+						<td>Instrucción N</td>
+					</tr>
+					<tr>
+						<td>Memoria</td>
+					</tr>
+					<tr>
+						<td>Memoria</td>
+					</tr>
+					<tr>
+						<td>Memoria</td>
+					</tr>
+				</table>
+				<p>Cada instrucción tiene la siguiente estructura:</p>
+				<table>
+					<tr>
+						<td>Tipo Instrucción</td>
+						<td>Variable A</td>
+						<td>Variable B</td>
+						<td>Variable C</td>
+					</tr>
+				</table>
+				<p>El tipo de instrucción puede ser suma, resta, multiplicación, división, módulo, asignar, .... hasta 256 distintas.<br /> Variable A,B,C marcan posiciones de memoria donde se guardan los valores... hay hasta 256 posiciones de memoria distintas.</p>
+				<p>Un ejemplo: Representar C=A+B<br /> La instrucción es suma, se suma lo que tiene A y B a C, eso sería así</p>
+				<table>
+					<tr>
+						<td>Sumar</td>
+						<td>Variable C</td>
+						<td>Variable A</td>
+						<td>Variable B</td>
+					</tr>
+					<tr>
+						<td>Sumar</td>
+						<td>[56]</td>
+						<td>[31]</td>
+						<td>[89]</td>
+					</tr>
+				</table>
+				<p>Simplemente, voy a la posición [31] de la memoria y traigo el dato, por ejemplo 7.6, luego voy a la posición [89] de la memoria y traigo el dato, por ejemplo 5.8, ahora sumo esos dos números 7.6+5.8=13.4 y ese valor 13.4 lo guardo en la posición [56] de la memoria. Hay hasta 256 posiciones de memoria distintas.</p>
+				<p>Los límites, entonces, de esta estructura son:</p>
+				<table>
+					<tr>
+						<td>Hasta 256 tipos de instrucciones</td>
+						<td>Hasta 256 posiciones de memoria</td>
+						<td>Hasta 256 posiciones de memoria</td>
+						<td>Hasta 256 posiciones de memoria</td>
+					</tr>
+				</table>
+				<p>Obsérvese que son los límites de un byte que puede tener 256 valores distintos (recordar que un byte es igual a ocho bits).</p>
+				<table>
+					<tr>
+						<td>byte</td>
+						<td>byte</td>
+						<td>byte</td>
+						<td>byte</td>
+					</tr>
+				</table>
+				<p>¿Si se unen 4 bytes que se obtiene? Respuesta: Un entero de 32 bits</p>
+				<p>Es mucho mas rápido manejar enteros y mas rápido manejar sus bytes y bits que cualquier otra estructura. Esta aproximación simple y flexible dará a simulaciones mucho más rápidas que las encontradas en los capítulos 1 y 2 y con menos consumo de recursos.</p>
+				<p>Para extraer los cuatro bytes de un entero se usa esto:</p>
+				<p>int iNumero = 1705498053;<br /> int iByte0 = ((iNumero &gt;&gt; 24) &amp; 0xFF);<br /> int iByte1 = ((iNumero &gt;&gt; 16) &amp; 0xFF);<br /> int iByte2 = ((iNumero &gt;&gt; 8) &amp; 0xFF);<br /> int iByte3 = (iNumero &amp; 0xFF);</p>
+				<p>Y dado los bytes para convertirlo a entero es tan simple como:</p>
+				<p>iNumero = (iByte0&lt;&lt;24) + (iByte1&lt;&lt;16) + (iByte2&lt;&lt;8) + iByte3</p>
+				<h2>Los tipos de instrucciones</h2>
+				<p>Se pueden hacer hasta 256 tipos distintos de instrucciones.</p>
+				<table>
+					<tr>
+						<th>Operación</th>
+						<th>Código instrucción, posiciones de memoria usadas</th>
+					</tr>
+					<tr>
+						<td>Suma C=A+B</td>
+						<td>1,[],[],[]</td>
+					</tr>
+					<tr>
+						<td>Resta C=A-B</td>
+						<td>2,[],[],[]</td>
+					</tr>
+					<tr>
+						<td>Multiplica C=A*B</td>
+						<td>3,[],[],[]</td>
+					</tr>
+					<tr>
+						<td>Divide C=A/B</td>
+						<td>4,[],[],[]</td>
+					</tr>
+					<tr>
+						<td>Módulo C=A%B</td>
+						<td>5,[],[],[]</td>
+					</tr>
+					<tr>
+						<td>Asigna C=A</td>
+						<td>6,[],[]</td>
+					</tr>
+					<tr>
+						<td>IF A==B GOTO instrucción</td>
+						<td>7,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>IF A&gt;=B GOTO instrucción</td>
+						<td>8,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>IF A&gt;B GOTO instrucción</td>
+						<td>9,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>IF A&lt;B GOTO instrucción</td>
+						<td>10,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>IF A&lt;=B GOTO instrucción</td>
+						<td>11,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>IF A&lt;&gt;B GOTO instrucción</td>
+						<td>12,[],[], GOTO []</td>
+					</tr>
+					<tr>
+						<td>GOTO instrucción</td>
+						<td>13,GOTO []</td>
+					</tr>
+				</table>
+				<p>Habrán nuevas instrucciones dependiendo de las necesidades encontradas.</p>
+				<h2>Como se simula una Población</h2>
+				<p>El algoritmo que tengo planeado para simular el comportamiento de una población es el siguiente:</p>
+				<p>1. Dado un arreglo unidimensional de N posiciones.<br /> 2. En cada posición de ese arreglo "vivirá" un organismo.<br /> 3. Se escoge una posición del arreglo unidimensional al azar.<br /> 4. Si esa posición estaba vacía entonces se genera un organismo al azar y se guarda así.<br /> 5. Si esa posición estaba ya ocupada por un organismo entonces se toma este, se reproduce, se muta y se busca una posición al azar en el arreglo para que el "hijo" viva. Si esa nueva posición estaba vacía entonces se almacena el hijo, si estaba ocupada entonces se compara frente a la "selección artificial" el "hijo" vs "el huésped original" cual es el mejor. Solo el mejor ocupará esa posición.</p>
+			</article>
+		</section>
+	</body>
+</html>
