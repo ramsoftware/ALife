@@ -1,0 +1,230 @@
+EUREKA!: Aproximación cero en 20 instrucciones
+Motor 05
+
+Serie de Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,
+Srie de Salida esperada: 1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,
+Maximo Ciclos de CPU: 130
+Intentos: 100.000
+Generar de 0 a N instruciiones: verdadero
+
+5 Instrucciones: 72.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( X = 8+4+Y ) goto 0;
+2: Y = X/X*X;
+return Y;
+}
+
+10 Instrucciones: 55.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( X < 7+(Z) ) goto 7;
+2: Z = Z+3-Z;
+3: Y = 4-9-Z;
+4: Z = 1+8*X;
+5: if( Y = (4-X) ) goto 0;
+6: Y = 6-7-Y;
+7: if( X = 3+(Y) ) goto 6;
+8: Z = 1/1-Z;
+9: if( Z > W+(W) ) goto 0;
+10: if( X > Z-4-Z ) goto 8;
+return Y;
+}
+
+15 Instrucciones: 60.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: W = Z-8-Z;
+2: Y = X-X-X;
+3: if( W = (4-X) ) goto 0;
+4: Y = ((X));
+5: X = 2+X/X;
+return Y;
+}
+
+20 Instrucciones: 0.0  <====== EUREKA!!!!!! ======
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( Z = (8-X) ) goto 3;
+2: if( Y ! (6-X) ) goto 8;
+3: W = 3-8+X;
+4: if( Y < 9-W-W ) goto 7;
+5: if( W < 2+6-X ) goto 3;
+6: if( W < 1+6-W ) goto 12;
+7: X = X-X-X;
+8: if( W = 9+1-X ) goto 12;
+9: if( Y = 2-(X) ) goto 5;
+10: Y = X+1-X;
+11: if( Z = 8-X-X ) goto 4;
+12: Z = Y+Y*Y;
+13: if( X = 3+7+Z ) goto 3;
+14: if( Y > 6-Z+Z ) goto 13;
+15: Y = X/X*X;
+return Y;
+}
+
+25 Instrucciones: 64.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( Z = 9+3-X ) goto 0;
+2: if( Z = 8*1-X ) goto 0;
+3: Y = X*X/X;
+return Y;
+}
+
+30 Instrucciones: 4.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( X ! 9+1-Z ) goto 5;
+2: Z = 2-(W);
+3: Y = X-X-X;
+4: W = (X/X);
+5: Z = (6-Z);
+6: if( Z = 1+1+X ) goto 12;
+7: if( Y < X-5-X ) goto 0;
+8: if( X = (8-Z) ) goto 2;
+9: if( X = (6+Z) ) goto 2;
+10: if( X = Z/Z*Z ) goto 2;
+11: Y = 2*X-X;
+12: if( X < 1-1-Z ) goto 0;
+13: if( Y = 8-Z+Z ) goto 3;
+return Y;
+}
+
+35 Instrucciones: 0.45833302
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: Z = (1-Y);
+2: Y = X-X-X;
+3: if( X = 8-Z-Z ) goto 0;
+4: if( Z < 5-5+X ) goto 1;
+5: if( X = 4+W+W ) goto 14;
+6: Y = 4-3/W;
+7: if( X = 8+2-W ) goto 11;
+8: if( W ! 2-X*X ) goto 16;
+9: if( X < 4+9-W ) goto 16;
+10: X = 1/X+X;
+11: Y = 8-6+W;
+12: W = 1-Z+Z;
+13: if( X = W-7*W ) goto 13;
+14: if( Y < (Y+Y) ) goto 1;
+15: X = 1/X-X;
+16: if( X = 3+9-Y ) goto 13;
+17: if( X = Y+8-Y ) goto 15;
+18: if( X = X+2-X ) goto 10;
+19: Y = ((X));
+return Y;
+}
+
+40 Instrucciones: 66.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( Z = 3+7-X ) goto 4;
+2: if( X = 5+3-Y ) goto 0;
+3: Y = X-X+X;
+4: if( W < W*W*W ) goto 4;
+5: W = 5*3-W;
+return Y;
+}
+
+45 Instrucciones: 4.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: Y = (1-Y);
+2: if( W = 8-X-X ) goto 9;
+3: if( W = 3+7-X ) goto 9;
+4: if( X ! 4*2-W ) goto 6;
+5: if( X < 7+2-Z ) goto 9;
+6: if( Y = (7-X) ) goto 13;
+7: if( X = 9+3*Y ) goto 13;
+8: X = 8-8-X;
+9: Y = X-X-X;
+10: if( Y ! 2*8/W ) goto 0;
+11: Y = 1-Z+Z;
+12: W = 5-9-Y;
+13: Y = 6-(W);
+14: if( X ! 8*X-X ) goto 9;
+return Y;
+}
+
+50 Instrucciones: 44.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: Z = 6+2-W;
+2: Y = X-X-X;
+3: if( X = 4/1+Z ) goto 11;
+4: if( Z = X+X-X ) goto 11;
+5: if( Y < Z*Z-Z ) goto 9;
+6: Y = (2*X);
+7: W = 6+9-Z;
+8: if( Z ! 2+5*X ) goto 2;
+9: Y = X+X-X;
+10: if( X > X+1/X ) goto 5;
+11: if( W = 6+1*W ) goto 11;
+12: if( W = 4/5-W ) goto 8;
+return Y;
+}
+
+55 Instrucciones: 64.0
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( Y ! 6/1/X ) goto 7;
+2: if( Z = 4+Z-Z ) goto 1;
+3: if( W > 4-Z-Z ) goto 5;
+4: if( Y < (4-Z) ) goto 5;
+5: if( Y = 7-Z-Z ) goto 7;
+6: if( Y < 4-X/X ) goto 5;
+7: Y = X-2*X;
+8: if( Z = 2*5-X ) goto 0;
+9: Y = X+X-X;
+return Y;
+}
+
+60 Instrucciones: 13.7
+float fSerVivo(float X)
+{
+float W=0, Y=0, Z=0;
+
+1: if( Z < 6-(X) ) goto 11;
+2: if( Z > 8+4-X ) goto 11;
+3: if( X > X+9*X ) goto 16;
+4: Z = 2*1-W;
+5: W = 9-(X);
+6: if( X = 7+Y*Y ) goto 16;
+7: if( W ! Z-Z-Z ) goto 12;
+8: W = 6-Y/Y;
+9: X = (2-W);
+10: if( W ! 5/4-X ) goto 2;
+11: X = 1/2-X;
+12: Z = 1*X-X;
+13: Y = 1/5-X;
+14: if( Z = 5+4-X ) goto 6;
+15: if( W ! (7)-Z ) goto 0;
+16: Y = (4+W);
+17: if( Z ! Z*3*Z ) goto 11;
+return Y;
+}
+
+
