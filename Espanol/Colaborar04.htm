@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 4.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 4. Primeras comparativas</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p>Se comparan los dos algoritmos genéticos:<p>
+				<p>1. <a href="Colaborar01.htm">El tradicional</a> que genera una población de individuos y empiezan a competir entre sí.</p> 
+				<p>2. <a href="Colaborar02.htm">El mejorado</a> que genera los individuos, ajusta uno a uno con respecto a los datos y luego de ese proceso empiezan a competir entre sí.</p>
+				<p>Se reescribieron los algoritmos para que usaran la misma cantidad de tiempo y así comparar cuál es más eficiente.</p>
+				<p>Por ahora se compara generando una sola ecuación que cubra todo el conjunto de datos.</p>
+			</article><br>
+			
+			<article>
+				<h3>Código fuente</h3>
+				<p><a href="../Download/colaborar04.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h3>Resultados</h3>
+				<p>Se hicieron 50 pruebas. Cada prueba genera un conjunto de datos de 200 registros (nacidos de una ecuación creada en forma aleatoria). En cada prueba, cada algoritmo tuvo 10 segundos para operar.</p>
+				<p>Cada valor de la tabla es la mejor aproximación que tuvo el mejor individuo en la población al conjunto de datos. Entre más cercano a cero es mejor.</p>
+				<table border="1">
+					<tr><th>Algoritmo genético tradicional</th><th>Algoritmo genético mejorando primero los individuos</th></tr>
+					<tr><td>	0,112356809	</td><td>	0,113902201	</td></tr>
+					<tr><td>	0,004018192	</td><td>	0,003988888	</td></tr>
+					<tr><td>	0,171860404	</td><td>	0,224462477	</td></tr>
+					<tr><td>	0,749216092	</td><td>	0,755401885	</td></tr>
+					<tr><td>	0,224678296	</td><td>	0,168578357	</td></tr>
+					<tr><td>	10,44519713	</td><td>	10,4470579	</td></tr>
+					<tr><td>	0,071480332	</td><td>	0,071982642	</td></tr>
+					<tr><td>	0,003683789	</td><td>	0,00624047	</td></tr>
+					<tr><td>	0,092466522	</td><td>	0,07055508	</td></tr>
+					<tr><td>	11,80712958	</td><td>	0,005320647	</td></tr>
+					<tr><td>	0,00668634	</td><td>	0,006467529	</td></tr>
+					<tr><td>	0,628305931	</td><td>	0,62365621	</td></tr>
+					<tr><td>	4,907378425	</td><td>	4,9062972	</td></tr>
+					<tr><td>	0,089978938	</td><td>	0,091673322	</td></tr>
+					<tr><td>	0,006413992	</td><td>	0,007768863	</td></tr>
+					<tr><td>	0,017892188	</td><td>	0,006408427	</td></tr>
+					<tr><td>	0,004842247	</td><td>	0,0048075	</td></tr>
+					<tr><td>	0,030858523	</td><td>	0,035970852	</td></tr>
+					<tr><td>	0,011459774	</td><td>	0,01409065	</td></tr>
+					<tr><td>	0,070830362	</td><td>	0,070574882	</td></tr>
+					<tr><td>	0,037896507	</td><td>	0,046917114	</td></tr>
+					<tr><td>	0,07318647	</td><td>	0,073699098	</td></tr>
+					<tr><td>	0,08807556	</td><td>	0,07562125	</td></tr>
+					<tr><td>	0,611387059	</td><td>	0,625284445	</td></tr>
+					<tr><td>	0,727130058	</td><td>	0,736545066	</td></tr>
+					<tr><td>	0,070725103	</td><td>	0,092011958	</td></tr>
+					<tr><td>	0,079420479	</td><td>	0,082313096	</td></tr>
+					<tr><td>	0,076809273	</td><td>	0,112705632	</td></tr>
+					<tr><td>	0,097651101	</td><td>	0,098873957	</td></tr>
+					<tr><td>	0,068472975	</td><td>	0,071703906	</td></tr>
+					<tr><td>	0,00584686	</td><td>	0,008210509	</td></tr>
+					<tr><td>	0,008111813	</td><td>	0,012003597	</td></tr>
+					<tr><td>	0,08822281	</td><td>	0,086124614	</td></tr>
+					<tr><td>	0,754598671	</td><td>	0,785475144	</td></tr>
+					<tr><td>	0,073492494	</td><td>	0,079136698	</td></tr>
+					<tr><td>	0,070039735	</td><td>	0,06810102	</td></tr>
+					<tr><td>	0,276771409	</td><td>	0,202307862	</td></tr>
+					<tr><td>	0,068467952	</td><td>	0,068627372	</td></tr>
+					<tr><td>	0,072400406	</td><td>	0,072089332	</td></tr>
+					<tr><td>	0,003397804	</td><td>	0,004779138	</td></tr>
+					<tr><td>	0,96466488	</td><td>	0,965404871	</td></tr>
+					<tr><td>	10,17623817	</td><td>	0,005678782	</td></tr>
+					<tr><td>	3,233479927	</td><td>	3,23411386	</td></tr>
+					<tr><td>	0,072026287	</td><td>	0,011091365	</td></tr>
+					<tr><td>	0,078384772	</td><td>	0,071856379	</td></tr>
+					<tr><td>	0,079766651	</td><td>	0,04742713	</td></tr>
+					<tr><td>	0,846828439	</td><td>	0,849463372	</td></tr>
+					<tr><td>	0,071423251	</td><td>	0,0905593	</td></tr>
+					<tr><td>	0,072049845	</td><td>	0,073752141	</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora004.jpg"></img><br>
+				<h3>Conclusiones</h3>
+				<p>Hacer que primero los individuos mejoren frente al conjunto de datos fue consistentemente mejor que el algoritmo tradicional</p>
+			</article>
+	
+		</section>
+	</body>
+</html>

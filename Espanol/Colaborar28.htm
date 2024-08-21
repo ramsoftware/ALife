@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+	<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <title>Colaboración entre individuos. Programa 28.</title>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<header>
+				<p><a href="../index.html">Ir a Inicio</a></p>
+				<h1>Colaboración entre individuos</h1>
+				<h2>Programa 28. Sumas de enteros</h2>
+			</header>
+			<p>Dada una serie de datos (X, Y) donde X no se repite, se busca la expresión Y = F(X) que genere esa serie de datos.</p>
+			<p>El algoritmo es el siguiente:</p>
+			<p>1. Generar una ecuación al azar del tipo Y=a*SENO(b*X+c) + d*SENO(e*X+f) + ...... + p*SENO(q*X+r). Dónde a, b, c, d, e, f, ....p, q, r son valores aleatorios.</p>
+			<p>2. Con esa ecuación dar origen a N valores (X, Y). X no debe repetirse.</p>
+			<p><img src="../Imagen/colaborar28a.jpg"></img></p>
+			<p>3. Normalizar los valores (X, Y). Multiplicarlos luego por 1000 y truncar para que sean enteros, finalmente restarle 500 (para que queden valores positivos y negativos). Ese será los datos a buscarle un patrón. Se eliminan los valores X, Y donde X esté repetido.</p>
+			<p><img src="../Imagen/colaborar28b.jpg"></img></p>
+			<p><img src="../Imagen/colaborar28c.jpg"></img></p>
+			<p>4. Generar un arreglo bidimensional de M columnas * N filas (la N del punto 2).</p>
+			<p>5. Cada columna de ese arreglo bidimensional representa una ecuación del tipo Y = s*COSENO(t*X+u). Dónde s, t, u son valores aleatorios. Con esa ecuación, se llenan las N filas donde la parte de X debe ser el mismo que usado en el punto 2. Cada valor se multiplica por 100 y se trunca para que sean enteros.</p>
+			<p><img src="../Imagen/colaborar28g.jpg"></img></p>
+			<p>6. Un individuo es un arreglo unidimensional, donde cada casilla es un valor aleatorio entre 0 y M (la M del punto 4). Por ejemplo: 7, 2, 8, 1, 3, 0, 2, 4, 0, 3</p>
+			<p>7. Cada valor del arreglo unidimensional del individuo representa una columna del arreglo bidimensional.</p>
+			<p>8. Se procede a sumar cada columna que señala el individuo. Siguiendo el ejemplo anterior, habría que sumar los valores de cada fila de las columnas 7, 2, 8, 1, 3, 0, 2, 4, 0, 3</p>
+			<p><img src="../Imagen/colaborar28h.jpg"></img></p>
+			<p>9. Se compara el resultado (diferencia absoluta) de cada suma con cada dato Y del ambiente. Se acumulan esas diferencias.</p>
+			<p>10. Se cambia en forma aleatoria algún valor del arreglo unidimensional del individuo, repite los puntos 8 en adelante. Si el acumulado es menor se mantiene el cambio, en caso contrario se retorna al valor anterior del arreglo bidimensional.</p>
+			<p>11. Después de ejecutar por lo menos decena de miles de veces los puntos 8 a 10, se habrá obtenido un individuo (arreglo unidimensional) cercano al ambiente. Aquí una serie de ejemplos donde se generan ambientes (línea azul) y luego se muestra el mejor individuo (línea naranja):</p>
+			<p><img src="../Imagen/colaborar28d.jpg"></img></p>
+			<p><img src="../Imagen/colaborar28e.jpg"></img></p>
+			<p><img src="../Imagen/colaborar28f.jpg"></img></p>
+			<p>Conclusiones:</p>
+			<p>Este algoritmo ha mostrado un buen ajuste y una buena velocidad. Faltaría optimizarlo y probarlo con datos reales de tipo cíclico.</p>
+			<p>¿Y la colaboración? Como el individuo es una serie de sumas (y el orden de los sumandos no altera el resultado), abre las puertas a poder usar el operador cruce entre dos o más individuos, aumentando la variedad.</p>
+			<p>Descargue el programa en C# <a href="../Download/colaborar28.zip">dando clic aquí.</a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

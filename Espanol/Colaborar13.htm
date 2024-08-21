@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 13.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 13. Mejora en el algoritmo evolutivo y aplicación gráfica</h2>
+		</header>
+		<section>
+			<p>En el <a href="colaborar12.htm">anterior programa</a> se desarrolló un software gráfico que compara un algoritmo evolutivo contra una red neuronal (perceptrón multicapa). A partir de allí hubo varios cambios:<p>
+			<p>1. Se mejora el algoritmo evolutivo, en vez de una larga ecuación polinómica dentro de la operación trigonométrica seno, ahora es la sumatoria de varias operaciones trigonométricas seno y su posterior normalización. Además se retira el concepto de competencia y ahora es un conjunto de individuos que van mejorando su ajuste poco a poco.</p>
+			<p>2. Se mejora la interfaz gráfica, haciéndola más sencilla de entender y controlar.</p>
+			<p>3. Si se maximiza la ventana, el gráfico estadístico también se maximiza.</p>
+			<p>Modo de operación:</p>
+			<p>1. El botón "Generar dataset" lo que hace es generar una serie de datos de entrenamiento y una serie de datos de validación. Esos datos nacen de una función generada al azar.</p>
+			<p>2. El botón de "Procesar" lanza un hilo de ejecución que ejecuta la red neuronal y el algoritmo evolutivo. Una vez lanzado, es dejar pasar el tiempo, el programa va mostrando los ciclos. Entre más tiempo se deje ejecutar el programa mejor.</p>
+			<p>3. El botón "Detener" lo que hace es finalizar el proceso inmediatamente.</p>
+			<p>Una vez se detiene el proceso, se muestra por pantalla las curvas obtenidas por ambos procedimientos. Se muestra la mejor red neuronal que se ajuste a los datos de validación, sucede lo mismo con el algoritmo evolutivo.<p>
+			<img src="../Imagen/Colaborar13a.png">
+			<p>En la segunda lengüeta se muestra el dataset y cuánto sería el valor deducido por ambos procedimientos.</p>
+			<img src="../Imagen/Colaborar13b.png">
+			<p>En la tercera lengüeta se muestra como se configura el procedimiento</p>
+			<img src="../Imagen/Colaborar13c.png">
+			<p>Generador de datos: es la ecuación que se genera al azar y que genera el dataset. Esa ecuación es del tipo Y=F(X). Por tal motivo se pregunta el valor de X mínimo, el valor de X máximo y el número de registros a generar. A continuación, el programa genera la ecuación al azar, de allí genera los datos tanto de entrenamiento como de validación. El programa después de generar los datos, los normaliza para que estén tanto X como Y entre 0 y 1.<p>
+			<p>Algoritmo evolutivo: ¿Cuántos individuos se generan?</p>
+			<p>Redes neuronales: ¿Cuántas redes se van a crear? ¿Cuántas neuronas tendrá la primera capa oculta y la segunda capa oculta?</p>
+			<p><a href="../Download/colaborar13.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			<p>Las primeras pruebas, muestran que la red neuronal logra un mejor ajuste al dataset considerando la validación, pero el algoritmo evolutivo ha mejorado bastante el ajuste también.</p>
+			<img src="../Imagen/Colaborar13d.png">
+			<p><b>Conclusiones:</b></p>
+			<p>Este nuevo programa ha generado una bifurcación en el desarrollo de esta investigación sobre colaboración. En una rama se seguirá desarrollando como herramienta de análisis de datos tanto el algoritmo evolutivo como la red neuronal (para una investigación que sigo en la universidad). La segunda rama, propiamente de vida artificial, se enfocará en el algoritmo evolutivo (se abandona la red neuronal) y los comportamientos cíclicos de los ambientes, algo que no estaba contemplado previamente.</p>
+		</section>
+	</body>
+</html>

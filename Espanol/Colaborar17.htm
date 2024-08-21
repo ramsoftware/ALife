@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 17.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 17. Ondas y animación</h2>
+		</header>
+		<section>
+			<p>La vida existe en un entorno donde el tiempo es una dimensión que se debe tener siempre en consideración. No más ambientes (o datos) estáticos. Se debe considerar que los ambientes periódicos cambian con el tiempo.<p>
+			<p>El siguiente programa en <a href="AmbienteTiempo.js">JavaScript</a> muestra como un ambiente periódico compuesto de tres ondas más simples cambia con el tiempo.</p>
+			<p>Pruebe a refrescar la pantalla para ver otro patrón de ondas.</p>
+		</section>
+		<section>
+		<canvas id="Canvas" width="900" height="500"></canvas>
+		<script src="./c17/AmbienteTiempo.js"></script>
+		<script>
+		var Canvas = document.getElementById('Canvas');
+		var Lienzo = Canvas.getContext('2d');
+		Ambiente = new AmbienteTiempo(Canvas, Lienzo);
+		Animacion();
+
+		function Animacion(){
+			Ambiente.Logica(); //Lógica de la animación
+			Ambiente.Dibujar(); //Visual de la animación
+			requestAnimationFrame(Animacion);
+		}
+		</script>
+		<p>Las siguientes simulaciones, trabajarán con ambientes periódicos que cambian con el tiempo. Serán individuos que se adaptan a estos cambios.</p>
+		</section>
+	</body>
+</html>

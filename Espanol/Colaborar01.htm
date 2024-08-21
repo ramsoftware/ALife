@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 1.</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p>Parte de un concepto simple: Se tiene un conjunto de datos tipo X, Y. El objetivo es hallar la curva Y=F(X)o curvas (Y=F(X), G=F(X), y así sucesivamente) que mejor se ajusten a ese conjunto de datos.</p>
+				<p>Estos son los pasos:</p>
+				<p>1.	Generar una sola curva Y = F(X) que mejor ajuste a todo el conjunto de datos.</p>
+				<p>2.	Generar una curva Y = F(X) que ajuste a la primera mitad del conjunto datos y luego generar una segunda curva Y = G(X) que ajuste a la segunda mitad.</p>
+				<p>3.	Generar una curva Y = F(X) que ajuste al primer tercio del conjunto datos, luego generar una segunda curva Y = G(X) que ajuste al segundo tercio y una última curva Y=H(X) que ajuste al tercio final.</p>
+				<p>4.	Y así sucesivamente</p>
+				<p>Se va a utilizar una curva de este estilo:</p>
+				<p>Y = (Seno(a*(1-X)^4 + b*(1-X)^3 + c*(1-X)^2 + d*(1-X) + e + f*X + g*X^2 + h*X^3 + i*X^4) + 1)/2</p>
+				<p>Los valores de Y están comprendidos entre 0 y 1, eso significa que el conjunto de datos debe estar normalizado entre 0 y 1.</p>
+				<p>En el algoritmo genético, como se trabaja con una población, cada individuo de la población es una ecuación de ese estilo, pero con distintos valores a, b, c, d, e, f, g, h, i. El objetivo es hallar el individuo que se ajuste mejor a los datos (saber que valores o coeficientes a,b,c,d,e,f,g,h,i permiten el mejor ajuste).</p>
+				<p>¿Por qué esa curva de ese estilo? Porque en la naturaleza no hay valores de crecimiento infinito Y, se llega a un tope (por leyes físicas) y comenzaría a disminuir, y podría aumentar de nuevo para luego volver a disminuir, es decir, un comportamiento cíclico, que se representa con una función sinusoidal. También Y podría a tender a cero y esa función puede mostrar ese comportamiento.</p>
+				<p>¿Podría ser otro tipo de ecuación? Por supuesto, podría usarse coseno o cualquier otra función (recomendado tener en cuenta el comportamiento cíclico) y tener más coeficientes. Cabe recordar que una función muy compleja o con una gran cantidad de coeficientes puede hacer más lento evaluarla, pero muy pocos coeficientes generan muy poca variedad.</p>
+				<p>El algoritmo genético trabaja así: </p>
+				<p>Paso 1: Dada una serie de valores (X, Y) donde X es la variable independiente y Y la variable dependiente se usará un algoritmo evolutivo para determinar cuál expresión matemática de tipo Y=F(X) logra ajustarse a esos datos.</p>
+				<p>Paso 2: Los individuos son  del tipo: Y = (Math.Sin(a*(1-x)^4 + b*(1-x)^3 + c*(1-x)^2 + d*(1-x) + e + f*x + g*x^2 + h*x^3 + i*x^4) + 1)/2</p>
+				<p>Paso 3: La población se compone de N individuos generados al azar</p>
+				<p>Paso 4: El proceso evolutivo es:<br>
+					a. Seleccionar dos individuos al azar<br>
+					b. Evaluar cada individuo escogido que tanto ajusta con la salida esperada<br>
+					c. El individuo con mejor ajuste sobrescribe al de menor ajuste<br>
+					d. El nuevo individuo (copia del mejor) se modifica al azar<br>
+				<p>Paso 5: El proceso evolutivo se repite N veces</p>
+				<p>Paso 6: Se escanea toda la población por el mejor individuo (mejor ajuste)</p>
+				<p>Paso 7: El mejor individuo muestra sus valores de salida dado los valores de entrada</p>
+			</article><br>
+			
+			<article>
+				<h3>Código fuente</h3>
+				<p><a href="../Download/colaborar01.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h3>Resultado de una prueba de ejemplo</h3>
+				<p>Se genera un conjunto de datos de 2000 registros (X, Y) y se ejecuta el algoritmo genético para hallar una sola curva que cubra todo el conjunto de datos, luego con dos individuos (primera mitad y segunda mitad), luego con tres individuos (primer tercio, segundo tercio y último tercio) y así sucesivamente:</p>
+				<p>Este es el gráfico obtenido. Valor menor significa mejor ajuste.</p>
+				<p>Número de individuos por población: 200</p>
+				<p>Número de ciclos a evaluar: 10000</p>
+				<table border="2">
+					<tr><th>Número de individuos(curvas) que cubren los datos</th><th>Aproximación (menor es mejor)</th></tr>
+					<tr><td>1</td><td>9,72667259630838</td></tr>
+					<tr><td>2</td><td>1,12793365536098</td></tr>
+					<tr><td>3</td><td>0,0937628784160977</td></tr>
+					<tr><td>4</td><td>0,914439257015682</td></tr>
+					<tr><td>5</td><td>0,126971590478581</td></tr>
+					<tr><td>6</td><td>0,133483004063954</td></tr>
+					<tr><td>7</td><td>0,42821748238329</td></tr>
+					<tr><td>8</td><td>0,144078634205807</td></tr>
+					<tr><td>9</td><td>0,0570441846308953</td></tr>
+					<tr><td>10</td><td>0,0462012255833265</td></tr>
+				</table></br>
+				<img src="../Imagen/Colabora001.jpg"></img>	
+			</article>
+	
+		</section>
+	</body>
+</html>

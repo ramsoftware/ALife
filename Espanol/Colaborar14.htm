@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 14.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 14. Replanteamiento del generador de datos = ambientes.</h2>
+		</header>
+		<section>
+			<p>En las anteriores simulaciones, se hizo uso de un generador de datos para poder hacer las pruebas con las redes neuronales y los algoritmos evolutivos. Ese generador nace de una ecuación generada al azar. ¿Por qué? Nuestro mundo macroscópico no es aleatorio, el subatómico sí. Luego todo dato de nuestro mundo nace de una ecuación o conjunto de estas.<p>
+			<p>El lío que me hice fue generar cualquier tipo de ecuación obviando la termodinámica. Una ecuación de tipo polinomial tiende a infinito o menos infinito en sus extremos, y esto, por supuesto, no se da en el mundo real, porque significaría que un elemento crece su energía infinitamente y eso es falso. Los ambientes no pueden tener crecimiento infinito. Lo que sí de verdad se da en los ambientes, es que estos son cíclicos. Cabe recordar que estoy trabajando en vida artificial, no en análisis de datos, y la vida habita en ambientes.</p>
+			<p>Entonces se replantea la ecuación o ecuaciones que generan ambientes a ser periódicas o cíclicas. Y estas deben ser sinusoidales del tipo:</p>
+			<img src="../Imagen/Colaborar14a.png">
+			<p>X debe estar en potencia de 1, no debe ser polinomio de grado dos o superior. Un ambiente más complejo y cíclico también sería:</p>
+			<img src="../Imagen/Colaborar14b.png">
+			<p>Ejemplos en WolframAlpha.com</p>
+			<p><a href="https://www.wolframalpha.com/input?i=Y%3D2*sin%283*X%2B4%29%2B5*sin%286*X%2B7%29&lang=es">Ejemplo 1</a></p>
+			<p><a href="https://www.wolframalpha.com/input?i=Y%3D1.2*sin%282.3*X%2B3.4%29%2B0.5*sin%281.6*X%2B0.7%29&lang=es">Ejemplo 2</a></p>
+			<p>Nótese la detección de periodicidad.</p>
+			<h3>Los cambios en la ecuación</h3>
+			<p>Si el ambiente se expresa de esta forma:</p>
+			<img src="../Imagen/Colaborar14a.png">
+			<p>Así cambia cuando a = 1, b = 1 y c = 0</p>
+			<img src="../Imagen/Colaborar14c.png">
+			<p>Y luego a = 5, b = 1 y c = 0</p>
+			<img src="../Imagen/Colaborar14d.png">
+			<p>Lo que hace es cambiar la altura de la onda.</p>
+			<p>Ahora se cambia, de esta forma, a = 1, b = 2, c = 0</p>
+			<img src="../Imagen/Colaborar14e.png">
+			<p>Luego a = 1, b = 5, c = 0</p>
+			<img src="../Imagen/Colaborar14f.png">
+			<p>Lo que hace es cambiar el número de crestas y valles.</p>
+			<p>Con a = 1, b = 0.8, c = 0 se disminuye el número de crestas y valles.</p>
+			<img src="../Imagen/Colaborar14g.png">
+			<p>El último cambio es en c que desplaza la curva. Tomando a = 1, b = 1, c = 0</p>
+			<img src="../Imagen/Colaborar14h.png">
+			<p>Tomando a = 1, b = 1, c = 1</p>
+			<img src="../Imagen/Colaborar14i.png">
+			<p>La curva se desplaza lateralmente.</p>
+			<p>La suma de varias ondas periódicas genera una onda periódica. Por ejemplo:</p>
+			<img src="../Imagen/Colaborar14j.png">
+			<p>Ejemplo:</p>
+			<img src="../Imagen/Colaborar14k.png">
+			<p>Y la onda resultante es:</p>
+			<img src="../Imagen/Colaborar14l.png">
+			<p>Es un inicio para ondas periódicas porque las simulaciones futuras tendrán en consideración el desplazamiento en X, ya no es un ambiente estático o un conjunto de datos estático, ahora cambiará con el tiempo. Otro punto es que no se debe quedar en dos dimensiones, la vida se mueve en cuatro dimensiones (tres espaciales y una temporal), luego las ondas deben ser en 3D con comportamiento periódico y cambian con el tiempo.</p>
+		</section>
+	</body>
+</html>

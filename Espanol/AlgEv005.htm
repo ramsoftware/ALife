@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Algoritmo 005</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Algoritmo 005"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Algoritmo 005: Los materiales no son los mismos para siempre</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Todo cambia, nada permanece estático. La misma presencia del organismo afecta un ambiente como se expresó en el <a href="Articu00037.htm">Articulo 35: ¿Supervivencia del mas apto o del que mejor adapta?</a> y los ambientes externos son comúnmente cíclicos. Cuando un organismo ha encontrado un punto de equilibrio, sabe muy bien que este no se mantendrá así por siempre. Porque a su vez este esta cambiando los materiales. Por ejemplo, si estamos en un cuarto herméticamente cerrado, el oxígeno de la habitación es cambiado por gas carbónico mientras respiramos, y mas vale que hagamos algo porque nos asfixiaremos cuando se termine el oxígeno.</p>
+				<p>En esta simulación, los organismos (compuestos por materiales según dicta su especie), verán que sus materiales cambian por el ambiente del Universo.</p>
+				<p>Observe un resultado parcial:</p>
+				<p>[Identificación=9, Especie=5, Estado=86]</p>
+				<p>Tipo Material Especie Original:[Tipo,Cantidad]: [8,1][0,3][9,5][1,5][6,5]</p>
+				<p> Materiales que hay en el organismo (tipos): 8,0,0,0,9,9,9,9,9,1,1,1,1,1,6,6,6,6,6,</p>
+				<p>En [8,1] significa que la especie 5 esta compuesta de material 8 y que la cantidad es 1; En [0,3] significa que la especie 5 esta compuesta de material 0 y que la cantidad es 3</p>
+				<p>Ahora el organismo con identificación 9 tiene esos materiales 8,0,0,0 (una molécula de material ocho y tres moléculas de material cero). Es decir, cumple con lo que dicta la especie...</p>
+				<p>Ahora viviendo, esto sucede:</p>
+				<p>[Identificación=9, Especie=5, Estado=75]<br />Tipo Material Especie Original:[Tipo,Cantidad]<br />[8,1][0,3][9,5][1,5][6,5]<br />Materiales que hay en el organismo (tipos):<br />7,5,5,5,7,7,7,7,7,0,0,0,0,0,0,0,0,0,0,</p>
+				<p>El material tipo 8 cambió a tipo 7, el material tipo 0 cambió a tipo 5, y así sucesivamente, observe el desastre para el organismo: todos sus materiales cambiaron, perdió identidad de especie y además corre un gran riesgo de morir... por otro lado puede que no sea un desastre sino al contrario los nuevos materiales ayudan al organismo. Aún así puede reproducirse con los datos originales de la especie.</p>
+				<p>Los materiales cambian por los ambientes entrelazados del Universo. El organismo si sobrevive un ciclo, se reproduce (genera uno nuevo). En la simulación se puede observar como las especies se van reproduciendo:</p>
+				<p>Sobreviven:<br />Organismo nuevo. Especie:1 Cantidad:13<br />Organismo nuevo. Especie:2 Cantidad:30<br />Organismo nuevo. Especie:2 Cantidad:31<br />Organismo nuevo. Especie:0 Cantidad:37<br />Organismo nuevo. Especie:9 Cantidad:19<br />Organismo nuevo. Especie:7 Cantidad:19<br />Organismo nuevo. Especie:8 Cantidad:19<br />Organismo nuevo. Especie:7 Cantidad:20</p>
+				<p>Significa por ejemplo que de la especie 2 se genero el 30avo y luego el 31avo organismo.</p>
+				<p>Descargue el código fuente, <a href="../Download/AlgEv005cpp.zip">de clic aquí</a><br />Descargue el ejecutable para Windows, <a href="../Download/AlgEv005exe.zip">de clic aquí</a></p>
+				<p><b>&iexcl;OJO FIN DE CAPITULO!</b> He usado la filosofía de programación orientada a objetos en Algoritmo 005: el Universo es una clase, los organismos otra clase... y al final en el código, hay una total	relación entre un organismo y su universo. ¿Donde queda el algoritmo evolutivo?. Este algoritmo como se dijo antes, debe ser independiente del Universo, tal como sucede con los virus informáticos que no son regidos por las leyes físicas sino por leyes del sistema operativo. El programa actual (Algoritmo 005) lo considero "equivocado" porque independencia no hay; el algoritmo evolutivo <b>debe</b> detectar lo que puede hacer con el Universo y generar organismos que saquen el mejor provecho de este universo hasta que logren la estabilidad.... y de paso la felicidad (comienzo a estudiar las emociones).</p>
+				<p>Por este problema, decidí dar fin a este capítulo, porque primero se debe resolver lo de la independencia. El próximo capítulo tratará sobre esto.</p>
+			</article>
+		</section>
+	</body>
+</html>

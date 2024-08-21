@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 02: Reproducción</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Torneo 02: Reproducción"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 02: Reproducción</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Una nueva instrucción tienen los tanques: Reproducirse( ). Cuando ejecuta esta instrucción, el tanque saca una copia de si mismo, modificando o no una parte de este en el hijo. El hijo hereda un porcentaje de la energía (vida) del padre y el padre, por supuesto, disminuye su energía al reproducirse.</p>
+				<p>Cuando inicia la simulación se leen los parámetros de archivo, luego se generan los bloques de instrucción, cada bloque tiene unas 10 instrucciones, luego se generan los tanques y por último al azar se asocia por cada tanque y por cada evento de este un bloque de instrucción. Cuando el tanque se reproduce entonces se copia las asociaciones tanque-evento-bloque en el hijo, pero si se muta entonces una asociación tanque-evento-bloque.</p>
+				<p>Parámetros de archivo:</p>
+				<p>NUMTANQUES=400; /* Debe ser entre 0 y 3999 */<br /> NUMINSTRUC=50; /* Debe ser entre 0 y 199 */<br /> TABLEROX=70;<br /> TABLEROY=80; /* TABLEROX*TABLEROY &gt; NUMTANQUES */<br /> CONSTVIDA=300;<br /> MAXCICLOS=50;<br /> LIMREPRODUCE=100; /* Debe ser LIMREPRODUCE &lt; CONSTVIDA o no se reproduce */<br /> MUTACION=1; /* 1 el hijo muta el comportamiento de un evento, 0 es un clon */</p>
+				<table>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque2.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src= "../Imagen/Tanque5.jpg" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque2.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque6.jpg" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><img src= "../Imagen/Tanque3.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque3.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque6.jpg" alt="image" /></td>
+					</tr>
+					<tr>
+						<td><img src= "../Imagen/Tanque4.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table><p>Descargue los <a href= "../Download/Torneo02.zip">fuentes.</a></p>
+			</article>
+		</section>
+	</body>
+</html>

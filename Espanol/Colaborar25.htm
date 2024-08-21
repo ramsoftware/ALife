@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+	<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <title>Programa 25</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <header>
+                <p><a href="../index.html">Ir a Inicio</a></p>
+                <h1>Colaboración entre individuos</h1>
+                <h2>Programa 25. Software en JavaScript</h2>
+            </header>
+            <p>Se muestra un programa en JavaScript (refresque con F5) que genera un individuo usando las técnicas de colaboración. Las columnas mostradas son:</p>
+            <p>Primera columna: Número de comando.</p>
+            <p>Segunda columna: El comando de colaboración. Base es una ecuación del tipo Y = seno(a * X + b) donde a y b son números reales aleatorios entre -1 y 1, el resultado es normalizado luego.</p>
+            <p>PRO( d, e, f ) es el promedio de los resultados de los comandos d, e, f (donde d, e, f son los números de comando).</p>
+            <p>MIN( d, e, f ) es el valor mínimo de los resultados de los comandos d, e, f</p>
+            <p>MAX( d, e, f ) es el valor máximo de los resultados de los comandos d, e, f</p>
+            <p>ALT( d, e, f ) es alternar los resultados de los comandos d, e, f</p>
+            <p>Cabe aclarar que los comandos pueden tener mínimo dos parámetros como PRO(d, e) o una gran cantidad como PRO(d, e, f, g, h, i, j, ...)</p>
+            <p>Tercera columna: El resultado del comando.</p>
+			
+            <table class="table table-striped table-bordered table-hover table-sm">
+                <thead>
+                <th class='col-md-1'>#;</th>
+                <th class='col-md-2'>Comando;</th>
+                <th class='col-md-7'>Datos;</th>
+                </thead>
+                <script src="Colaborar25.js"></script>
+            </table>
+            <p>Lo interesante es que cada individuo puede tener múltiples salidas (cada comando sería una salida), así que frente a un ambiente, el individuo puede mostrar varias adaptaciones, tiene más oportunidades.</p>
+            <p>El programa permite copiar y pegar su contenido hacia un archivo CSV y subirlo en Excel (separador es ; y la coma es para decimales)</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

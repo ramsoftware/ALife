@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Algoritmo 003</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Algoritmo 003"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Algoritmo 003: Nace el concepto de especie.</h1>
+		</header>
+
+		<section>
+			
+			<article>
+				<p>Existe un Universo rectangular, las dimensiones de este universo se determinan así:<br />iXmin=0; //Coordenada X inicial universo<br />iYmin=0; //Coordenada Y inicial universo<br />iXmax=300; //Coordenada X final universo<br />iYmax=300; //Coordenada Y final universo</p>
+				<p>Al interior de este Universo existen ambientes rectangulares, creados aleatoriamente: extensión y comportamiento; el usuario determina cuantos ambientes se crearán:<br />iTotalAmb=8; //Total ambientes</p>
+				<p>Hay tipos de materia (es como decir, hidrógeno, oxígeno, neón, oro, carbono, ...), el usuario determina cuantos tipos de materia existen en el universo (el comportamiento es creado aleatoriamente):<br />iTotalTip=10; //Total tipos de materia</p>
+				<p>Ahora vamos a decir cuantos átomos (materia) tendrá el Universo, ¿de que tipo? eso es escogido al azar:<br />iTotalMat=900; //Total materiales</p>
+				<p>Nace el concepto de especie. Una especie es la definición de un ser vivo, en la simulación significa que son los distintos tipos de materia que componen al ser vivo y el número de átomos (materia) por tipo de materia. Por ejemplo, la especie "Kytux" se compone de "Hidrógeno, Helio, Carbón, Calcio, Magnesio" en las siguientes cantidades "10 átomos de Hidrógeno, 30 de Helio, 7 de Carbón, 18 de Calcio y 15 de Magnesio". ¿De que estarán compuestas estas especies y que cantidad? Eso es escogido al azar. ¿Cuantas especies habrán?:<br /> iTotalEsp=10; //Total de especies</p>
+				<p>Ahora se deciden cuantos organismos van aexistir. ¿De que especie va a ser cada organismo? Eso es escogido al azar.<br />iTotalOrg=40; //Total organismos</p>
+				<p>Vienen opciones mas avanzadas para los usuarios, para generación de ambientes, tipos de materia, especie y organismos.</p>
+				<p>En generación de ambientes se puede parametrizar:<br /> iLongExprAmb=10; //Longitud máxima de la expresión de comportamiento del ambiente<br />iProbN=25; // Probabilidad de Numero<br />iProbX=25; // Probabilidad de variable X<br />iProbY=25; // Probabilidad de variable Y<br />iProbP=25; // Probabilidad de parentesis</p>
+				<p>En generación de tipos de materia se puede parametrizar:<br />iLongExprTip=10; //Longitud Máxima de la expresión de comportamiento de tipo de material<br />iTipProbN=33; // Probabilidad de Numero<br />iTipProbX=33; // Probabilidad de variable X<br />iTipProbP=34; // Probabilidad de paréntesis</p><p class="TextoNormal">En generación de especies se puede parametrizar:<br />iTipMatEsp=5; //Número de tipos de material que tendrá cada especie<br />iMaxMatTip=5; //Máximos materiales por tipo de material que tendrá cada especie</p>
+				<p>Todos los seres vivos pueden vivir en ciertos valores del medio ambiente, si van mas allá de las fronteras, mueren. Aquí se parametriza el mínimo y máximo de tolerancia de los seres vivos en el Universo. Cada especie tiene sus propios valores pero entre los siguientes valores:<br />iTolVivoMin = -50; //Tolerancia mínima de los seres vivos (por ejemplo temperatura) en el Universo<br /> iTolVivoMax = 180; //Tolerancia máxima de los seres vivos (por ejemplo temperatura) en el Universo</p>
+				<p>Todos estos parámetros se configuran en el archivo AlgEv003.ini que se muestra a continuación</p>
+				<p><img src="../Imagen/Alg003.gif" alt="configurar" /></p>
+				<p>Favor leer <a href="AlgEv001.htm">Algoritmo 001</a> y <a href="AlgEv002.htm">Algoritmo 002</a> para entender mejor los inicios de este tipo de simulaciones. Los resultados de esta simulación son enviados a consola, aquí hay un ejemplo explicado de los datos enviados:</p>
+				<p>Especie <b>n</b> se compone de <b>[</b><i>tipo_de_materia</i><b>,</b> <i>cantidad_de_ese_tipo_de_materia</i><b>]</b></p>
+				<p><img src="../Imagen/Alg003b.gif" alt="ejemplo de pantalla de la simulación" /></p>
+				<p>Se generan los organismos, de determinada especie, la estabilidad es el punto medio entre las tolerancias mínima y máxima de la especie, luego se seleccionan los materiales que compondrán a cada organismo. Si seencuentran todos los materiales el organismo es creado y vive, de lo contrario, no existe por falta de materiales.</p>
+				<p><img src="../Imagen/Alg003c.gif" alt="ejemplo de pantalla de la simulación" /></p>
+				<p>Hay organismos que no pueden existir por falta de materiales. Luego comienza la simulación: aquí dependiendo de los ambientes, del comportamiento de los materiales que componen al organismo con respecto al ambiente, laestabilidad del ser vivo se ve comprometida. En cada ciclo se acerca o aleja del punto medio de equilibrio, los que se pasan delas fronteras, mueren, en la simulación se observa Sobreviven: <b>[</b><i>identificador_de_organismo</i><b>,</b><i>estabilidad</i><b>]</b></p>
+				<p><img src="../Imagen/Alg003d.gif" alt="ejemplo de pantalla de la simulación" /></p>
+				<p>Sucede que algunos organismos tienen la suerte de ser siempre estables, luego la simulación nunca termina.</p>
+				<p>Descargue el código fuente, <a href="../Download/AlgEv003cpp.zip">de clic aquí</a></p>
+				<p>Descargue el ejecutable para Windows, <a href="../Download/AlgEv003exe.zip">de clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 20.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 21. Operaciones de colaboración entre funciones</h2>
+		</header>
+		<section>
+			<p>Dada las funciones F(x), G(x), H(x). Como se observa en la figura:</p>
+			<p><img src="../Imagen/Colaborar21a.jpg"></img></p>
+			<p>para que colaboren entre sí, se hacen las siguientes operaciones:<p>
+			<p>Y = Máximo(F(x), G(x), H(x))</p>
+			<p>Y = Mínimo(F(x), G(x), H(x))</p>
+			<p>Y = Alterna(F(x), G(x), H(x))</p>
+			<p>¿Qué significan?</p>
+			<p>En el caso de "Máximo", para un valor de "x" en particular, se evalúan las tres funciones, aquella que devuelva el mayor valor es la que dará ese valor a Y. Dando como resultado esta figura:<p>
+			<p><img src="../Imagen/Colaborar21b.jpg"></img></p>
+			<p>En el caso de "Mínimo", para un valor de "x" en particular, se evalúan las tres funciones, aquella que devuelva el menor valor es la que dará ese valor a Y. Dando como resultado esta figura:<p>
+			<p><img src="../Imagen/Colaborar21c.jpg"></img></p>
+			<p>En el caso de "Alterna", para el primer valor de "x" a evaluar, a Y se le da lo que genere F(x), el segundo valor de "x" a evaluar, entonces a Y se le da lo que genere G(x), el tercer valor de "x" a evaluar, entonces a Y se le da lo que genere H(x), el cuarto valor de "x" vuelve a ser Y lo que genere F(x) y así sucesivamente.<p>
+			<p>El caso de "Alterna" es el que da mayor variedad, porque si se cambia el orden así: Y = Alterna(G(x), F(x), H(x)), entonces se obtiene algo completamente distinto. Volviendo a Y = Alterna(F(x), G(x), H(x)) si se cambia la frecuencia de cambio, por ejemplo, los primeros cinco valores de x se evalúa F(x), los siguientes cinco se evalúa G(x), los siguientes cinco se evalúa H(x), y se repite de nuevo los siguientes cinco con F(x) y así sucesivamente se obtiene otro comportamiento. Ver figura:<p>
+			<p><img src="../Imagen/Colaborar21d.jpg"></img></p>
+			<p>A diferencia de los algoritmos genéticos o algoritmos evolutivos clásicos, en este caso NO se eliminan individuos, sino que todo el esfuerzo se dirige a que exista una determinada colaboración entre ellos. Luego lo que se evalúa es el resultado de la colaboración, y dado el caso se varía la colaboración para mejorar los resultados.</p> 
+			<p>La evaluación de la colaboración sería similar a los algoritmos genéticos, pero antes de empezar un proceso como tal, hay que definir que funciones de colaboración van a haber, como serán sus parámetros, cómo pueden variar, etc.</p>
+		</section>
+	</body>
+</html>

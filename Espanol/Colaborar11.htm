@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 11.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 11. Teniendo en cuenta el sobreajuste</h2>
+		</header>
+		<section>
+			<p>El sobreajuste es un problema que aparece cuando se busca la mejor curva de tendencia que represente a una serie de datos. Visualmente es detectable cuando entre un punto y el siguiente en los datos de entrenamiento, la curva es radicalmente distinta a una recta o curva sencilla que une a esos dos puntos, presentando un dibujado con profundos valles o enormes crestas como se ve en el gráfico:</p>
+			<img src="../Imagen/sobreajuste.jpg">
+			<p>Una curva así no sirve para hacer interpolación, ni mucho menos extrapolación porque simplemente no logra generalizar el comportamiento de los datos.</p>
+			<p>¿Cómo detectarlo? Hay una solución clásica y es la siguiente:</p>
+			<p>1. Del conjunto de datos de entrenamiento, tomar el 80% al azar.</p>
+			<p>2. Con ese 80% se generan varias curvas de tendencia.</p>
+			<p>3. Cada curva se evalúa con el 20% restante (datos de evaluación) y se mide su ajuste.</p>
+			<p>4. La curva que tenga el mejor ajuste a esos datos de evaluación es la que se escoge.</p><br><br>
+			<p>Con los algoritmos evolutivos lo anterior se cumple generando varias poblaciones y cada población tendrá su mejor individuo. Luego cada uno de esos individuos se le calcula su ajuste con los datos de validación.</p>
+			<p>Con las redes neuronales, es crear una nueva red con pesos al inicio al azar y hacer el proceso de BackPropagation. Luego a cada red se le calcula su ajuste con los datos de validación.</p>
+			<p>Como el programa genera un conjunto de datos de una ecuación al azar, entonces se pueden generar 150 datos para entrenar y 150 datos para validar.</p>
+			<p><a href="../Download/colaborar11.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			<p>Ejemplo de ejecución:</p>
+			<img src="../Imagen/colaborar11.png">
+			<p>Las primeras pruebas, muestran que la red neuronal logra un mejor ajuste al conjunto de datos considerando la validación.</p>
+		</section>
+	</body>
+</html>

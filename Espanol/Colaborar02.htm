@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 2.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 2.</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p>Es un algoritmo <a href="Colaborar01.htm">muy similar al anterior</a>, la diferencia fundamental es la siguiente:<p>
+				<p>Cada individuo generado se enfrenta al conjunto de datos, luego se muta y se vuelve a enfrentar al conjunto de datos. Si esa mutación mejora la aproximación se queda, caso contrario se restauran los coeficientes anteriores. Lo primero que se observa es que, al haber un nuevo proceso, este algoritmo es más lento que el anterior. Sin embargo, durante las pruebas se muestra una mejora en el ajuste.</p> 
+			</article><br>
+			
+			<article>
+				<h3>Código fuente</h3>
+				<p><a href="../Download/colaborar02.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h3>Resultado de una prueba de ejemplo</h3>
+				<p>Se genera un conjunto de datos de 2000 registros (X, Y) y se ejecuta el algoritmo genético para hallar una sola curva que cubra todo el conjunto de datos, luego con dos individuos (primera mitad y segunda mitad), luego con tres individuos (primer tercio, segundo tercio y último tercio) y así sucesivamente:</p>
+				<p>Número de individuos por población: 200</p>
+				<p>Número de ciclos para mejorar cada individuo: 100</p>
+				<p>Número de ciclos del algoritmo genético: 10000</p>
+				<table border="2">
+					<tr><th>Número de individuos(curvas) que cubren los datos</th><th>Aproximación (menor es mejor)</th></tr>
+					<tr><td>1</td><td>0,297693585144862</td></tr>
+					<tr><td>2</td><td>0,225607508909792</td></tr>
+					<tr><td>3</td><td>0,0246828134882212</td></tr>
+					<tr><td>4</td><td>0,0584607494907632</td></tr>
+					<tr><td>5</td><td>0,026635890193686</td></tr>
+					<tr><td>6</td><td>0,0440122892455421</td></tr>
+					<tr><td>7</td><td>0,0203551662834108</td></tr>
+					<tr><td>8</td><td>0,0258003490308382</td></tr>
+					<tr><td>9</td><td>0,00391399470233006</td></tr>
+					<tr><td>10</td><td>0,022795774719511</td></tr>
+				</table></br>
+				<img src="../Imagen/Colabora002.jpg"></img>	
+			</article>
+	
+		</section>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 05: Jugando Ajedrez: El MacroOrganismo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Jugando Ajedrez: El MacroOrganismo"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 05: Jugando Ajedrez: El MacroOrganismo</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En diversos artículos he hablado una y otra vez sobre el concepto de MacroOrganismo, pero no he llevado esto a la práctica porque no tenía idea de como hacerlo.</p>
+				<p>Mientras ejercía la docencia enseñando arreglos bidimensionales a los estudiantes, en el cual uso a menudo como ejemplo el ajedrez, me surgió la idea de que con este juego se puede implementar el concepto de MacroOrganismo. El objetivo de este juego es eliminar al Rey contrario, pero cada Rey es cuidado por un ejército de ocho peones, dos torres, dos alfiles, dos caballos y una Reina, si muere el Rey (queda en jaque mate) el juego termina, el ejército que queda en pie ya no es útil. Eso es un MacroOrganismo: organismos simples diferenciados: como cada pieza con sus propios movimientos y objetivos comunes: proteger a su Rey y eliminar al Rey contrario.</p>
+				<p>Implementar los movimientos de las fichas de un ajedrez es simple, pero para propósitos del experimento, hay que modificar un poco el juego para que quede lo mas parecido a lo que sucede en la vida. En primer lugar no sería un tablero de 8*8 sería mucho mas grande, segundo no son solo dos ejércitos, serían varios reyes cada uno con su ejercito, no habría posición inicial de salida, es seleccionada esta al azar y no habrían peones.</p>
+				<p>Los eventos o emociones que tendría el MacroOrganismo sería cuando algunas de sus piezas detecta a una ficha contraria, a una ficha propia, o ve amenazado a su Rey, o amenaza al Rey contrario. Las condiciones de ganar-perder pueden variar, pero podría ser que si un Rey muere, todas las demás fichas mueren con este, o se puede modificar un poco y el ejército que ve su Rey morir cambia de bando y ahora trabaja bajo las ordenes del agresor.</p>
+				<p>La evolución de los MacroOrganismos, se observará en las instrucciones que controlan los eventos de las fichas o quizás mas adelante generar nuevas fichas con nuevos movimientos.</p>
+				<p>La complejidad puede escalar a crear no tableros planos sino entornos tridimensionales, donde cada ficha estaría en alguna coordenada espacial X, Y, Z.</p>
+			</article>
+		</section>
+	</body>
+</html>

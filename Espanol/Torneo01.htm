@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 01: Inspiración.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Torneo 01: Inspiración."/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 01: Inspiración.</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Inspirado en el programa Robocode de IBM, esta simulación consiste en generar N tanques en un tablero (un plano), cada tanque puede girar, desplazarse hacia adelante o hacia atrás, tiene un radar y disparar. Mientras dura el torneo, en cada ciclo*, el tanque va perdiendo un punto de vida, pierde tres puntos de vida si es impactado por un proyectil de otro tanque y gana tres puntos de vida si al disparar acierta a otro tanque.</p>
+				<p>El tanque tiene cuatro(4) eventos que se activan cuando:<br /> 1. Es alcanzado por un disparo.<br /> 2. Acierta su disparo en otro tanque.<br /> 3. Choca contra otro tanque.<br /> 4. Detecta otro tanque con el radar.</p>
+				<p>Cada evento dispara un bloque de instrucciones. Los bloques de instrucción han sido generados previamente y se asocian al azar: Tanque+Evento -&gt; Bloque</p>
+				<p><img src="../Imagen/Torneo.gif" alt="image" /></p>
+				<p>En cada bloque hay una serie de instrucciones, típicas de un lenguaje muy simple de programación se manejan:<br /> 1. Diez(10) variables.<br /> 2. Las instrucciones IF y SET (asignación)<br /> 3. Ocho(8) funciones:</p>
+				<p>a: Avanzar_Tanque();<br /> b: Retroceder_Tanque();<br /> c: Girar_Tanque(1-8); /* 8 posiciones */<br /> d: Girar_Radar(1-8); /* El radar se mueve independiente del tanque */<br /> e: Disparar();<br /> f: GetPosX();<br /> g: GetPosY();<br /> h: GetVida();</p>
+				<p>Cuando inicia la simulación, se generan primero los bloques de instrucción, cada bloque tiene unas 10 instrucciones, luego se generan los tanques y por último al azar se asocia por cada tanque y por cada evento de este un bloque de instrucción.</p>
+				<table>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque2.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src= "../Imagen/Tanque5.jpg" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque2.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque6.jpg" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque1.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><img src= "../Imagen/Tanque3.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque3.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><img src= "../Imagen/Tanque6.jpg" alt="image" /></td>
+					</tr>
+					<tr>
+						<td><img src= "../Imagen/Tanque4.JPG" alt="image" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<p>Observaciones: Este programa se crea como base de desarrollos futuros para probar conceptos sobre la evolución: macroorganismos, reproducción, sensores, emociones, etc..<br /> Fue diseñado para ser lo más rápido posible (modo texto o de consola) y escrito en C++.</p>
+				<p><a href="../Download/Torneo01.zip">Descargue los fuentes.</a></p>
+				<h2>Pruebas preliminares</h2>
+				<p>Traté de aplicar las reglas originales de Robocode: el tanque pierde tres puntos de vida cuando es impactado, gana tres puntos de vida si logra acertarle un disparo a un tanque enemigo, por cada disparo disminuye la vida en un punto y cuando la vida sea cero el tanque es destruido. Sin embargo cuando ejecuté la simulación, para mi sorpresa, sobrevivieron los tanques que no disparaban, así que cambié las reglas: ahora por cada ciclo(*) cada tanque pierde un punto de vida, es decir, o empiezan a disparar y acertar o sino son destruidos. Allí si sobrevive uno.</p>
+				<p>(*) un ciclo cubre evaluar cada evento de todos los tanques de guerra)</p>
+			</article>
+		</section>
+	</body>
+</html>

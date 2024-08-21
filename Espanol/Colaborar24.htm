@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 24.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 24. Piezas en la expresión de colaboración</h2>
+		</header>
+		<section>
+			<p>Las piezas son así:</p>
+			<p>ID_Pieza = OperaciónColaboración  "Lista de ecuaciones que participan o valores"</p>
+			<p>Entonces hay de este tipo:</p>
+			<p>0: Base(4.1, -1.2, 8.02, -6.1, 3.3, 9.172, -2.912, 1.8464, 4.3452654, 5.3894756, -7.384756)</p>
+			<p>¿Qué significa? Que es una ecuación base, y los valores mostrados de tipo double son los que genera esa ecuación y esos son asignados a la pieza 0</p>
+
+			<p>5: MAX( 0, 1, 4 )</p>
+			<p>¿Qué significa? Que es una operación de colaboración, participan las piezas 0, 1 y 4, cada una con sus valores de tipo double y se genera la lista de valores máximos.</p>
+
+			<p>Las piezas van de 0: a N: donde las primeras piezas serán Base porque son las ecuaciones que participan. Las siguientes piezas hasta el final son operaciones de colaboración</p>
+
+			<p><b>GENERANDO LAS PIEZAS</b></p>
+			<p>Generar las piezas es bastante sencillo, las Base son creadas al azar Y=abs(seno(a*X+b)) donde a y b son reales aleatorios entre 0 y 10, las demás sólo es decidir al azar que operación de colaboración se va a hacer y luego al azar seleccionar que piezas participan dentro de la operación de colaboración.</p>
+			
+			<p>Las operaciones de colaboración son: PRO (promedio), MIN (mínimo), ALT (alterna valores), MAX (máximo).</p>
+
+			<p><b>VENTAJAS</b></p>
+			<p>Cada pieza es una salida del individuo:</p>
+
+			0: Base( 8,309; 8,262; 8,151; 7,977; 7,741; 7,447; 7,094; 6,688; 6,229; 5,723; 5,173; )<br>
+			1: Base( -0,482; 0,623; 1,261; 0,955; -0,066; -1,038; -1,232; -0,504; 0,602; 1,257; 0,971; )<br>
+			2: Base( 0,439; 3,091; 3,831; 2,203; -0,788; -3,291; -3,759; -1,903; 1,130; 3,464; 3,656; )<br>
+			3: Base( 0,065; 3,939; 6,816; 7,964; 7,094; 4,426; 0,635; -3,316; -6,427; -7,908; -7,385; )<br>
+			4: Base( 6,326; 6,379; 4,803; 2,001; -1,313; -4,291; -6,173; -6,480; -5,131; -2,473; 0,817; )<br>
+			5: Base( 3,927; 4,087; 4,217; 4,315; 4,382; 4,415; 4,416; 4,384; 4,319; 4,223; 4,094; )<br>
+			6: PRO( 1, 3, 4, )<br>
+			7: MIN( 1, 2, 3, 4, 5, )<br>
+			8: MIN( 1, 3, 4, 5, )<br>
+			9: ALT( 2, 3, 5, 6, 7, )<br>
+			10: MIN( 1, 4, 5, 6, 8, )<br>
+			11: ALT( 2, 5, 6, 8, )<br>
+			12: MAX( 1 )<br>
+			13: MAX( 2, 3, 4, 6, 8, 11, )<br>
+			14: MIN( 6, 7, 11, 12, )<br>
+			15: MAX( 1, 2, 5, 6, 8, 9, 10, 11, 12, )<br>
+			
+			<p>Luego un individuo puede lidiar con un ambiente, con algunas de las salidasm o hasta con varios ambientes.</p>
+
+		</section>
+	</body>
+</html>

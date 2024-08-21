@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 8.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 8. Comparativa entre algoritmo genético colaborativo y red neuronal ante conjunto de datos de doble variable independiente</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p>En esta prueba, en algoritmos genéticos, la mitad de los datos del conjunto de datos son cubiertos por un individuo y la otra mitad por otro individuo. A diferencia de las veces anteriores que se buscaba el mejor individuo que ajustara a todos los datos del conjunto de datos, en esta ocasión el conjunto de datos se divide a la mitad y en cada una, habrá un individuo que se adapte a cada mitad, obteniéndose dos individuos. Se compara esta nueva estrategia contra una red neuronal (perceptrón multicapa).<p>
+				<p>1. Se genera al azar una ecuación.</p> 
+				<p>2. Esta ecuación genera un conjunto de datos de tipo Q=F(X, Y), es decir, doble variable independiente y una variable dependiente.</p>
+				<p>3. Se reescribieron los algoritmos para que usaran la misma cantidad de tiempo y así comparar cuál es más eficiente.</p>
+				<p>4. El algoritmo genético y la red neuronal tienen dos entradas y una sola salida.</p>
+				<p>5. La red neuronal intentará cubrir todo el conjunto de datos. En el caso del algoritmo genético, una mitad del conjunto de datos será cubierta por un individuo y la otra mitad por otro individuo.</p>
+				<p>6. En el caso del algoritmo genético, se calcula el promedio de ajuste de los dos individuos encontrados.</p>
+			</article><br>
+			
+			<article>
+				<h2>Código fuente</h2>
+				<p><a href="../Download/colaborar08.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h2>Resultados</h2>
+				<p>Se hicieron 20 pruebas. Cada prueba genera un conjunto de datos de 400 registros (nacidos de una ecuación creada en forma aleatoria). En cada prueba, cada algoritmo tuvo 20 segundos para operar.</p>
+				<p>Cada valor de la tabla es la mejor aproximación que tuvo el mejor individuo en la población al conjunto de datos. Entre más cercano a cero es mejor.</p>
+				<h3>Algoritmo Genético (población: 100 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Colaboración entre dos individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>Promedio: 0,215760952</td><td>Promedio: 0,037382509</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora008a.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 250 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Colaboración entre dos individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>Promedio: 0,516693579</td><td>Promedio: 0,320088199</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora008b.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 500 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Colaboración entre dos individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>Promedio: 0,239967436</td><td>Promedio: 0,018721448</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora008c.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 750 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Colaboración entre dos individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>Promedio: 0,127889636</td><td>Promedio: 0,017020235</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora008d.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 1000 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Colaboración entre dos individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>Promedio: 0,374603425</td><td>Promedio: 0,062964957</td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora008e.jpg"></img><br><br>
+
+				<h3>Conclusiones</h3>
+				<p>En todas las pruebas, la red neuronal tuvo mejor aproximación en promedio. La gran mejora se observa en el algoritmo genético, las aproximaciones son mucho mejores y es anecdótico que existan picos.<br>
+				Cabe recordar que el algoritmo genético lo componen individuos que tienen la siguiente expresión y=f(x) así:<br>
+				z=(seno(a*(1-x)^4 + b*(1-x)^3 + c*(1-x)^2 + d*(1-x) + e + f*x + g*x^2 + h*x^3 + i*x^4 + j*(1-y)^4 + k*(1-y)^3 + l*(1-y)^2 + m*(1-y) + n + o*y + p*y^2 + q*y^3 + r*y^4)+1)/2<br>
+				El algoritmo genético trabaja en modificar a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r.</p>
+			</article>
+	
+		</section>
+	</body>
+</html>

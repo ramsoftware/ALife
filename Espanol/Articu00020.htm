@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Hipótesis: Simbiosis</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Hipótesis: Simbiosis"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, simbiosis"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Simbiosis: Escalable y simple. <time>2000-junio-03</time></h1>
+		</header>
+
+		<section>
+			<article>
+				<h2>Escalabilidad</h2>
+				<p>Una ley de la termodinámica es "La energía no se crea ni se destruye, solo se transforma". Esta ley debe tenerse en cuenta en los seres vivos, cualquier parte de ellos (órganos o sensores) reciben energía y la transforman. Observe los gráficos:</p>
+
+				<table>
+					<tr><th>Entra</th><th>Objeto</th><th>Salida</th></tr>
+					<tr><td>Señal de Luz</td><td>Ojo (sensor)</td><td>Señales eléctricas</td></tr>
+					<tr><td>Alimento</td><td>Sistema Digestivo</td><td>Compuestos simples alimenticios</td></tr>
+					<tr><td>Energía calorífica</td><td>Motor</td><td>Movimiento</td></tr>
+				</table>
+				
+				<p>En ambos casos se transforma una forma de energía (materia) en otra forma de energía (materia).</p>
+				<p>En las simulaciones, el mismo esquema se observa:</p>
+
+				<table>
+					<tr><th>Entra</th><th>Objeto</th><th>Salida</th></tr>
+					<tr><td>Serie de Entrada</td><td>Expresión</td><td>Serie de Salida</td></tr>
+					<tr><td>Serie de Entrada</td><td>Algoritmo</td><td>Serie de Salida</td></tr>
+				</table>
+				
+				<p>Un esquema bastante simple y escalable. La evolución nos ha enseñado a través de la historia al mostrarnos millones de especies tan distintas desde las simples (virus, bacterias) hasta las muy complejas (mamíferos, reptiles) que la escalabilidad es la piedra angular en el algoritmo evolutivo.</p>
+				
+				<h2>El Problema</h2>
+				<p>Ahora bien, se deben respetar las leyes físicas y una de ellas es que el mismo hecho de transformar una forma de energía en otra requiere de un trabajo y para hacer este trabajo se requiere de energía (insumo), el mismo trabajo genera una salida (un residuo). Por ejemplo, un motor de gasolina convierte la energía calorífica (entrada) en movimiento (salida), pero para hacer esto requiere de gasolina (insumo) y durante el trabajo genera CO2 (residuo). Observe el esquema:</p>
+				<p><img src="../Imagen/Dual01.gif" alt="image" /></p>
+				<p>En comparación con lo visto anteriormente, existen dos entradas y dos salidas, es posible entonces, hablar de múltiples entradas y múltiples soluciones. El mecanismo se complica demasiado y pierde escalabilidad.</p>
+				<p><img src="../Imagen/Dual02.gif" alt="image" /></p>
+				
+				<h2>La Solución</h2>
+				<p>Si se mantiene el primer esquema Una Entrada - Objeto - Una Salida, es posible hablar de escalabilidad por su simpleza. Por lo tanto, para solucionar el problema de las dos entradas y dos salidas se creó un término llamado dualidad.</p>
+				<p><img src="../Imagen/Dual03.gif" alt="image" /></p>
+				<p>Motor1a y Motor 1b están fuertemente emparentados, para ser más sencillo son uno solo, pero para propósitos de las simulaciones están separados para mantener la escalabilidad.</p>
+				
+				<h2>Simbiosis</h2>
+				<p>La simbiosis se define como una cooperación entre organismos para poder vivir o adaptarse. Esta colaboración puede darse uno a uno (en forma directa), es decir A ayuda a B y B ayuda a A, o también puede ser indirecta A ayuda a B, B ayuda a C y C ayuda a A. Como se observa también es escalable el concepto. Como cada organismo se ha definido como una dualidad, entonces la simbiosis es una colaboración entre dualidades. En el ejemplo vemos una simbiosis uno a uno entre dos organismos (dualidades):</p>
+				<p><img src="../Imagen/Simbiosis.jpg" alt="image" /></p>
+				<p>1.La <b>Dualidad Cubo</b> hace el papel de escudo o piel para la <b>Dualidad Esfera</b>. Hay un ambiente que es dañino para <b>Dualidad Esfera</b>, <b>Dualidad Cubo</b> toma este ambiente (entrada en flechas azules) y lo convierte a un ambiente benigno (salida en flechas azules) para <b>Dualidad Esfera</b> (Entrada).</p>
+				<p>2.<b>Dualidad Esfera</b> toma esta entrada del ambiente y emite una salida (flecha azul) que es insumo para <b>Dualidad Cubo</b> (pequeño cubo).</p>
+				<p>3. Flechas rojas representan el insumo y el residuo de <b>Dualidad Esfera.</b></p>
+				<p>4. <b>Dualidad Cubo</b> (el pequeño cubo) recibe el insumo de la salida de <b>Dualidad Esfera.</b></p>
+				<p>Aquí hay simbiosis, <b>Dualidad Cubo</b> le da protección a <b>Dualidad Esfera</b> y <b>Dualidad Esfera</b> le da comida a <b>Dualidad Cubo</b>.</p>
+				
+				<h2>Implementación entre Ambientes y Dualidades</h2>
+				<p>Observe el gráfico:</p>
+				<p><img src="../Imagen/Dual04.gif" alt="image" /></p>
+				<p>La salida de la Dualidad 1 (Arriba) es insumo de la Dualidad 2 (Abajo). Ahora bien, si se redujera el número de Ambientes, por ejemplo, a 5, significa que el desecho o la salida de alguna dualidad deberá ser el insumo o entrada de la otra.</p>
+				<p>Ahora bien, como las dualidades están evolucionando para adaptarse a los ambientes, entonces al principio muchas dualidades morirán porque no logran sincronizarse con las demás para vivir.</p>
+				
+				<h2>Otro Punto de Vista</h2>
+				<p>Cambiando la abstracción, es posible obviar el concepto de dualidad y dejarlo todo en solo entrada -organismo -salida, simplificando más el concepto de simbiosis (más fácil de implementar en simulaciones y más escalable). Observe el gráfico:</p>
+				<p><img src="../Imagen/Dual05.gif" alt="image" /></p>
+				<p>En la naturaleza pueden existir varios organismos que compartan un mismo ambiente. En el gráfico:</p>
+				<ol>
+					<li>Org1, tiene como ambiente de entrada: Gasolina, y ambiente de salida: Energía Calorífica</li>
+					<li>Org2, tiene como ambiente de entrada: Energía Calorífica, y ambiente de salida: Movimiento</li>
+					<li>Org3, tiene como ambiente de entrada: Energía Calorífica, y ambiente de salida: Residuo</li>
+				</ol>
+				<p>¿Entonces cual implementar? ¿Dualidad o simple entrada -objeto- salida? La investigación continúa.</p>
+			</article>
+		</section>
+	</body>
+</html>

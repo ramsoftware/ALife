@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 6.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 6. Generador de conjuntos de datos de doble variable independiente Q=F(X,Y)</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p>Para hacer pruebas con los algoritmos genéticos se requiere un conjunto de datos con las siguientes características:<p>
+				<p>1. Tener un patrón, es decir, una ecuación que los genera.</p> 
+				<p>2. Los datos deben estar normalizados. Tanto X como Y deben estar entre 0 y 1.</p>
+				<p>3. El valor de Q debe ser distinto dependiendo de X y Y. El gráfico NO debe ser un plano.</p>
+				<p>4. El valor de Q debe tener subidas y bajadas. El gráfico NO debe ser un simple plano curvo.</p>
+			</article><br>
+			
+			<article>
+				<h3>Código fuente</h3>
+				<p><a href="../Download/colaborar06.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h3>Resultado de una generación</h3>
+				<p>Se genera un conjunto de datos (X, Y)</p>
+				<table border="1">
+					<tr><th>Y</th><th colspan="20">X</th></tr>
+					<tr><td></td><td><b>-1</b></td><td><b>-0,9</b></td><td><b>-0,8</b></td><td><b>-0,7</b></td><td><b>-0,6</b></td><td><b>-0,5</b></td><td><b>-0,4</td><td><b>-0,3</td><td><b>-0,2</td><td><b>-0,1</td><td><b>0</td><td><b>0,1</td><td><b>0,2</td><td><b>0,3</td><td><b>0,4</td><td><b>0,5</td><td><b>0,6</td><td><b>0,7</td><td><b>0,8</td><td><b>0,9</b></td></tr>
+					<tr><td><b>-1</b></td><td>1,429297547</td><td>1,272371739</td><td>1,12536279</td><td>0,994100179</td><td>0,881448816</td><td>0,788788984</td><td>0,716729895</td><td>0,665452383</td><td>0,634870577</td><td>0,624707354</td><td>0,634532742</td><td>0,66379112</td><td>0,7118302</td><td>0,777937282</td><td>0,861384156</td><td>0,961480445</td><td>1,07763579</td><td>1,209433907</td><td>1,356726406</td><td>1,519762507</td></tr>
+					<tr><td><b>-0,9</b></td><td>1,474749972</td><td>1,336819668</td><td>1,205463337</td><td>1,086480704</td><td>0,983103061</td><td>0,897197556</td><td>0,829867094</td><td>0,781748551</td><td>0,753159492</td><td>0,744171124</td><td>0,75464936</td><td>0,784286833</td><td>0,832637712</td><td>0,899160554</td><td>0,983270701</td><td>1,084402419</td><td>1,202081847</td><td>1,336014892</td><td>1,486199907</td><td>1,65308483</td></tr>
+					<tr><td><b>-0,8</b></td><td>1,511167748</td><td>1,390407875</td><td>1,273740351</td><td>1,166792445</td><td>1,072987165</td><td>0,994520015</td><td>0,932857443</td><td>0,888990318</td><td>0,863561734</td><td>0,856932996</td><td>0,869223369</td><td>0,900343644</td><td>0,950034215</td><td>1,017912501</td><td>1,103531298</td><td>1,206448563</td><td>1,326310394</td><td>1,462952512</td><td>1,61653221</td><td>1,787714474</td></tr>
+					<tr><td><b>-0,7</b></td><td>1,537582493</td><td>1,432016984</td><td>1,328817079</td><td>1,233337305</td><td>1,149056415</td><td>1,078367507</td><td>1,022987675</td><td>0,984168775</td><td>0,962804689</td><td>0,959487749</td><td>0,974544621</td><td>1,00806921</td><td>1,059962145</td><td>1,129981269</td><td>1,217804689</td><td>1,323107237</td><td>1,445652764</td><td>1,585408862</td><td>1,742698348</td><td>1,918415683</td></tr>
+					<tr><td><b>-0,6</b></td><td>1,553116943</td><td>1,460667477</td><td>1,369506567</td><td>1,284650249</td><td>1,209530268</td><td>1,146631898</td><td>1,097827116</td><td>1,064546077</td><td>1,04786385</td><td>1,048546139</td><td>1,06707991</td><td>1,103704299</td><td>1,158450322</td><td>1,231193378</td><td>1,321720074</td><td>1,429810534</td><td>1,555339348</td><td>1,698403134</td><td>1,859491676</td><td>2,039735803</td></tr>
+					<tr><td><b>-0,5</b></td><td>1,556935749</td><td>1,475480568</td><td>1,394786066</td><td>1,319490566</td><td>1,252903423</td><td>1,197518917</td><td>1,155284314</td><td>1,127736167</td><td>1,116067599</td><td>1,121163234</td><td>1,143624052</td><td>1,183795686</td><td>1,241807717</td><td>1,317627538</td><td>1,411130292</td><td>1,52218636</td><td>1,650770352</td><td>1,797101081</td><td>1,961832349</td><td>2,14633334</td></tr>
+					<tr><td><b>-0,4</b></td><td>1,548197635</td><td>1,475634896</td><td>1,403760992</td><td>1,336816372</td><td>1,277934219</td><td>1,22955339</td><td>1,193631421</td><td>1,171749908</td><td>1,165164055</td><td>1,174827399</td><td>1,201411033</td><td>1,245329209</td><td>1,306777991</td><td>1,385790151</td><td>1,482307761</td><td>1,596274317</td><td>1,727751189</td><td>1,877069526</td><td>2,04504063</td><td>2,233269793</td></tr>
+					<tr><td><b>-0,3</b></td><td>1,52601929</td><td>1,460331211</td><td>1,395631908</td><td>1,335756447</td><td>1,283624358</td><td>1,241569849</td><td>1,211508323</td><td>1,195014887</td><td>1,193358146</td><td>1,207515748</td><td>1,238188521</td><td>1,28582366</td><td>1,35065282</td><td>1,432747917</td><td>1,532096057</td><td>1,648695821</td><td>1,78268059</td><td>1,934481847</td><td>2,105058941</td><td>2,296247223</td></tr>
+					<tr><td><b>-0,2</b></td><td>1,489461393</td><td>1,428777036</td><td>1,369677901</td><td>1,315593796</td><td>1,269204957</td><td>1,23270369</td><td>1,207921444</td><td>1,196384124</td><td>1,199332145</td><td>1,217728022</td><td>1,252266217</td><td>1,303394407</td><td>1,371351266</td><td>1,456223158</td><td>1,558021163</td><td>1,676781038</td><td>1,812692783</td><td>1,966274689</td><td>2,138622116</td><td>2,331790572</td></tr>
+					<tr><td><b>-0,1</b></td><td>1,437546414</td><td>1,380201835</td><td>1,32526795</td><td>1,275773615</td><td>1,234142542</td><td>1,202397158</td><td>1,182251919</td><td>1,175148589</td><td>1,182264497</td><td>1,204513449</td><td>1,242552189</td><td>1,29680034</td><td>1,36747819</td><td>1,454664299</td><td>1,558374351</td><td>1,678664251</td><td>1,815765174</td><td>1,970267497</td><td>2,143387912</td><td>2,337387649</td></tr>
+					<tr><td><b>0</b></td><td>1,369315995</td><td>1,313910561</td><td>1,261908645</td><td>1,21594472</td><td>1,178174858</td><td>1,150430939</td><td>1,13428472</td><td>1,131065791</td><td>1,141859789</td><td>1,167503908</td><td>1,208590866</td><td>1,265488133</td><td>1,338376</td><td>1,427306087</td><td>1,532281643</td><td>1,65336312</td><td>1,790807731</td><td>1,945262068</td><td>2,118046352</td><td>2,31160723</td></tr>
+					<tr><td><b>0,1</b></td><td>1,283932344</td><td>1,229379238</td><td>1,179331708</td><td>1,136038148</td><td>1,101380766</td><td>1,076986319</td><td>1,064264558</td><td>1,064411145</td><td>1,078397451</td><td>1,10696183</td><td>1,150611958</td><td>1,209643879</td><td>1,284180573</td><td>1,374231206</td><td>1,479772397</td><td>1,600855367</td><td>1,737748737</td><td>1,891138164</td><td>2,062425706</td><td>2,254215318</td></tr>
+					<tr><td><b>0,2</b></td><td>1,180822509</td><td>1,126390109</td><td>1,077618166</td><td>1,036379584</td><td>1,004281087</td><td>0,982735318</td><td>0,972976644</td><td>0,976051063</td><td>0,992799036</td><td>1,023843639</td><td>1,069592027</td><td>1,130254744</td><td>1,205884861</td><td>1,296437682</td><td>1,401852266</td><td>1,52215902</td><td>1,657624056</td><td>1,80895349</td><td>1,977604783</td><td>2,166301043</td></tr>
+					<tr><td><b>0,3</b></td><td>1,059856412</td><td>1,005195853</td><td>0,957347831</td><td>0,917823937</td><td>0,887958768</td><td>0,868947482</td><td>0,861841592</td><td>0,867527709</td><td>0,886704797</td><td>0,919870207</td><td>0,967320949</td><td>1,029173563</td><td>1,105403769</td><td>1,195906154</td><td>1,300575041</td><td>1,419411071</td><td>1,552664959</td><td>1,701043277</td><td>1,866027078</td><td>2,050408295</td></tr>
+					<tr><td><b>0,4</b></td><td>0,92153958</td><td>0,866692898</td><td>0,819753678</td><td>0,781891516</td><td>0,754177973</td><td>0,737593337</td><td>0,733004927</td><td>0,741136484</td><td>0,762541182</td><td>0,797586495</td><td>0,846455846</td><td>0,909169237</td><td>0,985623188</td><td>1,075649765</td><td>1,17909568</td><td>1,295926089</td><td>1,426365066</td><td>1,571098687</td><td>1,731594383</td><td>1,910649071</td></tr>
+					<tr><td><b>0,5</b></td><td>0,76719123</td><td>0,712574809</td><td>0,666852465</td><td>0,630877682</td><td>0,605474548</td><td>0,591417527</td><td>0,589394854</td><td>0,599970414</td><td>0,623553856</td><td>0,660385195</td><td>0,710537328</td><td>0,773937487</td><td>0,850407137</td><td>0,93971957</td><td>1,04167592</td><td>1,156204148</td><td>1,283493009</td><td>1,424187255</td><td>1,579699048</td><td>1,752753099</td></tr>
+					<tr><td><b>0,6</b></td><td>0,59907075</td><td>0,545430545</td><td>0,50151798</td><td>0,4679037</td><td>0,445186794</td><td>0,433951633</td><td>0,434719085</td><td>0,447902836</td><td>0,473777964</td><td>0,512466144</td><td>0,56393944</td><td>0,628042572</td><td>0,704532335</td><td>0,793132898</td><td>0,893607312</td><td>1,005849449</td><td>1,130007829</td><td>1,266666829</td><td>1,417139453</td><td>1,583990185</td></tr>
+					<tr><td><b>0,7</b></td><td>0,420413978</td><td>0,368752357</td><td>0,327464419</td><td>0,296878587</td><td>0,277398195</td><td>0,269439751</td><td>0,273374916</td><td>0,289483301</td><td>0,317920878</td><td>0,358706609</td><td>0,411727863</td><td>0,476763408</td><td>0,553521876</td><td>0,641693862</td><td>0,7410175</td><td>0,851361038</td><td>0,972832705</td><td>1,105941211</td><td>1,251857625</td><td>1,412892656</td></tr>
+					<tr><td><b>0,8</b></td><td>0,235348186</td><td>0,18682661</td><td>0,149116734</td><td>0,122351638</td><td>0,10677402</td><td>0,102660512</td><td>0,110257495</td><td>0,129732452</td><td>0,161143564</td><td>0,204428525</td><td>0,25941185</td><td>0,325828447</td><td>0,403360626</td><td>0,491686131</td><td>0,590536408</td><td>0,69976764</td><td>0,819452913</td><td>0,9500153</td><td>1,092446137</td><td>1,24871131</td></tr>
+					<tr><td><b>0,9</b></td><td>0,048672224</td><td>0,004498549</td><td>-0,028637449</td><td>-0,050746956</td><td>-0,061708546</td><td>-0,061353106</td><td>-0,049531105</td><td>-0,026160648</td><td>0,00874454</td><td>0,055066776</td><td>0,112593757</td><td>0,181042503</td><td>0,260094377</td><td>0,349438217</td><td>0,448820081</td><td>0,558100805</td><td>0,677327239</td><td>0,806832056</td><td>0,947396953</td><td>1,100563942</td></tr>
+				</table></br>
+				<p>Ejemplos de curvas generadas</p>
+				<img src="../Imagen/Colabora006a.jpg"></img><br>
+				<img src="../Imagen/Colabora006b.jpg"></img><br>
+				<img src="../Imagen/Colabora006c.jpg"></img><br>
+				<img src="../Imagen/Colabora006d.jpg"></img><br>
+				<img src="../Imagen/Colabora006e.jpg"></img><br>
+				<img src="../Imagen/Colabora006f.jpg"></img><br>
+			</article>
+	
+		</section>
+	</body>
+</html>

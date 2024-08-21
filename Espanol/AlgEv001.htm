@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Algoritmo 001</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Algoritmo 001"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Motor de Vida Artificial: Algoritmo 001</h1>
+		</header>
+
+		<section>
+			<article>
+				<h2>Ambientes</h2>
+				<p>Dado un Universo rectangular (para hacerlo simple), se generan múltiples ambientes rectangulares de forma aleatoria. Cada ambiente tiene un comportamiento interno propio representado por una ecuación de doble variable independiente X y Y. Quiere decir, que en un determinado punto X,Y interno hay un valor Z = f(X,Y). Observe el gráfico de ambientes:</p>
+				<p><img src="../Imagen/Alg001a.gif" alt="Ambientes: Obsérvese que los ambientes pueden entrecruzarse." /></p>
+				<h2>Materiales</h2>
+				<p>Ahora se generan materiales puntuales y se colocan de forma aleatoria dentro del Universo, como se observa el gráfico:</p>
+				<p><img src="../Imagen/Alg001b.gif" alt="materiales" /></p>
+				<p>Cada material es un elemento puntual con una coordenada X,Y; además de eso, el material reacciona al ambiente (representado por una ecuación de una sola variableindependiente) así R = f(Valor Ambiente).</p>
+				<p>Por ejemplo, tomemos el material de color verde ubicado en la esquina superior izquierda del ambiente marcado como X*Y+5, este material esta ubicado en la posición (3,5)y su reacción es R= 4*Z + 12. Ahora para ver como reaccionaes muy sencillo:</p>
+				<p>Valor del ambiente X*Y+5 en (3,5) = 3*5+5 = 20<br />	Reacción del material R= 4*Z +12 = 4*20+12= 92</p>
+				<p>¿Que sucede cuando se entrecruzan los ambientes?<br />Por ejemplo, tomemos el material de color verde oscuro ubicado en la esquina inferior derecha del ambiente marcado como X*Y+5 (también influye el ambiente marcado como X+4*Y), este material esta ubicado en la posición (7,15) y su reacción es R= 3*Z*Z. Ahora para ver como reacciona es muy sencillo:</p><p class="TextoNormal">Valor del ambiente (X*Y+5) + (X+4*Y) en (7,15) = 110 + 67 = 177<br /> Reacción del material R= 3*Z*Z = 3*177*177 = 93987</p>
+				<p>¿Que sucede cuando el material cae fuera de algún ambiente?<br />El Universo siempre se comporta como cero (0), el material reacciona al cero(0).</p>
+				<h2>Organismos</h2>
+				<p>Los organismos son la relación entre materiales, ellos buscan mantenerse estables, nacen con un valor estable de energía, pero tienen una tolerancia mínimay máxima de energía.<br />En cada ciclo, el organismo recibe o pierde energía dependiendo de la reacción de los materiales a los ambientes: si la reacción es positiva suma un punto de energía a la estabilidad, si es negativa resta un punto deenergía a la estabilidad del organismo. El ideal sería que tuviese un material que sume y otro que reste por ciclo, así sería eterna la estabilidad.<br />Estos organismos (relaciones) son generados al azar, ver gráfico:</p>
+				<p><img src="../Imagen/Alg001c.gif" alt="organismos" /></p>
+				<p>Hay tres organismos: Rojo, Violeta y Verde, en cada ciclo ganan o pierden estabilidad energética, al pasarse de las tolerancias, mueren (la relación se destruye).</p>
+				<p>La primera simulación es simple, hace lo anterior, genera los organismos al principio, corre el ciclo hasta que todos los organismos mueran.</p>
+				<p>Descargue el código fuente, <a href="../Download/AlgEv001cpp.zip">de clic aquí</a></p>
+				<p>Descargue el ejecutable para Windows, <a href="../Download/AlgEv001exe.zip">de clic aquí</a></p>
+			</article>
+		</section>
+	</body>
+</html>

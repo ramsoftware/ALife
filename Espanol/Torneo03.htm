@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 03: Análisis de las Instrucciones</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Torneo 03: Análisis de las Instrucciones"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 03: Análisis de las Instrucciones</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Cada tanque tiene cinco(5) bloques de instrucción, para atender los distintos eventos que le ocurren. Estos bloques de instrucción son independientes del tanque por lo cual pueden ser usadas por otros tanques.</p>
+				<p><img src="../Imagen/Torneo.gif" alt="image" /></p>
+				<p>Cuando inicia la simulación se leen los parámetros de archivo:</p>
+				<p>NUMTANQUES=400; /* Debe ser entre 0 y 3999 */<br /> NUMINSTRUC=50; /* Debe ser entre 0 y 199 */<br /> TABLEROX=70;<br /> TABLEROY=80; /* TABLEROX*TABLEROY &gt; NUMTANQUES */<br /> CONSTVIDA=300;<br /> MAXCICLOS=50;<br /> LIMREPRODUCE=100; /* Debe ser LIMREPRODUCE &lt; CONSTVIDA o no se reproduce */<br /> MUTACION=1; /* 1 el hijo muta el comportamiento de un evento, 0 es un clon */<br /> TORNEOS=50; /* Cuantos torneos se hacen para sacar a los mejores */</p>
+				<p>Al final de los N torneos, se tienen N tanques buenos ya que fueron los que sobrevivieron. Se analiza cada uno de estos tanques que bloques usaron y se emite el informe.</p>
+				<p>Descargue los <a href= "../Download/Torneo03.zip">fuentes.</a></p>
+			</article>
+		</section>
+	</body>
+</html>

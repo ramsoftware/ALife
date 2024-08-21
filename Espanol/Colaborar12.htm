@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 12.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 12. Aplicación Gráfica</h2>
+		</header>
+		<section>
+			<p>En el <a href="colaborar11.htm">anterior programa</a> se trabajó con el tema del sobreajuste. En esta oportunidad, se elaboró un programa con interfaz gráfica para ver mejor cómo es el desempeño de una red neuronal contra un algoritmo evolutivo (se evalúan ambos procedimientos). En otras palabras, colaborar 12 es la versión gráfica de colaborar 11.<p>
+			<p>Modo de operación:</p>
+			<p>1. El botón "Generar dataset" lo que hace es generar una serie de datos de entrenamiento y una serie de datos de validación. Esos datos nacen de una función generada al azar.</p>
+			<p>2. El botón de "Procesar" lanza un hilo de ejecución que ejecuta la red neuronal y el algoritmo evolutivo. Una vez lanzado, es dejar pasar el tiempo, el programa va mostrando cuantas poblaciones va creando (algoritmo evolutivo) o cuantas redes neuronales ha creado. Entre más tiempo se deje ejecutar el programa mejor.</p>
+			<p>3. El botón "Detener" lo que hace es finalizar el proceso. No lo hace inmediatamente sino hasta que el número de poblaciones y el número de redes neuronales sean iguales y se hayan terminado de evaluar.</p>
+			<p>Una vez se detiene el proceso, se muestra por pantalla las curvas obtenidas por ambos procedimientos. Se muestra la mejor red neuronal que se ajuste a los datos de validación, sucede lo mismo con el algoritmo evolutivo.<p>
+			<img src="../Imagen/Colaborar12a.png">
+			<p>En la segunda lengüeta se muestra el dataset y cuánto sería el valor deducido por ambos procedimientos.</p>
+			<img src="../Imagen/Colaborar12b.png">
+			<p>En la tercera lengüeta se muestra como se configura el procedimiento</p>
+			<img src="../Imagen/Colaborar12c.png">
+			<p>Generador de datos: es la ecuación que se genera al azar y que genera el dataset. Esa ecuación es del tipo Y=F(X). Por tal motivo se pregunta el valor de X mínimo, el valor de X máximo y el número de registros a generar. A continuación, el programa genera la ecuación al azar, de allí genera los datos tanto de entrenamiento como de validación. El programa después de generar los datos, los normaliza para que estén tanto X como Y entre 0 y 1.<p>
+			<p>Algoritmo evolutivo: ¿Cuántos individuos por población se generan?</p>
+			<p>Redes neuronales: ¿Cuántas neuronas tendrá la primera capa oculta y la segunda capa oculta?</p>
+			<p>Tiempo en segundos para el proceso: ¿Cuánto tiempo se dará a cada población generada y a cada red neuronal generada para entrenarse con los datos?</p>
+			<p><a href="../Download/colaborar12.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			<p>Las primeras pruebas, muestran que la red neuronal logra un mejor ajuste al dataset considerando la validación.</p>
+		</section>
+	</body>
+</html>

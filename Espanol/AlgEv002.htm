@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Motor de Vida Artificial: Algoritmo 002</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial: Algoritmo 002"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Algoritmo 002: Optimización, mejor uso de la memoria, tipos de materiales y parametrización.</h1>
+		</header>
+
+		<section>
+			
+			<article>
+				<p>En esta simulación se trae el concepto de tipos de materiales, es decir, presentan un comportamiento similar (una misma expresión). Los materiales heredan entonces el tipo y son ubicados aleatoriamente en los distintos ambientes. Observe en el gráfico materiales del mismo color (mismo tipo) ubicado en distintos ambientes.</p>
+				<p><img src="../Imagen/Alg002a.gif" alt="ambientes, materiales, individuos" /></p>
+				<p>Además se optimiza el uso de memoria, el programa solo reserva la memoria que necesita para operar. La velocidad se incrementó considerablemente.</p>
+				<p>El usuario final puede parametrizar la simulación modificando un archivo texto plano, como se observa a continuación.</p>
+				<p><img src="../Imagen/Alg002b.gif" alt="parámetros de la simulación" /></p>
+				<p>Durante las pruebas se observa que si los organismos son la relación de un número par de materiales, algunos vivirían para siempre (uno resta energía y otro suma en cada ciclo manteniéndose constante la estabilidad).</p>
+				<p>Los parámetros no están validados, luego un valor anómalo puede detener o bloquear la simulación, tenga en cuenta que:<br /> iTotalMat &gt;&gt;&gt; iTotalOrg * iMaxMat;</p>
+				<p>Descargue el código fuente, <a href="../Download/AlgEv002cpp.zip">de clic aquí</a></p>
+				<p>Descargue el ejecutable para Windows, <a href= "../Download/AlgEv002exe.zip">de clic aquí</a></p>
+			</article>
+		
+		</section>
+	</body>
+</html>

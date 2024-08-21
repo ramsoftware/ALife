@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 5.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 5. Comparando el algoritmo genético contra una red neuronal (perceptrón multicapa).</h2>
+		</header>
+		<section>
+		
+			<article>
+				<p><a href="Colaborar04.htm">En la comparación anterior</a>, lo hizo mejor el algoritmo genético que mejora primero los individuos. En esta ocasión, se compara ese algoritmo genético contra una red neuronal (perceptrón multicapa).<p>
+				<p>1. Se genera al azar una ecuación.</p> 
+				<p>2. Esta ecuación genera un conjunto de datos de tipo X, Y.</p>
+				<p>3. Se reescribieron los algoritmos para que usaran la misma cantidad de tiempo y así comparar cuál es más eficiente.</p>
+				<p>4. Tanto el algoritmo genético como la red neuronal intentarán cubrir <b>todo el conjunto de datos con una sola ecuación.</b></p>
+			</article><br>
+			
+			<article>
+				<h2>Código fuente</h2>
+				<p><a href="../Download/colaborar05.zip">Descargar el código fuente desarrollado en C#. Probado en Microsoft Visual Studio 2022 Community Edition</a></p>
+			</article><br>
+			
+			<article>
+				<h2>Resultados</h2>
+				<p>Se hicieron 50 pruebas. Cada prueba genera un conjunto de datos de 200 registros (nacidos de una ecuación creada en forma aleatoria). En cada prueba, cada algoritmo tuvo 10 segundos para operar.</p>
+				<p>Cada valor de la tabla es la mejor aproximación que tuvo el mejor individuo en la población al conjunto de datos. Entre más cercano a cero es mejor.</p>
+				<h3>Algoritmo Genético (población: 100 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Algoritmo genético mejorando primero los individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>0,056409587</td><td>0,050768058</td></tr>
+					<tr><td>0,003112154</td><td>0,001861577</td></tr>
+					<tr><td>5,01E-05</td><td>2,367256871</td></tr>
+					<tr><td>0,041525684</td><td>0,005296844</td></tr>
+					<tr><td>0,04558736</td><td>0,006861776</td></tr>
+					<tr><td>0,006200571</td><td>0,001576744</td></tr>
+					<tr><td>0,134919196</td><td>0,00552177</td></tr>
+					<tr><td>0,091445151</td><td>0,00727422</td></tr>
+					<tr><td>0,001799825</td><td>0,004657489</td></tr>
+					<tr><td>0,040832769</td><td>0,011581341</td></tr>
+					<tr><td>0,384664615</td><td>0,003653298</td></tr>
+					<tr><td>0,000116745</td><td>11,93224729</td></tr>
+					<tr><td>0,301865702</td><td>0,003891278</td></tr>
+					<tr><td>0,2297422</td><td>0,006171706</td></tr>
+					<tr><td>2,85074217</td><td>0,003277111</td></tr>
+					<tr><td>0,028779889</td><td>0,006233412</td></tr>
+					<tr><td>0,916100632</td><td>0,903040892</td></tr>
+					<tr><td>0,002696252</td><td>0,001617391</td></tr>
+					<tr><td>0,001897393</td><td>0,002337936</td></tr>
+					<tr><td>0,212620097</td><td>0,005410461</td></tr>
+					<tr><td>0,040970555</td><td>0,003883254</td></tr>
+					<tr><td>1,961298182</td><td>0,000810018</td></tr>
+					<tr><td>0,040916169</td><td>0,004052651</td></tr>
+					<tr><td>0,597321421</td><td>0,386056736</td></tr>
+					<tr><td>0,065896271</td><td>0,006635768</td></tr>
+					<tr><td>0,012382273</td><td>0,007900692</td></tr>
+					<tr><td>0,002192463</td><td>0,003200907</td></tr>
+					<tr><td>0,033991481</td><td>0,00330776</td></tr>
+					<tr><td>0,0410592</td><td>0,005365516</td></tr>
+					<tr><td>0,039712344</td><td>0,011473051</td></tr>
+					<tr><td>0,619756345</td><td>0,626917069</td></tr>
+					<tr><td>0,038858342</td><td>0,002719818</td></tr>
+					<tr><td>0,591514408</td><td>0,366639355</td></tr>
+					<tr><td>0,696365464</td><td>0,037309013</td></tr>
+					<tr><td>0,003410273</td><td>0,001217354</td></tr>
+					<tr><td>8,773757702</td><td>5,895568474</td></tr>
+					<tr><td>0,046814627</td><td>0,006253101</td></tr>
+					<tr><td>0,003463817</td><td>0,002035888</td></tr>
+					<tr><td>0,645801505</td><td>0,001380191</td></tr>
+					<tr><td>0,040839066</td><td>0,007058582</td></tr>
+					<tr><td>0,03597662</td><td>0,004449249</td></tr>
+					<tr><td>0,097802952</td><td>0,014384295</td></tr>
+					<tr><td>0,776244715</td><td>0,768370477</td></tr>
+					<tr><td>0,05684533</td><td>0,006116995</td></tr>
+					<tr><td>0,040919958</td><td>0,012500529</td></tr>
+					<tr><td>0,040935166</td><td>0,00788109</td></tr>
+					<tr><td>0,90419109</td><td>0,911076466</td></tr>
+					<tr><td>0,163853156</td><td>0,011219462</td></tr>
+					<tr><td>0,005222732</td><td>0,009794643</td></tr>
+					<tr><td>0,102595674</td><td>0,007928003</td></tr>
+					<tr><td>Promedio: <b>0,437440348</b></td><td>Promedio: <b>0,489280877</b></td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora005a.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 250 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Algoritmo genético mejorando primero los individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>0,002738895</td><td>0,007435696</td></tr>
+					<tr><td>0,053222715</td><td>0,010510213</td></tr>
+					<tr><td>0,040988507</td><td>0,012803539</td></tr>
+					<tr><td>0,005555635</td><td>0,004137448</td></tr>
+					<tr><td>0,053108762</td><td>0,009026788</td></tr>
+					<tr><td>0,42917138</td><td>0,00259097</td></tr>
+					<tr><td>0,01265889</td><td>0,001895588</td></tr>
+					<tr><td>0,039178598</td><td>0,005084603</td></tr>
+					<tr><td>0,952583285</td><td>0,989763775</td></tr>
+					<tr><td>0,001745922</td><td>0,007106661</td></tr>
+					<tr><td>0,053093029</td><td>0,006365995</td></tr>
+					<tr><td>0,102694856</td><td>0,019117981</td></tr>
+					<tr><td>0,041476921</td><td>0,01732451</td></tr>
+					<tr><td>0,926253135</td><td>0,999355014</td></tr>
+					<tr><td>0,156514695</td><td>0,006570568</td></tr>
+					<tr><td>0,722398673</td><td>0,739598247</td></tr>
+					<tr><td>0,05322883</td><td>0,013483637</td></tr>
+					<tr><td>0,040124633</td><td>0,013136605</td></tr>
+					<tr><td>0,156520226</td><td>0,006300334</td></tr>
+					<tr><td>0,039506216</td><td>0,004715571</td></tr>
+					<tr><td>0,006457773</td><td>0,005379192</td></tr>
+					<tr><td>0,000106148</td><td>0,003445485</td></tr>
+					<tr><td>0,004184082</td><td>0,006535181</td></tr>
+					<tr><td>0,043994173</td><td>0,010416954</td></tr>
+					<tr><td>0,040847686</td><td>0,013648211</td></tr>
+					<tr><td>0,008875653</td><td>0,019212311</td></tr>
+					<tr><td>0,002106464</td><td>0,001898676</td></tr>
+					<tr><td>0,03973931</td><td>0,012698318</td></tr>
+					<tr><td>0,190554436</td><td>0,003283916</td></tr>
+					<tr><td>0,001712208</td><td>0,00109696</td></tr>
+					<tr><td>0,040906098</td><td>0,004808459</td></tr>
+					<tr><td>0,040855613</td><td>0,006232195</td></tr>
+					<tr><td>0,005254851</td><td>0,002939542</td></tr>
+					<tr><td>0,006887772</td><td>0,000584531</td></tr>
+					<tr><td>0,001868573</td><td>0,001171315</td></tr>
+					<tr><td>2,121093271</td><td>0,000265699</td></tr>
+					<tr><td>0,019453016</td><td>0,004250675</td></tr>
+					<tr><td>0,915602761</td><td>0,957964901</td></tr>
+					<tr><td>0,002602513</td><td>0,000825023</td></tr>
+					<tr><td>0,001780728</td><td>0,001035339</td></tr>
+					<tr><td>0,009123772</td><td>0,001696353</td></tr>
+					<tr><td>0,199862698</td><td>0,003513151</td></tr>
+					<tr><td>0,048613421</td><td>0,020218377</td></tr>
+					<tr><td>0,007823033</td><td>0,006341934</td></tr>
+					<tr><td>0,001972889</td><td>0,020373753</td></tr>
+					<tr><td>0,169492594</td><td>0,018853633</td></tr>
+					<tr><td>0,591096809</td><td>0,001398673</td></tr>
+					<tr><td>0,001551313</td><td>0,000793783</td></tr>
+					<tr><td>0,661345678</td><td>0,170475862</td></tr>
+					<tr><td>0,038769222</td><td>0,013956033</td></tr>
+					<tr><td>Promedio: <b>0,182145967</b></td><td>Promedio: <b>0,083832763</b></td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora005b.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 500 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Algoritmo genético mejorando primero los individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>0,045705219</td><td>0,01158748</td></tr>
+					<tr><td>0,096046645</td><td>0,01323741</td></tr>
+					<tr><td>0,236785894</td><td>0,009299029</td></tr>
+					<tr><td>0,015921686</td><td>0,003612142</td></tr>
+					<tr><td>0,014791062</td><td>0,003863399</td></tr>
+					<tr><td>0,0071595</td><td>0,0014993</td></tr>
+					<tr><td>0,0036478</td><td>0,010041613</td></tr>
+					<tr><td>0,002642247</td><td>0,008896704</td></tr>
+					<tr><td>0,002857066</td><td>0,006235412</td></tr>
+					<tr><td>0,059810701</td><td>0,002751161</td></tr>
+					<tr><td>0,039714329</td><td>0,005549972</td></tr>
+					<tr><td>0,532487942</td><td>0,003222028</td></tr>
+					<tr><td>0,002672488</td><td>0,001069281</td></tr>
+					<tr><td>0,023467745</td><td>0,002759507</td></tr>
+					<tr><td>0,002784431</td><td>0,0012695</td></tr>
+					<tr><td>0,041088136</td><td>0,003203934</td></tr>
+					<tr><td>0,039775329</td><td>0,004455568</td></tr>
+					<tr><td>0,650343962</td><td>0,328891501</td></tr>
+					<tr><td>0,040866141</td><td>0,005967821</td></tr>
+					<tr><td>0,004051801</td><td>0,020495148</td></tr>
+					<tr><td>0,040885588</td><td>0,004899178</td></tr>
+					<tr><td>0,040863692</td><td>0,014085881</td></tr>
+					<tr><td>0,003662333</td><td>0,004609448</td></tr>
+					<tr><td>0,003106835</td><td>0,001128523</td></tr>
+					<tr><td>0,006494741</td><td>0,004307463</td></tr>
+					<tr><td>0,003044504</td><td>0,001710511</td></tr>
+					<tr><td>0,038536761</td><td>0,004157228</td></tr>
+					<tr><td>0,040839024</td><td>0,005921686</td></tr>
+					<tr><td>0,038592117</td><td>0,013879406</td></tr>
+					<tr><td>0,042198918</td><td>0,012663046</td></tr>
+					<tr><td>0,003120159</td><td>0,003105548</td></tr>
+					<tr><td>0,039601413</td><td>0,011418638</td></tr>
+					<tr><td>0,12116823</td><td>0,015194655</td></tr>
+					<tr><td>0,002063412</td><td>0,000992255</td></tr>
+					<tr><td>0,039768206</td><td>0,015028975</td></tr>
+					<tr><td>0,003108242</td><td>0,001264114</td></tr>
+					<tr><td>7,29E-06</td><td>0,005665333</td></tr>
+					<tr><td>0,001644004</td><td>0,006256636</td></tr>
+					<tr><td>0,003739339</td><td>0,00163749</td></tr>
+					<tr><td>0,066989114</td><td>0,015576702</td></tr>
+					<tr><td>0,600842158</td><td>0,364637271</td></tr>
+					<tr><td>0,013301293</td><td>0,003061603</td></tr>
+					<tr><td>0,010724448</td><td>0,001901634</td></tr>
+					<tr><td>0,038736597</td><td>0,012761851</td></tr>
+					<tr><td>0,121150987</td><td>0,011004292</td></tr>
+					<tr><td>0,577263373</td><td>0,602620104</td></tr>
+					<tr><td>0,573298084</td><td>0,600871965</td></tr>
+					<tr><td>0,004868006</td><td>0,004949279</td></tr>
+					<tr><td>0,004558455</td><td>0,005940986</td></tr>
+					<tr><td>0,003708808</td><td>0,001174557</td></tr>
+					<tr><td>Promedio: <b>0,087010125</b></td><td>Promedio: <b>0,044006683</b></td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora005c.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 750 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Algoritmo genético mejorando primero los individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>0,073596955</td><td>0,011701394</td></tr>
+					<tr><td>0,020880206</td><td>0,003216936</td></tr>
+					<tr><td>0,095274218</td><td>0,005794233</td></tr>
+					<tr><td>0,040857823</td><td>0,01271875</td></tr>
+					<tr><td>0,000515327</td><td>0,004607653</td></tr>
+					<tr><td>0,006606109</td><td>0,003535447</td></tr>
+					<tr><td>0,000240304</td><td>0,00426408</td></tr>
+					<tr><td>0,002973698</td><td>0,001510895</td></tr>
+					<tr><td>0,001942462</td><td>0,000826035</td></tr>
+					<tr><td>0,023368807</td><td>0,003010282</td></tr>
+					<tr><td>0,06393348</td><td>0,005756714</td></tr>
+					<tr><td>0,693699471</td><td>0,043586601</td></tr>
+					<tr><td>4,978975869</td><td>1,19378722</td></tr>
+					<tr><td>0,001753929</td><td>0,000843333</td></tr>
+					<tr><td>0,044808785</td><td>0,00416116</td></tr>
+					<tr><td>2,599145972</td><td>0,000482171</td></tr>
+					<tr><td>0,002533144</td><td>0,001698213</td></tr>
+					<tr><td>0,109135161</td><td>0,018543145</td></tr>
+					<tr><td>0,001426074</td><td>0,000836743</td></tr>
+					<tr><td>0,680435996</td><td>0,697202909</td></tr>
+					<tr><td>0,468869838</td><td>0,004699076</td></tr>
+					<tr><td>2,642764587</td><td>0,001707228</td></tr>
+					<tr><td>0,000403009</td><td>0,000676294</td></tr>
+					<tr><td>0,028839783</td><td>0,003384246</td></tr>
+					<tr><td>0,054522974</td><td>0,007228966</td></tr>
+					<tr><td>0,040444764</td><td>0,007175726</td></tr>
+					<tr><td>0,057468825</td><td>0,004292816</td></tr>
+					<tr><td>0,009008995</td><td>0,012764017</td></tr>
+					<tr><td>0,039190996</td><td>0,004016388</td></tr>
+					<tr><td>0,003532441</td><td>0,019536189</td></tr>
+					<tr><td>0,607264534</td><td>0,608038603</td></tr>
+					<tr><td>0,00157024</td><td>0,001983717</td></tr>
+					<tr><td>0,007530491</td><td>0,001346314</td></tr>
+					<tr><td>0,00131032</td><td>0,000745118</td></tr>
+					<tr><td>0,003479239</td><td>0,002567215</td></tr>
+					<tr><td>0,768140022</td><td>0,78045493</td></tr>
+					<tr><td>0,049634413</td><td>0,00411522</td></tr>
+					<tr><td>0,040895419</td><td>0,004005847</td></tr>
+					<tr><td>0,095372938</td><td>0,006392564</td></tr>
+					<tr><td>0,597098418</td><td>0,339193495</td></tr>
+					<tr><td>0,9359204</td><td>0,974304855</td></tr>
+					<tr><td>0,040852977</td><td>0,017859016</td></tr>
+					<tr><td>0,007641276</td><td>0,009389338</td></tr>
+					<tr><td>0,042056329</td><td>0,018484971</td></tr>
+					<tr><td>0,014580322</td><td>0,007167583</td></tr>
+					<tr><td>0,040096326</td><td>0,018287478</td></tr>
+					<tr><td>0,001799158</td><td>0,002459916</td></tr>
+					<tr><td>1,626247682</td><td>0,000432976</td></tr>
+					<tr><td>0,003119453</td><td>0,009242168</td></tr>
+					<tr><td>0,037883893</td><td>0,012818774</td></tr>
+					<tr><td>Promedio: <b>0,354192877</b></td><td>Promedio: <b>0,098057099</b></td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora005d.jpg"></img><br><br>
+				
+				<h3>Algoritmo Genético (población: 1000 individuos) vs Red neuronal: 2 capas ocultas, cada una de 5 neuronas.</h3>
+				<table border="1">
+					<tr><th>Algoritmo genético mejorando primero los individuos</th><th>Red Neuronal (Perceptrón multicapa)</th></tr>
+					<tr><td>0,063664801</td><td>0,007294925</td><tr>
+					<tr><td>0,030609026</td><td>0,003369836</td><tr>
+					<tr><td>0,006213155</td><td>0,004122689</td><tr>
+					<tr><td>0,002262269</td><td>0,004768821</td><tr>
+					<tr><td>0,04092856</td><td>0,015340665</td><tr>
+					<tr><td>0,025187516</td><td>0,002683691</td><tr>
+					<tr><td>0,007051688</td><td>0,002074759</td><tr>
+					<tr><td>1,557855926</td><td>0,005438602</td><tr>
+					<tr><td>0,039597931</td><td>0,010815268</td><tr>
+					<tr><td>0,03291923</td><td>0,004277725</td><tr>
+					<tr><td>0,636903635</td><td>0,000882676</td><tr>
+					<tr><td>0,038529044</td><td>0,01345365</td><tr>
+					<tr><td>0,057484079</td><td>0,007722232</td><tr>
+					<tr><td>0,022116487</td><td>0,007990784</td><tr>
+					<tr><td>0,927395951</td><td>0,97450765</td><tr>
+					<tr><td>3,22E-06</td><td>0,008315674</td><tr>
+					<tr><td>0,021148478</td><td>0,009234336</td><tr>
+					<tr><td>0,336560335</td><td>0,003300005</td><tr>
+					<tr><td>0,001290622</td><td>0,001095776</td><tr>
+					<tr><td>0,039666144</td><td>0,004560474</td><tr>
+					<tr><td>0,00188847</td><td>0,006067861</td><tr>
+					<tr><td>0,000301453</td><td>0,001063474</td><tr>
+					<tr><td>0,871717677</td><td>0,795047708</td><tr>
+					<tr><td>0,597528709</td><td>0,384757834</td><tr>
+					<tr><td>0,011251557</td><td>0,003434738</td><tr>
+					<tr><td>0,00605428</td><td>0,008681054</td><tr>
+					<tr><td>0,005449899</td><td>0,005302853</td><tr>
+					<tr><td>0,850042696</td><td>0,000781718</td><tr>
+					<tr><td>0,372387351</td><td>0,004532554</td><tr>
+					<tr><td>0,000616332</td><td>0,001412185</td><tr>
+					<tr><td>0,409279097</td><td>0,003333115</td><tr>
+					<tr><td>0,482878209</td><td>0,008587236</td><tr>
+					<tr><td>0,06020981</td><td>0,002395195</td><tr>
+					<tr><td>0,037342806</td><td>0,012978091</td><tr>
+					<tr><td>0,178333282</td><td>0,042423438</td><tr>
+					<tr><td>0,641468443</td><td>0,661011502</td><tr>
+					<tr><td>0,007514029</td><td>0,001357586</td><tr>
+					<tr><td>0,001669264</td><td>0,000727154</td><tr>
+					<tr><td>0,082287604</td><td>0,006910647</td><tr>
+					<tr><td>0,002957812</td><td>0,001343235</td><tr>
+					<tr><td>0,634174306</td><td>0,000890253</td><tr>
+					<tr><td>0,002605849</td><td>0,001145639</td><tr>
+					<tr><td>0,115337571</td><td>0,002251434</td><tr>
+					<tr><td>0,887855743</td><td>0,894815742</td><tr>
+					<tr><td>0,063439362</td><td>0,004543663</td><tr>
+					<tr><td>0,005523357</td><td>0,00125938</td><tr>
+					<tr><td>0,852400477</td><td>0,000906904</td><tr>
+					<tr><td>0,000387608</td><td>0,004213101</td><tr>
+					<tr><td>0,050510521</td><td>0,00584791</td><tr>
+					<tr><td>0,04098977</td><td>0,003847243</td><tr>
+					<tr><td>Promedio: <b>0,223235829</b></td><td>Promedio: <b>0,079262414</b></td></tr>
+				</table><br><br>
+				<img src="../Imagen/Colabora005e.jpg"></img><br><br>
+
+				<h3>Conclusiones</h3>
+				<p>En 4 de 5 pruebas, la red neuronal tuvo mejor aproximación en promedio. Por lo general, donde hay una aproximación peor para el algoritmo genético, también lo es para la red neuronal.<br>
+				Cabe recordar que el algoritmo genético lo componen individuos que tienen la siguiente expresión y=f(x) así:<br>
+				y=(seno(a*(1-x)^4 + b*(1-x)^3 + c*(1-x)^2 + d*(1-x) +e + f*x + g*x^2 + h*x^3 + i*x^4)+1)/2<br>
+				el algoritmo genético trabaja en modificar a, b, c, d, e, f, g, h, i.</p>
+			</article>
+	
+		</section>
+	</body>
+</html>

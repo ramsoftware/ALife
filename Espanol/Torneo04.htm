@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Vida Artificial. Torneo 04: ¿De dónde nacen las reacciones?</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Vida Artificial. Torneo 04: ¿De dónde nacen las reacciones?"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, Algoritmos"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Vida Artificial. Torneo 04: ¿De dónde nacen las reacciones?</h1>
+		</header>
+
+		<section>
+			<article>
+				<p>En los anteriores torneos, he construido una serie de tanques los cuales reaccionan cuando son alcanzados por un disparo, o cuando detectan a un tanque enemigo en el radar, etc.. es la típica programación por eventos. Sin embargo, esto tiene una limitante y es que los eventos ya están predefinidos: "cuando_detecta_un_tanque_con_el_radar", "cuando_es_alcanzado_por_un_disparo".</p>
+				<p>Los seres vivos no tienen esta limitante. En el curso evolutivo con el desarrollo de nuevos sentidos (mecanismos para darse cuenta que sucede en el ambiente interno/externo), se generan nuevos eventos que dan a lugar a nuevas reacciones. Por ejemplo, si se evoluciona un mecanismo para detectar las ondas sonoras (como el oído), este sentido comunica al cerebro del ser vivo cuando percibe un ruido y entre mas complejo sea el oído mayor será la información transmitida sobre el ruido (volumen, timbre, frecuencia), el cerebro al recibir esta información, la procesa y reacciona.</p>
+				<p>Esto significa que el material del nuevo sentido reacciona con determinadas manifestaciones del ambiente, en el caso del oído, este sentido reacciona por las ondas sonoras que hay en el ambiente. Aquí solo hay leyes físicas, luego en una simulación sobre vida artificial se debería simular las leyes físicas, pero para no volver demasiado complejo el trabajo de programación (imagínense simular todos los eventos físicos, &iexcl;no se terminaría nunca!) entonces estas leyes físicas se pueden implementar fácilmente como una relación cuantitativa entre dos o mas tipos de materiales, ejemplo: Material Tipo A, se encuentra a una distancia D del material Tipo B entonces hay una reacción expresada con una fórmula que se genera al azar al inicio de la simulación. Yo considero que la vida es independiente de las leyes físicas, la vida solo hace uso u obedece las leyes físicas.</p>
+				<p>El otro punto es que el tipo de material se vuelve parte del organismo, ese material solo comunica información cuando reacciona con el medio ambiente, en otras palabras, significa que al haber un nuevo material se crea un nuevo canal de comunicación entre el nuevo material y el "cerebro" del organismo, si ese canal permanece sin datos es porque el nuevo material no ha reaccionado con nada, cuando comience a llegar datos por ese canal es porque el nuevo material esta reaccionando con algo. Así que el "cerebro" del organismo solo debe estar pendiente de lo que llega por los diversos canales y eso reduce considerablemente la tarea de programación, la vuelve muy simple, tal y como la vida lo ha demostrado. Así se soluciona el manejo dinámico de eventos.</p>
+			</article>
+		</section>
+	</body>
+</html>

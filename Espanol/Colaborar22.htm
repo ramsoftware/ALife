@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Colaboración entre individuos. Programa 22.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Investigación sobre la colaboración entre individuos"/>
+		<meta name="keywords" content="Vida Artificial, colaboración, software, simulaciones"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Colaboración entre individuos</h1>
+			<h2>Programa 22. Planificando las operaciones de colaboración</h2>
+		</header>
+		<section>
+			<p>En el artículo anterior (Programa 21) se mencionó sobre operaciones de colaboración. Es momento de empezar a definir estas operaciones.</p>
+			<p>Las operaciones son del tipo:</p>
+			<p>Y = FuncionColaboración( F1(x), F2(x), F3(x), ....., Fn(x) ). Se evalúan las N funciones con todos los diferentes valores de X, se aplica la FuncionColaboración y luego se normaliza (quedando los valores entre 0 y 1)</p><br>
+			
+			<p>Y = Máximo(F(x), G(x), H(x))</p>
+			<p>En el caso de "Máximo", para un valor de "x" en particular, se evalúan las tres funciones, aquella que devuelva el mayor valor es la que dará ese valor a Y.</p><br> 
+			
+			<p>Y = Mínimo(F(x), G(x), H(x))</p>
+			<p>En el caso de "Mínimo", para un valor de "x" en particular, se evalúan las tres funciones, aquella que devuelva el menor valor es la que dará ese valor a Y.</p><br>
+			
+			<p>Y = ExtremoMaximo(F(x), G(x), H(x))</p>
+			<p>Se busca el mayor valor si está por encima de cero, y el menor valor si está por debajo de cero.</p><br>
+			
+			<p>Y = ExtremoMinimo(F(x), G(x), H(x))</p>
+			<p>Se busca el menor valor si está por encima de cero, y el mayor valor si está por debajo de cero.</p><br>
+			
+			<p>Y = Alterna(N, F(x), G(x), H(x))</p>
+			<p>Los primeros N valores de x se evalúa F(x), los siguientes N valores se evalúa G(x), los siguientes N valores se evalúa H(x), y se repite de nuevo los siguientes N valores con F(x).</p><br>
+			
+			<p>Van a haber más operaciones de colaboración. Un paso siguiente y complejo es crear un evaluador de expresiones que sea capaz de interpretar esas operaciones, y en forma paralela, cómo hacer para que esas operaciones puedan combinarse y también mutar para aplicar las técnicas de algoritmos evolutivos.</p>
+			
+		</section>
+	</body>
+</html>

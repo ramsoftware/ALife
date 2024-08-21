@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="../Estilo.css" rel="stylesheet" type="text/css" />
+		<title>Hipótesis: Reproducción sexual y escalabilidad</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Hipótesis: Reproducción sexual y escalabilidad"/>
+		<meta name="keywords" content="Vida Artificial, Simulación, simbiosis"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<p><a href="../index.html">Ir a Inicio</a></p>
+			<h1>Simbiosis: Reproducción sexual y escalabilidad. <time>2000-julio-26</time></h1>
+		</header>
+
+		<section>
+			<article>
+				<p>Uno de los experimentos mas comunes en la implementación de la vida artificial es el uso de poblaciones, esta consiste en crear una generación de organismos al principio y luego se les deja vivir: compitiendo, depredando, reproduciéndose y muriendo. Cada nueva generación puede combinar las características de sus padres (en reproducción sexual) o pueden tener ciertas modificaciones o mutaciones (reproducción asexual). Solo los mas aptos sobreviven.</p>
+				<p>Este acercamiento plantea algunos problemas como:</p>
+				<ol>
+					<li>¿Cómo se crea la primera generación?</li>
+					<li>La calidad de la primera generación determina la calidad de las siguientes generaciones en reproducción sexual.</li>
+					<li>En reproducción sexual, se puede lograr un enorme número de combinaciones, pero son finitas.</li>
+					<li>Creación del ambiente y las leyes que operarán.</li>
+					<li>Posibilidad de extinción masiva.</li>
+				</ol>
+				<p>En las simulaciones que estoy realizando los organismos son representados como algoritmos:</p>
+				<p>Serie Entrada: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,</p>
+				<p>Serie Salida:2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97</p>
+				<p>Organismo 01 Aproximación: [26.999992]<br />
+						float fSerVivo(float X)<br />
+						{<br />
+							float W=0, Y=0, Z=0;<br /><br />
+							1: Y = (((Y*6)));<br />
+							2: Z = 1-6-6;<br />
+							3: Y = (Y)-7;<br />
+							4: if( W &gt; (((1*X))) ) goto 17;<br />
+							5: Y = 8/((2/X));<br />
+							6: if( X &gt; 2-(Z+Z) ) goto 0;<br />
+							7: if( Y &lt; ((((9+X)))) ) goto 16;<br />
+							8: X = Z/3+2;<br />
+							9: Y = 5*(Y/5);<br />
+							10: if( X &gt; ((X+3)) ) goto 0;<br />
+							11: Z = 4*6/Y;<br />
+							12: W = Z+6/3;<br />
+							13: if( Z &lt; X+X+5 ) goto 3;<br />
+							14: Z = 7*X-X;<br />
+							15: if( Y ! 3+(X/X) ) goto 13;<br />
+							16: Y = X-1+2;<br />
+							17: if( W &gt; (8*Z) ) goto 0;<br />
+							18: Y = Y-8+4;<br />
+							return Y;<br />
+						}<br /></p>
+				<p>Organismo 2: Aproximación: [31.000000]<br />
+						float fSerVivo(float X)<br />
+						{<br />
+							float W=0, Y=0, Z=0;<br />
+							<br />
+							1: X = X-4+3;<br />
+							2: if( X ! (Y+Y) ) goto 23;<br />
+							3: Z = 3-(((5)/2));<br />
+							4: X = (3/7);<br />
+							5: if( X ! (4*8) ) goto 14;<br />
+							6: if( X &lt; 9-(7-5) ) goto 27;<br />
+							7: Z = (Y-Y);<br />
+							8: Y = (4/3);<br />
+							9: Y = 2/8/7;<br />
+							10: Y = 4-9-3;<br />
+							11: Y = Z-((7*Z));<br />
+							12: Y = ((Y-8));<br />
+							13: W = Y*(Y/5);<br />
+							14: if( Z &lt; 2-X-3 ) goto 21;<br />
+							15: X = (X*7);<br />
+							16: Y = 4-Z-Z;<br />
+							17: if( Y &gt; 8*(W*5) ) goto 26;<br />
+							18: W = Z+1+1;<br />
+							19: if( X = (4*9) ) goto 8;<br />
+							20: W = (Z+Z);<br />
+							21: Y = 3*(((4-X)));<br />
+							22: Z = (Y/Y);<br />
+							23: W = X+X-3;<br />
+							24: Y = (W+W);<br />
+							25: if( W = (((2/Y))) ) goto 4;<br />
+							26: W = 7+Z*5;<br />
+							27: if( X &gt; (8+7) ) goto 0;<br />
+							28: Y = (Y-1);<br />
+							29: X = Y/Y*4;<br />
+							return Y;<br />
+						}<br /></p>
+						
+						<p>Si creo una población de Organismos y los programo para una reproducción sexual, los hijos resultantes ¿que heredarían?, puede ser una combinación de instrucciones, sin embargo, como se observó en simulaciones anteriores, los hijos resultantes tienen el mismo problema que un organismo el cual ha mutado mucho: Su adaptación es deficiente. Por ejemplo, combinemos los dos organismos anteriores:<br /></p>
+						<p>Posible Hijo 1 (Instrucciones impares Organismo 1 + Instrucciones pares Organismo 2)<br />Aproximación: 91,5714 (mala)<br />
+						float fSerVivo(float X)<br />
+						{<br />
+							float W=0, Y=0, Z=0;<br />
+							1: Y = (((Y*6)));<br />
+							2: if( X ! (Y+Y) ) goto 23;<br />
+							3: Y = (Y)-7;<br />
+							4: X = (3/7);<br />
+							5: Y = 8/((2/X));<br />
+							6: if( X &lt; 9-(7-5) ) goto 27;<br />
+							7: if( Y &lt; ((((9+X)))) ) goto 16;<br />
+							8: Y = (4/3);<br />
+							9: Y = 5*(Y/5);<br />
+							10: Y = 4-9-3;<br />
+							11: Z = 4*6/Y;<br />
+							12: Y = ((Y-8));<br />
+							13: if( Z &lt; X+X+5 ) goto 3;<br />
+							14: if( Z &lt; 2-X-3 ) goto 21;<br />
+							15: if( Y ! 3+(X/X) ) goto 13;<br />
+							16: Y = 4-Z-Z;<br />
+							17: if( W &gt; (8*Z) ) goto 0;<br />
+							18: W = Z+1+1;<br />
+							19: if( X = (4*9) ) goto 8;<br />
+							20: W = (Z+Z);<br />
+							21: Y = 3*(((4-X)));<br />
+							22: Z = (Y/Y);<br />
+							23: W = X+X-3;<br />
+							24: Y = (W+W);<br />
+							25: if( W = (((2/Y))) ) goto 4;<br />
+							26: W = 7+Z*5;<br />
+							27: if( X &gt; (8+7) ) goto 0;<br />
+							28: Y = (Y-1);<br />
+							29: X = Y/Y*4;<br />
+						}<br /></p>
+						
+					<p>Posible Hijo 2: (Instrucciones pares Organismo 1 + Instrucciones impares Organismo 2)<br /> Aproximación: 1066 (muy mala)<br />
+						float fSerVivo(float X)<br />
+						{<br />
+							float W=0, Y=0, Z=0;<br />
+							1: X = X-4+3;<br />
+							2: Z = 1-6-6;<br />
+							3: Z = 3-(((5)/2));<br />
+							4: if( W &gt; (((1*X))) ) goto 17;<br />
+							5: if( X ! (4*8) ) goto 14;<br />
+							6: if( X &gt; 2-(Z+Z) ) goto 0;<br />
+							7: Z = (Y-Y);<br />
+							8: X = Z/3+2;<br />
+							9: Y = 2/8/7;<br />
+							10: if( X &gt; ((X+3)) ) goto 0;<br />
+							11: Y = Z-((7*Z));<br />
+							12: W = Z+6/3;<br />
+							13: W = Y*(Y/5);<br />
+							14: Z = 7*X-X;<br />
+							15: X = (X*7);<br />
+							16: Y = X-1+2;<br />
+							17: if( Y &gt; 8*(W*5) ) goto 26;<br />
+							18: Y = Y-8+4;<br />
+							19: if( X = (4*9) ) goto 8;<br />
+							20: W = (Z+Z);<br />
+							21: Y = 3*(((4-X)));<br />
+							22: Z = (Y/Y);<br />
+							23: W = X+X-3;<br />
+							24: Y = (W+W);<br />
+							25: if( W = (((2/Y))) ) goto 4;<br />
+							26: W = 7+Z*5;<br />
+							27: if( X &gt; (8+7) ) goto 0;<br />
+							28: Y = (Y-1);<br />
+							29: X = Y/Y*4;<br />
+						}<br /></p>
+						
+					<p>Se necesitará de muchísimas reproducciones para que por suerte se genere un hijo que se adapte mejor que sus padres. El problema es que a pesar que las instrucciones de cada organismo son independientes, durante el curso de selección y modificación aleatoria se ha generado una dependencia implícita. Una instrucción de asignación, necesita de la instrucción condicional o asignación siguiente y así sucesivamente. Cuando combino instrucciones en la generación de hijos, esta relación se pierde y da como resultado una completa desadaptación.</p>
+					<p>¿Y entonces, como se explica que la reproducción sexual exista en la naturaleza y sea tan exitosa? Los seres vivos mas complejos (incluyéndonos), tienen reproducción sexual. Esta reproducción se da entre dos seres vivos de la misma especie. El resultado son hijos que combinan las características de sus padres.</p>
+					<p>No puedo intercambiar instrucciones entre los organismos que uso en las simulaciones, luego no puedo implementar reproducción sexual, pero la reproducción sexual existe en la naturaleza. ¿Jaque mate?. Nada de eso, hay una solución.</p>
+					
+					<h2>La Escalabilidad</h2>
+					<p>En términos de informática la escalabilidad es la capacidad que tiene el hardware o software para poder adaptarse a una exigencia mayor. Por ejemplo, un sistema operativo se ejecuta bien en un solo procesador, ahora instalémoslo en una máquina con cuatro(4) procesadores, el sistema operativo es escalable si puede manejar los tres procesadores adicionales sin problemas repartiendo tareas entre estos.</p>
+					<p>Pero seamos escépticos, subamos el número de procesadores por ejemplo a 7000 ¿Podrá el sistema operativo manejar este número? Si puedo subir el número de procesadores a miles o millones y no hay límite entonces estaremos frente a un software totalmente escalable. Pero si en cambio, su límite llegó hasta manejar 4 entonces se pone en duda su escalabilidad (puede que esté programado para manejar de 1 a 4).</p>
+					<p>El motor evolutivo es un software totalmente escalable, han existido millones de especies, desde los virus, bacterias hasta ballenas, elefantes o seres humanos totalmente distintos, de distinto comportamiento pero con algo en común: son seres vivos.</p>
+					<p>Luego cualquier estudio sobre vida artificial debe tener siempre presente la escalabilidad: la vida no tiene límites.</p>
+					
+					<h2>El MacroOrganismo</h2>
+					<p>Siempre se nos ha enseñado que somos un ser vivo, un organismo. Pensemos entonces que nosotros mismos, nuestro cuerpo es una compleja y armoniosa simbiosis entre varios organismos, cada parte de nuestro cuerpo fue en un tiempo un organismo independiente pero al lograr hacer simbiosis, varias de sus características se atrofiaron y se especializaron en una determinada función, se implementó el "yo doy, tu das". Por ejemplo tomemos el caso de nuestros ojos, un organismo que se especializó en tratar la luz, se convirtió en un sentido, el ofrece este servicio a la comunidad y a su vez recibe protección y alimentos. Igual podemos hablar de todos los órganos y partes de nuestro cuerpo.</p>
+					<p>Este concepto es escalable, un conjunto de organismos en simbiosis generan un nuevo organismo (al que llamo MacroOrganismo). Nosotros mismos somos un MacroOrganismo.</p>
+					<p>Ahí se encuentra la respuesta de la reproducción sexual, esta simplemente no existe.</p>
+					<p>Cada parte del MacroOrganismo, se reproduce asexualmente. Cuando decimos: "Hay que niño tan lindo, saco los ojos del papá y la nariz de la mamá", hablamos a enorme escala que los ojos del padre se reprodujeron y lo mismo sucede con la nariz de la madre. Si, es a enorme escala, porque los ojos serán a su vez la simbiosis de seres vivos aún mas pequeños y así sucesivamente. </p>
+					<p>Implementar esto ya es más fácil, cada organismo (representado por un algoritmo) es la unidad básica de reproducción asexual. Una simbiosis de organismos generan un MacroOrganismo, el reproducir MacroOrganismos simplemente es tomar un organismo de uno u otro de manera aleatoria y generar una nueva simbiosis (un nuevo MacroOrganismo, un "hijo").</p>
+					<p>Pero se plantea la siguiente pregunta: ¿No generará esto un número finito de seres vivos? Si, pero como sucede con el ajedrez, el cual tiene un número finito de movimientos, este número es muy grande, es enorme. Además las casuales mutaciones le darían la característica infinita.</p>
+			</article>
+		</section>
+	</body>
+</html>
