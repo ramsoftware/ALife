@@ -1,0 +1,84 @@
+body{
+	margin: 1;
+	background: white;
+}
+
+#principal{
+	margin: auto;
+	height: 100%;
+	position: relative;
+}
+
+article{
+	font-family:Verdana;
+	background: white;
+	margin: 10px;
+	height: 100%;
+}
+
+article:hover{
+	opacity: 1;
+}
+
+li{
+	font-family:Verdana;
+	text-align:left
+}
+
+td{
+	font-family:Verdana;
+	text-align:left;
+}
+
+th{
+	font-family:Verdana;
+	text-align:center;
+}
+
+p{
+	font-family:Verdana;
+	text-align:left;
+}
+
+h1{
+	font-family:Tahoma;
+	color:#00639C;
+	text-align:center;
+	border: 1px solid gray;
+	border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+	box-shadow: 3px 3px 10px black;
+	-webkit-box-shadow: 3px 3px 10px black;
+	padding: 10px 10px 10px 10px;
+	overflow: hidden;
+}
+
+h2{
+	font-family:Tahoma;
+	color:#00639C;
+	text-align:left;
+}
+
+h3{
+	font-family:Tahoma;
+	color:#00639C;
+	text-align:left;
+}
+
+table{
+		border-collapse: collapse;
+		border: 1px solid black;
+		box-shadow: 3px 3px 10px black;
+	-webkit-box-shadow: 3px 3px 10px black;
+}
+
+table td{
+	border: 1px solid black;
+	padding: 10px 10px 10px 10px;
+	overflow: hidden;
+}
+
+.estilotextarea {font-family: verdana,garamond;font-size: 18pt;font-weight: bold;}
+.estiloinput {font-family: verdana,garamond;font-size: 18pt;font-weight: bold; text-align: right;}
+.estiloangulo {font-family: verdana,garamond;font-size: 18pt;font-weight: bold; text-align: right; width:80px; }
+.estiloboton {font-family: verdana,garamond;font-size: 18pt;font-weight: bold; text-align: center; width:50px; }
